@@ -10,6 +10,11 @@
 		0F0A10E01634E45B0003E32B /* IsLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A10DB1634E45B0003E32B /* IsLogin.m */; };
 		0F0A10E11634E45B0003E32B /* LoginWithAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A10DD1634E45B0003E32B /* LoginWithAccount.m */; };
 		0F0A10E21634E45B0003E32B /* Resume.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A10DF1634E45B0003E32B /* Resume.m */; };
+		0F0A113E1634ECB60003E32B /* SecOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11371634ECB60003E32B /* SecOptionCell.m */; };
+		0F0A113F1634ECB60003E32B /* VIPIndustryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11391634ECB60003E32B /* VIPIndustryViewController.m */; };
+		0F0A11401634ECB60003E32B /* VIPIndustryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A113A1634ECB60003E32B /* VIPIndustryViewController.xib */; };
+		0F0A11411634ECB60003E32B /* VIPJobSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A113C1634ECB60003E32B /* VIPJobSearchViewController.m */; };
+		0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */; };
 		0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A05A316326FD0003D216A /* QuartzCore.framework */; };
 		0FA014FD16322FF2004A0CB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA014FC16322FF2004A0CB0 /* UIKit.framework */; };
 		0FA014FF16322FF2004A0CB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA014FE16322FF2004A0CB0 /* Foundation.framework */; };
@@ -72,6 +77,14 @@
 		0F0A10DD1634E45B0003E32B /* LoginWithAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWithAccount.m; sourceTree = "<group>"; };
 		0F0A10DE1634E45B0003E32B /* Resume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resume.h; sourceTree = "<group>"; };
 		0F0A10DF1634E45B0003E32B /* Resume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resume.m; sourceTree = "<group>"; };
+		0F0A11361634ECB60003E32B /* SecOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecOptionCell.h; sourceTree = "<group>"; };
+		0F0A11371634ECB60003E32B /* SecOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecOptionCell.m; sourceTree = "<group>"; };
+		0F0A11381634ECB60003E32B /* VIPIndustryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPIndustryViewController.h; sourceTree = "<group>"; };
+		0F0A11391634ECB60003E32B /* VIPIndustryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPIndustryViewController.m; sourceTree = "<group>"; };
+		0F0A113A1634ECB60003E32B /* VIPIndustryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPIndustryViewController.xib; sourceTree = "<group>"; };
+		0F0A113B1634ECB60003E32B /* VIPJobSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPJobSearchViewController.h; sourceTree = "<group>"; };
+		0F0A113C1634ECB60003E32B /* VIPJobSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPJobSearchViewController.m; sourceTree = "<group>"; };
+		0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPJobSearchViewController.xib; sourceTree = "<group>"; };
 		0F5A055416326ED2003D216A /* _CPTFillColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillColor.h; sourceTree = "<group>"; };
 		0F5A055516326ED2003D216A /* _CPTFillGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillGradient.h; sourceTree = "<group>"; };
 		0F5A055616326ED2003D216A /* _CPTFillImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillImage.h; sourceTree = "<group>"; };
@@ -411,6 +424,14 @@
 		0FA0151316323126004A0CB0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0F0A11361634ECB60003E32B /* SecOptionCell.h */,
+				0F0A11371634ECB60003E32B /* SecOptionCell.m */,
+				0F0A11381634ECB60003E32B /* VIPIndustryViewController.h */,
+				0F0A11391634ECB60003E32B /* VIPIndustryViewController.m */,
+				0F0A113A1634ECB60003E32B /* VIPIndustryViewController.xib */,
+				0F0A113B1634ECB60003E32B /* VIPJobSearchViewController.h */,
+				0F0A113C1634ECB60003E32B /* VIPJobSearchViewController.m */,
+				0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */,
 				0FA0151916323375004A0CB0 /* VIPHomeViewController.h */,
 				0FA0151A16323375004A0CB0 /* VIPHomeViewController.m */,
 				0FA0151B16323375004A0CB0 /* VIPHomeViewController.xib */,
@@ -625,6 +646,8 @@
 				0FFCBD521633883500392042 /* accessoryArrow@2x.png in Resources */,
 				0FCC25FC1633F3E6003A660F /* CustomCellForRow0.xib in Resources */,
 				0FCC2638163414AB003A660F /* README-GHUnit in Resources */,
+				0F0A11401634ECB60003E32B /* VIPIndustryViewController.xib in Resources */,
+				0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +684,9 @@
 				0F0A10E01634E45B0003E32B /* IsLogin.m in Sources */,
 				0F0A10E11634E45B0003E32B /* LoginWithAccount.m in Sources */,
 				0F0A10E21634E45B0003E32B /* Resume.m in Sources */,
+				0F0A113E1634ECB60003E32B /* SecOptionCell.m in Sources */,
+				0F0A113F1634ECB60003E32B /* VIPIndustryViewController.m in Sources */,
+				0F0A11411634ECB60003E32B /* VIPJobSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

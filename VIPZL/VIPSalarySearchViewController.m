@@ -10,6 +10,7 @@
 
 #import "CustomcellForSalary.h"
 #import "DealWithNetWorkAndXmlHelper.h"
+#import "SaveDataSingleton.h"
 @implementation VIPSalarySearchViewController
 @synthesize tableview;
 
@@ -52,8 +53,15 @@
     selextedArrar = [[NSArray alloc] initWithObjects:@"我有工作经验",@"地区:",@"行业:",@"学历:",@"企业性质:",@"职位类别:",@"职位级别:",@"期望月薪:", nil];
     tipArray = [[NSArray alloc] initWithObjects:@" ", @"请选择地区",@"请选择行业",@"请选择学历",@"请选择企业性质",@"请选择职位类别",@"请选择职位级别",@"请点击输入",nil];
     
-    [DealWithNetWorkAndXmlHelper getCityItems];
-    [DealWithNetWorkAndXmlHelper getCompanyTypeItems];
+    SaveDataSingleton *myData = [SaveDataSingleton DefaultSaveData];
+    NSLog(@"cityItemDictionary = %d",[myData.cityItemDictionary count]);
+    NSLog(@"IndustryItemsDictionary = %d",[myData.IndustryItemsDictionary count]);
+    NSLog(@"EducationItemsDictionary = %d",[myData.EducationItemsDictionary count]);
+    NSLog(@"CompanyTypeItemsDictionary count = %d",[myData.CompanyTypeItemsDictionary count]);
+    NSLog(@"JobTypeItemsDictionary count = %d",[myData.JobTypeItemsDictionary count]);
+    NSLog(@"JobLevelItemsDictionary count =%d",[myData.JobLevelItemsDictionary count]);
+    
+    
     
     
     [super viewDidLoad];

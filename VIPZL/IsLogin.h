@@ -6,6 +6,8 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
+// test edit by taocy 2012/10/22
+
 #import <Foundation/Foundation.h>
 
 @interface IsLogin : NSObject

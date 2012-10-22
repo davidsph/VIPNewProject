@@ -12,6 +12,7 @@
 
 
 // test edit 2012  by djy
+// delete all by default daijunyou 2012
 
 #import "IsLogin.h"
 

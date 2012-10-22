@@ -30,8 +30,6 @@
     NSString *urlString = @"http://mobileinterface.zhaopin.com/iphone/payquery/querylist.service ";
     
     ASIFormDataRequest *newRequest = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlString]];
-    
-    
     [newRequest startSynchronous];
     
     NSError *erroe= [newRequest error];
@@ -39,10 +37,8 @@
     NSString *reponse;
     
     if (!erroe) {
-        
+        NSLog(@"请求成功");
         reponse = [newRequest responseString];
-        
-        NSLog(@"接收到的数据为：%@",reponse);
         
     } else {
         
@@ -83,15 +79,15 @@
         NSString *cityId = [[[cityItem elementsForName:@"id"] objectAtIndex:0] stringValue];
         NSString *city = [[[cityItem elementsForName:@"name"] objectAtIndex:0] stringValue];
         
-        NSLog(@"city = %@",city);
+        
         [dictionary setObject:city forKey:cityId];
         
     }
     
     
     return [dictionary autorelease];
-
-       
+    
+    
 }
 
 
@@ -99,8 +95,6 @@
 //获得城市列表
 + (NSMutableDictionary *) getCityItems{
     
-    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
-        
     return  [self getItemsWthIndex:0]; 
     
 }
@@ -117,17 +111,10 @@
 }
 //获得公司性质列表
 + (NSMutableDictionary *) getCompanyTypeItems{
-   
-    
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
-    
-    
     
     return [self getItemsWthIndex:1];
     
-    
-    
-   
 }
 //获得职业列表
 + (NSMutableDictionary *) getJobTypeItems{
@@ -143,6 +130,7 @@
 @end
 
 
+//之前是想用单利传值 但是后来又发现了一个好方法 故此处 策略放在这里仅供留念
 @implementation SaveItemsWithDictionary
 
 + (id) DefaultSaveItems{

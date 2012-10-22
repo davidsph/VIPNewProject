@@ -18,6 +18,9 @@
 		0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11641634EF6A0003E32B /* XMLAnalysis.m */; };
 		0F0A11681634EF820003E32B /* basedata.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A11671634EF820003E32B /* basedata.xml */; };
 		0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A05A316326FD0003D216A /* QuartzCore.framework */; };
+		0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */; };
+		0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */; };
+		0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE475163503BA00C20619 /* SaveDataSingleton.m */; };
 		0FA014FD16322FF2004A0CB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA014FC16322FF2004A0CB0 /* UIKit.framework */; };
 		0FA014FF16322FF2004A0CB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA014FE16322FF2004A0CB0 /* Foundation.framework */; };
 		0FA0150116322FF2004A0CB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA0150016322FF2004A0CB0 /* CoreGraphics.framework */; };
@@ -165,6 +168,11 @@
 		0F5A059C16326ED2003D216A /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		0F5A059D16326ED2003D216A /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		0F5A05A316326FD0003D216A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0F9DE46E1635026900C20619 /* VIPSelectedTableviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSelectedTableviewController.h; sourceTree = "<group>"; };
+		0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSelectedTableviewController.m; sourceTree = "<group>"; };
+		0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSelectedTableviewController.xib; sourceTree = "<group>"; };
+		0F9DE474163503BA00C20619 /* SaveDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveDataSingleton.h; sourceTree = "<group>"; };
+		0F9DE475163503BA00C20619 /* SaveDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveDataSingleton.m; sourceTree = "<group>"; };
 		0FA014F816322FF2004A0CB0 /* VIPZL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPZL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA014FC16322FF2004A0CB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0FA014FE16322FF2004A0CB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -500,6 +508,8 @@
 				0FCC2604163405B0003A660F /* DealWithNetWorkAndXmlHelper.m */,
 				0FCC260A163406A9003A660F /* SalarySearchInfoSingleton.h */,
 				0FCC260B163406A9003A660F /* SalarySearchInfoSingleton.m */,
+				0F9DE474163503BA00C20619 /* SaveDataSingleton.h */,
+				0F9DE475163503BA00C20619 /* SaveDataSingleton.m */,
 			);
 			path = modelsForSalary;
 			sourceTree = "<group>";
@@ -581,6 +591,9 @@
 				0FF798D516326DC200EA1B61 /* CustomcellForSalary.m */,
 				0FF798D616326DC200EA1B61 /* VIPCustomCellForSalarySearch.xib */,
 				0FCC25FB1633F3E6003A660F /* CustomCellForRow0.xib */,
+				0F9DE46E1635026900C20619 /* VIPSelectedTableviewController.h */,
+				0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */,
+				0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */,
 			);
 			name = SalarySearch;
 			sourceTree = "<group>";
@@ -656,7 +669,11 @@
 				0FCC2638163414AB003A660F /* README-GHUnit in Resources */,
 				0F0A11401634ECB60003E32B /* VIPIndustryViewController.xib in Resources */,
 				0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */,
+
 				0F0A11681634EF820003E32B /* basedata.xml in Resources */,
+
+				0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,7 +713,12 @@
 				0F0A113E1634ECB60003E32B /* SecOptionCell.m in Sources */,
 				0F0A113F1634ECB60003E32B /* VIPIndustryViewController.m in Sources */,
 				0F0A11411634ECB60003E32B /* VIPJobSearchViewController.m in Sources */,
+
 				0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */,
+
+				0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */,
+				0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

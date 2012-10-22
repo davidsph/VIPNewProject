@@ -10,6 +10,9 @@
 
 //  edit by taocy ...
 
+
+// test edit 2012  by djy
+
 #import "IsLogin.h"
 
 @implementation IsLogin

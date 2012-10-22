@@ -11,6 +11,7 @@
 #import "VIPMyZhilianViewController.h"
 #import "IsLogin.h"
 #import "VIPSalarySearchViewController.h"
+#import "VIPJobSearchViewController.h"
 @implementation VIPHomeViewController
 @synthesize myZhilian;
 
@@ -61,6 +62,9 @@
 
 - (IBAction)searchPosition:(id)sender {
     NSLog(@"推出职位查询界面");
+    VIPJobSearchViewController *jbschVC = [[VIPJobSearchViewController alloc] init];
+    [self.navigationController pushViewController:jbschVC animated:YES];
+    [jbschVC release];
 }
 - (IBAction)myZhilian:(id)sender {
     

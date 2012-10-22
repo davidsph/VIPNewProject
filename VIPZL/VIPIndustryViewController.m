@@ -33,7 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //array = [[NSArray alloc] initWithObjects:@"不限",@"计算机硬件及其网络设备",@"计算机软件", nil];
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisIndustry]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -151,6 +152,7 @@
         [_delegate sentIndustry:[array objectAtIndex:indexPath.row]];
     }
     [self.navigationController popViewControllerAnimated:YES];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -159,6 +161,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    
 }
 
 @end

@@ -196,6 +196,7 @@
 - (void)sentIndustry:(NSString *)selectedIndustry
 {
     self.industry = selectedIndustry;
+    
     NSLog(@"行业类别选中为：%@",_industry);
 }
 

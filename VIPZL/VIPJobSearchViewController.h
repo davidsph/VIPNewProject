@@ -10,7 +10,7 @@
 #import "VIPIndustryViewController.h"
 @interface VIPJobSearchViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,IndustryProtocl>
 {
-    NSArray *cellName;
+    NSMutableArray *cellName;
     NSArray *cellOption;
 }
 @property (retain, nonatomic) IBOutlet UITableView *tableView1;

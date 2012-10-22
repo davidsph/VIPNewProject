@@ -4,8 +4,17 @@
 //
 //  Created by Ibokan on 12-10-11.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+
 //  edit more
 
+//
+
+// test edit by taocy 2012/10/22
+
+
+
+
+// test confict by djy 
 
 #import <Foundation/Foundation.h>
 

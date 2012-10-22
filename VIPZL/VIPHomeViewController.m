@@ -12,6 +12,7 @@
 #import "IsLogin.h"
 #import "VIPSalarySearchViewController.h"
 #import "VIPJobSearchViewController.h"
+#import "VIPJObRecommend.h"
 @implementation VIPHomeViewController
 @synthesize myZhilian;
 
@@ -89,6 +90,9 @@
 
 - (IBAction)realTimeRecommend:(id)sender {
     NSLog(@"推出实时推荐界面");
+    VIPJObRecommend *jobRecommend = [[VIPJObRecommend alloc]init];
+    [self.navigationController pushViewController:jobRecommend animated:YES];
+    
 }
 
 - (IBAction)paymentSearch:(id)sender {

@@ -72,6 +72,9 @@
 		0FF798DC16326DD200EA1B61 /* VIPSalarySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF798DA16326DD200EA1B61 /* VIPSalarySearchViewController.m */; };
 		0FF798DD16326DD200EA1B61 /* VIPSalarySearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF798DB16326DD200EA1B61 /* VIPSalarySearchViewController.xib */; };
 		0FF798DF16326E1F00EA1B61 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF798DE16326E1F00EA1B61 /* libCorePlot-CocoaTouch.a */; };
+		0FF9DBCE163551CA005076A4 /* VIPJObRecommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF9DBCC163551CA005076A4 /* VIPJObRecommend.m */; };
+		0FF9DBCF163551CA005076A4 /* VIPJObRecommend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9DBCD163551CA005076A4 /* VIPJObRecommend.xib */; };
+		0FF9DBD316355716005076A4 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF9DBD216355716005076A4 /* CustomCell.m */; };
 		0FFCBD521633883500392042 /* accessoryArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FFCBD511633883500392042 /* accessoryArrow@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +256,11 @@
 		0FF798DA16326DD200EA1B61 /* VIPSalarySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSalarySearchViewController.m; sourceTree = "<group>"; };
 		0FF798DB16326DD200EA1B61 /* VIPSalarySearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSalarySearchViewController.xib; sourceTree = "<group>"; };
 		0FF798DE16326E1F00EA1B61 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		0FF9DBCB163551CA005076A4 /* VIPJObRecommend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPJObRecommend.h; sourceTree = "<group>"; };
+		0FF9DBCC163551CA005076A4 /* VIPJObRecommend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPJObRecommend.m; sourceTree = "<group>"; };
+		0FF9DBCD163551CA005076A4 /* VIPJObRecommend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPJObRecommend.xib; sourceTree = "<group>"; };
+		0FF9DBD116355716005076A4 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		0FF9DBD216355716005076A4 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		0FFCBD511633883500392042 /* accessoryArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "accessoryArrow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -459,10 +467,16 @@
 				0FA0156916325EAE004A0CB0 /* VIPFindViewController.xib */,
 				0FA0157216326387004A0CB0 /* VIPRegisterViewController.h */,
 				0FA0157316326387004A0CB0 /* VIPRegisterViewController.m */,
-				0FA0157416326388004A0CB0 /* VIPRegisterViewController.xib */,
+				0FA0157416326388004A0CB0 /* VIPRegisterViewController.xib *
 				0F0A119E16355C640003E32B /* VIPSearchOptionViewController.h */,
 				0F0A119F16355C640003E32B /* VIPSearchOptionViewController.m */,
 				0F0A11A016355C640003E32B /* VIPSearchOptionViewController.xib */,
+				0FF9DBCB163551CA005076A4 /* VIPJObRecommend.h */,
+				0FF9DBCC163551CA005076A4 /* VIPJObRecommend.m */,
+				0FF9DBCD163551CA005076A4 /* VIPJObRecommend.xib */,
+				0FF9DBD116355716005076A4 /* CustomCell.h */,
+				0FF9DBD216355716005076A4 /* CustomCell.m */,
+
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -668,14 +682,18 @@
 				0FCC25FC1633F3E6003A660F /* CustomCellForRow0.xib in Resources */,
 				0FCC2638163414AB003A660F /* README-GHUnit in Resources */,
 				0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */,
-
 				0F0A11681634EF820003E32B /* basedata.xml in Resources */,
+
 
 
 				0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */,
 
 
 				0F0A11A216355C640003E32B /* VIPSearchOptionViewController.xib in Resources */,
+
+
+				0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */,
+				0FF9DBCF163551CA005076A4 /* VIPJObRecommend.xib in Resources */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,8 +733,8 @@
 				0F0A10E21634E45B0003E32B /* Resume.m in Sources */,
 				0F0A113E1634ECB60003E32B /* SecOptionCell.m in Sources */,
 				0F0A11411634ECB60003E32B /* VIPJobSearchViewController.m in Sources */,
-
 				0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */,
+
 
 
 				0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */,
@@ -724,6 +742,12 @@
 
 
 				0F0A11A116355C640003E32B /* VIPSearchOptionViewController.m in Sources */,
+
+
+				0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */,
+				0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */,
+				0FF9DBCE163551CA005076A4 /* VIPJObRecommend.m in Sources */,
+				0FF9DBD316355716005076A4 /* CustomCell.m in Sources */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;

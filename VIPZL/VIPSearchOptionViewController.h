@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol SearchOptionProtocl <NSObject>
+- (void)sentOption:(NSString *)selectedOption;
+@end
 
 @interface VIPSearchOptionViewController : UITableViewController
-
+{
+    NSArray *array;
+}
+@property(nonatomic,assign)int tag;
+@property(nonatomic,retain)id<SearchOptionProtocl>delegate;
 @end

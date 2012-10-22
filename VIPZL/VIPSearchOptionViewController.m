@@ -7,9 +7,10 @@
 //
 
 #import "VIPSearchOptionViewController.h"
+#import "XMLAnalysis.h"
 
 @implementation VIPSearchOptionViewController
-
+@synthesize tag,delegate;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -32,7 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
+    if (tag == 2) {
+        array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisIndustry]];
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -77,16 +83,15 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [array count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,7 +104,8 @@
     }
     
     // Configure the cell...
-    
+    cell.textLabel.font = [UIFont fontWithName:@"" size:16];
+    cell.textLabel.text = [array objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -146,6 +152,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (delegate!=nil && [delegate respondsToSelector:@selector(sentOption:)]) {
+        [delegate sentOption:[array objectAtIndex:indexPath.row]];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

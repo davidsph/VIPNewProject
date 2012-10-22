@@ -8,11 +8,12 @@
 
 #import "VIPJobSearchViewController.h"
 #import "SecOptionCell.h"
-#import "VIPIndustryViewController.h"
+#import "VIPSearchOptionViewController.h"
 
 @implementation VIPJobSearchViewController
 @synthesize tableView1;
-@synthesize industry = _industry;
+@synthesize industry = _industry,position = _position,postName = _postName,workPositon = _workPositon,range = _range;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,8 +39,8 @@
     tableView1.delegate = self;
     tableView1.dataSource = self;
     tableView1.backgroundColor = [UIColor clearColor];
-    cellName = [[NSArray alloc] initWithObjects:@"当前位置:",@"职位名称:",@"行业类别:",@"工作地点:",@"关键字:",@"定位范围:", nil];
-    cellOption = [[NSArray alloc] initWithObjects:@"北京市石景山区",@"请选择职位名称",@"请选择行业",@"请选择工作地点",@"请输入关键词",@"请输入定位范围", nil];
+    cellName = [[NSMutableArray alloc] initWithObjects:@"当前位置:",@"职位名称:",@"行业类别:",@"工作地点:",@"关键字:",@"定位范围:", nil];
+    cellOption = [[NSMutableArray alloc] initWithObjects:@"北京市石景山区",@"请选择职位名称",@"请选择行业",@"请选择工作地点",@"请输入关键词",@"请输入定位范围", nil];
     //tableView1.backgroundColor = [UIColor clearColor];
     // Do any additional setup after loading the view from its nib.
 }
@@ -84,6 +85,13 @@
     cell.textLabel.text = name;
     NSString *optionText = [cellOption objectAtIndex:indexPath.row];
     cell.optionLabel.text = optionText;
+    if (indexPath.section == 0 && indexPath.row == 2 &&selectIndustry == YES) {
+        cell.optionLabel.textColor = [UIColor blackColor];
+    }
+    else
+    {
+        cell.optionLabel.textColor = [UIColor grayColor];
+    }
     return cell;
 }
 
@@ -132,10 +140,11 @@
 {
     if(indexPath.row == 2)
     {
-        VIPIndustryViewController *indVC = [[VIPIndustryViewController alloc] init];
-        indVC.delegate = self;
-        [self.navigationController pushViewController:indVC animated:YES];
-        [indVC release];
+        VIPSearchOptionViewController *schOPVC = [[VIPSearchOptionViewController alloc] init];
+        schOPVC.tag = indexPath.row;
+        schOPVC.delegate = self;
+        [self.navigationController pushViewController:schOPVC animated:YES];
+        [schOPVC release];
     }
     // Navigation logic may go here. Create and push another view controller.
     /*
@@ -193,10 +202,12 @@
 }
 
 #pragma mark -- 以下是实现了一些用于传值的协议的方法
-- (void)sentIndustry:(NSString *)selectedIndustry
+- (void)sentOption:(NSString *)selectedOption
 {
-    self.industry = selectedIndustry;
-    
+    //self.industry = selectedOption;
+    [cellOption replaceObjectAtIndex:2 withObject:self.industry];
+    selectIndustry = YES;
+    [tableView1 reloadData];
     NSLog(@"行业类别选中为：%@",_industry);
 }
 

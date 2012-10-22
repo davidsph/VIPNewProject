@@ -11,12 +11,12 @@
 		0F0A10E11634E45B0003E32B /* LoginWithAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A10DD1634E45B0003E32B /* LoginWithAccount.m */; };
 		0F0A10E21634E45B0003E32B /* Resume.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A10DF1634E45B0003E32B /* Resume.m */; };
 		0F0A113E1634ECB60003E32B /* SecOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11371634ECB60003E32B /* SecOptionCell.m */; };
-		0F0A113F1634ECB60003E32B /* VIPIndustryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11391634ECB60003E32B /* VIPIndustryViewController.m */; };
-		0F0A11401634ECB60003E32B /* VIPIndustryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A113A1634ECB60003E32B /* VIPIndustryViewController.xib */; };
 		0F0A11411634ECB60003E32B /* VIPJobSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A113C1634ECB60003E32B /* VIPJobSearchViewController.m */; };
 		0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */; };
 		0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11641634EF6A0003E32B /* XMLAnalysis.m */; };
 		0F0A11681634EF820003E32B /* basedata.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A11671634EF820003E32B /* basedata.xml */; };
+		0F0A11A116355C640003E32B /* VIPSearchOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A119F16355C640003E32B /* VIPSearchOptionViewController.m */; };
+		0F0A11A216355C640003E32B /* VIPSearchOptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A11A016355C640003E32B /* VIPSearchOptionViewController.xib */; };
 		0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A05A316326FD0003D216A /* QuartzCore.framework */; };
 		0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */; };
 		0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */; };
@@ -84,15 +84,15 @@
 		0F0A10DF1634E45B0003E32B /* Resume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Resume.m; sourceTree = "<group>"; };
 		0F0A11361634ECB60003E32B /* SecOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecOptionCell.h; sourceTree = "<group>"; };
 		0F0A11371634ECB60003E32B /* SecOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecOptionCell.m; sourceTree = "<group>"; };
-		0F0A11381634ECB60003E32B /* VIPIndustryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPIndustryViewController.h; sourceTree = "<group>"; };
-		0F0A11391634ECB60003E32B /* VIPIndustryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPIndustryViewController.m; sourceTree = "<group>"; };
-		0F0A113A1634ECB60003E32B /* VIPIndustryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPIndustryViewController.xib; sourceTree = "<group>"; };
 		0F0A113B1634ECB60003E32B /* VIPJobSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPJobSearchViewController.h; sourceTree = "<group>"; };
 		0F0A113C1634ECB60003E32B /* VIPJobSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPJobSearchViewController.m; sourceTree = "<group>"; };
 		0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPJobSearchViewController.xib; sourceTree = "<group>"; };
 		0F0A11631634EF6A0003E32B /* XMLAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLAnalysis.h; sourceTree = "<group>"; };
 		0F0A11641634EF6A0003E32B /* XMLAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLAnalysis.m; sourceTree = "<group>"; };
 		0F0A11671634EF820003E32B /* basedata.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = basedata.xml; sourceTree = "<group>"; };
+		0F0A119E16355C640003E32B /* VIPSearchOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSearchOptionViewController.h; sourceTree = "<group>"; };
+		0F0A119F16355C640003E32B /* VIPSearchOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSearchOptionViewController.m; sourceTree = "<group>"; };
+		0F0A11A016355C640003E32B /* VIPSearchOptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSearchOptionViewController.xib; sourceTree = "<group>"; };
 		0F5A055416326ED2003D216A /* _CPTFillColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillColor.h; sourceTree = "<group>"; };
 		0F5A055516326ED2003D216A /* _CPTFillGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillGradient.h; sourceTree = "<group>"; };
 		0F5A055616326ED2003D216A /* _CPTFillImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillImage.h; sourceTree = "<group>"; };
@@ -442,9 +442,6 @@
 			children = (
 				0F0A11361634ECB60003E32B /* SecOptionCell.h */,
 				0F0A11371634ECB60003E32B /* SecOptionCell.m */,
-				0F0A11381634ECB60003E32B /* VIPIndustryViewController.h */,
-				0F0A11391634ECB60003E32B /* VIPIndustryViewController.m */,
-				0F0A113A1634ECB60003E32B /* VIPIndustryViewController.xib */,
 				0F0A113B1634ECB60003E32B /* VIPJobSearchViewController.h */,
 				0F0A113C1634ECB60003E32B /* VIPJobSearchViewController.m */,
 				0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */,
@@ -463,6 +460,9 @@
 				0FA0157216326387004A0CB0 /* VIPRegisterViewController.h */,
 				0FA0157316326387004A0CB0 /* VIPRegisterViewController.m */,
 				0FA0157416326388004A0CB0 /* VIPRegisterViewController.xib */,
+				0F0A119E16355C640003E32B /* VIPSearchOptionViewController.h */,
+				0F0A119F16355C640003E32B /* VIPSearchOptionViewController.m */,
+				0F0A11A016355C640003E32B /* VIPSearchOptionViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -667,12 +667,15 @@
 				0FFCBD521633883500392042 /* accessoryArrow@2x.png in Resources */,
 				0FCC25FC1633F3E6003A660F /* CustomCellForRow0.xib in Resources */,
 				0FCC2638163414AB003A660F /* README-GHUnit in Resources */,
-				0F0A11401634ECB60003E32B /* VIPIndustryViewController.xib in Resources */,
 				0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */,
 
 				0F0A11681634EF820003E32B /* basedata.xml in Resources */,
 
+
 				0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */,
+
+
+				0F0A11A216355C640003E32B /* VIPSearchOptionViewController.xib in Resources */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,13 +714,16 @@
 				0F0A10E11634E45B0003E32B /* LoginWithAccount.m in Sources */,
 				0F0A10E21634E45B0003E32B /* Resume.m in Sources */,
 				0F0A113E1634ECB60003E32B /* SecOptionCell.m in Sources */,
-				0F0A113F1634ECB60003E32B /* VIPIndustryViewController.m in Sources */,
 				0F0A11411634ECB60003E32B /* VIPJobSearchViewController.m in Sources */,
 
 				0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */,
 
+
 				0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */,
 				0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */,
+
+
+				0F0A11A116355C640003E32B /* VIPSearchOptionViewController.m in Sources */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -786,12 +792,14 @@
 				GCC_PREFIX_HEADER = "VIPZL/VIPZL-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "VIPZL/VIPZL-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -803,12 +811,14 @@
 				GCC_PREFIX_HEADER = "VIPZL/VIPZL-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "VIPZL/VIPZL-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -1,16 +1,16 @@
 //
-//  VIPIndustryViewController.m
+//  VIPSearchOptionViewController.m
 //  VIPZL
 //
-//  Created by Ibokan on 12-10-21.
+//  Created by Ibokan on 12-10-22.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "VIPIndustryViewController.h"
+#import "VIPSearchOptionViewController.h"
 #import "XMLAnalysis.h"
 
-@implementation VIPIndustryViewController
-@synthesize delegate = _delegate;
+@implementation VIPSearchOptionViewController
+@synthesize tag,delegate;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -33,8 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //array = [[NSArray alloc] initWithObjects:@"不限",@"计算机硬件及其网络设备",@"计算机软件", nil];
-    array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisIndustry]];
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
+    if (tag == 2) {
+        array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisIndustry]];
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -79,6 +83,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+
     // Return the number of sections.
     return 1;
 }
@@ -147,8 +152,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_delegate!=nil && [_delegate respondsToSelector:@selector(sentIndustry:)]) {
-        [_delegate sentIndustry:[array objectAtIndex:indexPath.row]];
+    if (delegate!=nil && [delegate respondsToSelector:@selector(sentOption:)]) {
+        [delegate sentOption:[array objectAtIndex:indexPath.row]];
     }
     [self.navigationController popViewControllerAnimated:YES];
     // Navigation logic may go here. Create and push another view controller.

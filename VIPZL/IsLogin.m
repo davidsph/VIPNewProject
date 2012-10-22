@@ -6,6 +6,8 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
+//  edit by taocy at 20121022/4:22
+
 #import "IsLogin.h"
 
 @implementation IsLogin

@@ -13,6 +13,9 @@
 
 // test edit 2012  by djy
 
+
+// add something more
+
 #import "IsLogin.h"
 
 @implementation IsLogin

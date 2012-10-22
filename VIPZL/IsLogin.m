@@ -8,6 +8,8 @@
 
 //  edit by taocy at 20121022/4:22
 
+//  edit by taocy ...
+
 #import "IsLogin.h"
 
 @implementation IsLogin

@@ -1,16 +1,15 @@
 //
-//  VIPIndustryViewController.m
+//  VIPSearchOptionViewController.m
 //  VIPZL
 //
-//  Created by Ibokan on 12-10-21.
+//  Created by Ibokan on 12-10-22.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "VIPIndustryViewController.h"
-#import "XMLAnalysis.h"
+#import "VIPSearchOptionViewController.h"
 
-@implementation VIPIndustryViewController
-@synthesize delegate = _delegate;
+@implementation VIPSearchOptionViewController
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -33,9 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.showsVerticalScrollIndicator = NO;
-    self.tableView.showsHorizontalScrollIndicator = NO;
-    array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisIndustry]];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -80,14 +77,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [array count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -100,8 +99,7 @@
     }
     
     // Configure the cell...
-    cell.textLabel.font = [UIFont fontWithName:@"" size:16];
-    cell.textLabel.text = [array objectAtIndex:indexPath.row];
+    
     return cell;
 }
 
@@ -148,11 +146,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_delegate!=nil && [_delegate respondsToSelector:@selector(sentIndustry:)]) {
-        [_delegate sentIndustry:[array objectAtIndex:indexPath.row]];
-    }
-    [self.navigationController popViewControllerAnimated:YES];
-    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -161,7 +154,6 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    
 }
 
 @end

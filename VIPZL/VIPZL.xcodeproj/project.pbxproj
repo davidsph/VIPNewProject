@@ -15,6 +15,8 @@
 		0F0A11401634ECB60003E32B /* VIPIndustryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A113A1634ECB60003E32B /* VIPIndustryViewController.xib */; };
 		0F0A11411634ECB60003E32B /* VIPJobSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A113C1634ECB60003E32B /* VIPJobSearchViewController.m */; };
 		0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */; };
+		0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11641634EF6A0003E32B /* XMLAnalysis.m */; };
+		0F0A11681634EF820003E32B /* basedata.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A11671634EF820003E32B /* basedata.xml */; };
 		0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A05A316326FD0003D216A /* QuartzCore.framework */; };
 		0FA014FD16322FF2004A0CB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA014FC16322FF2004A0CB0 /* UIKit.framework */; };
 		0FA014FF16322FF2004A0CB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA014FE16322FF2004A0CB0 /* Foundation.framework */; };
@@ -85,6 +87,9 @@
 		0F0A113B1634ECB60003E32B /* VIPJobSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPJobSearchViewController.h; sourceTree = "<group>"; };
 		0F0A113C1634ECB60003E32B /* VIPJobSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPJobSearchViewController.m; sourceTree = "<group>"; };
 		0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPJobSearchViewController.xib; sourceTree = "<group>"; };
+		0F0A11631634EF6A0003E32B /* XMLAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLAnalysis.h; sourceTree = "<group>"; };
+		0F0A11641634EF6A0003E32B /* XMLAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLAnalysis.m; sourceTree = "<group>"; };
+		0F0A11671634EF820003E32B /* basedata.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = basedata.xml; sourceTree = "<group>"; };
 		0F5A055416326ED2003D216A /* _CPTFillColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillColor.h; sourceTree = "<group>"; };
 		0F5A055516326ED2003D216A /* _CPTFillGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillGradient.h; sourceTree = "<group>"; };
 		0F5A055616326ED2003D216A /* _CPTFillImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillImage.h; sourceTree = "<group>"; };
@@ -362,6 +367,9 @@
 				0F0A10DD1634E45B0003E32B /* LoginWithAccount.m */,
 				0F0A10DE1634E45B0003E32B /* Resume.h */,
 				0F0A10DF1634E45B0003E32B /* Resume.m */,
+				0F0A11631634EF6A0003E32B /* XMLAnalysis.h */,
+				0F0A11641634EF6A0003E32B /* XMLAnalysis.m */,
+				0F0A11671634EF820003E32B /* basedata.xml */,
 				0FCC264016341504003A660F /* libz.dylib */,
 				0FCC263E163414F4003A660F /* CFNetwork.framework */,
 				0FCC263C163414EA003A660F /* SystemConfiguration.framework */,
@@ -648,6 +656,7 @@
 				0FCC2638163414AB003A660F /* README-GHUnit in Resources */,
 				0F0A11401634ECB60003E32B /* VIPIndustryViewController.xib in Resources */,
 				0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */,
+				0F0A11681634EF820003E32B /* basedata.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +696,7 @@
 				0F0A113E1634ECB60003E32B /* SecOptionCell.m in Sources */,
 				0F0A113F1634ECB60003E32B /* VIPIndustryViewController.m in Sources */,
 				0F0A11411634ECB60003E32B /* VIPJobSearchViewController.m in Sources */,
+				0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

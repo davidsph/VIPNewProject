@@ -7,6 +7,7 @@
 //
 
 #import "VIPIndustryViewController.h"
+#import "XMLAnalysis.h"
 
 @implementation VIPIndustryViewController
 @synthesize delegate = _delegate;
@@ -32,7 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    array = [[NSArray alloc] initWithObjects:@"不限",@"计算机硬件及其网络设备",@"计算机软件", nil];
+    //array = [[NSArray alloc] initWithObjects:@"不限",@"计算机硬件及其网络设备",@"计算机软件", nil];
+    array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisIndustry]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -84,7 +86,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 3;
+    return [array count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

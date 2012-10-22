@@ -4,13 +4,7 @@
 //
 //  Created by Ibokan on 12-10-11.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
-//
-
-// test edit by taocy 2012/10/22
-
-// test again by taocy
-
-// test by  djy 
+//  edit more
 
 
 #import <Foundation/Foundation.h>

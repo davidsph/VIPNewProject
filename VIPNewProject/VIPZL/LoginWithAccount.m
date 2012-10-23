@@ -21,6 +21,7 @@
     
     NSString *urlstr1 = [NSString stringWithFormat:@"http://wapinterface.zhaopin.com/iphone/myzhaopin/loginmgr/login.aspx?loginname=%@&password=%@",accout,passWord];
     NSString *urlstr2 = [DNWrapper getMD5String:urlstr1];
+    NSLog(@"凭啥密码错误 %@",urlstr2);
     NSURL *url = [NSURL URLWithString:urlstr2];
 
     //第二步，创建请求
@@ -42,7 +43,7 @@
     GDataXMLElement *resultValue = [children objectAtIndex:0];
     
     result = [resultValue stringValue];//验证登陆失败与否的属性
-       
+    NSLog(@"result = %@",result);
     //登陆成功
     if ([result isEqual:@"1"] == YES) {
         //如果登陆成功，将用户名和密码保存到本地以便下次自动登陆
@@ -99,7 +100,6 @@
     //登陆失败
     else
     {
-        
         NSLog(@"有错误,登陆失败");
         GDataXMLElement *error = [children objectAtIndex:1];
         NSLog(@"error = %@",[error stringValue]);

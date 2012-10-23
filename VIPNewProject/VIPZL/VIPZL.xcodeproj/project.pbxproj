@@ -18,6 +18,12 @@
 		0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A05A316326FD0003D216A /* QuartzCore.framework */; };
 		0F6CF7CA16369AC3004BB24A /* VIPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CF7C816369AC3004BB24A /* VIPDetailViewController.m */; };
 		0F6CF7CB16369AC3004BB24A /* VIPDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */; };
+		0F6CF7ED1636C5DD004BB24A /* A2ResumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CF7EC1636C5DD004BB24A /* A2ResumeView.m */; };
+		0F6CF7F11636C87B004BB24A /* ResumeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CF7F01636C87B004BB24A /* ResumeViewCell.m */; };
+		0F6CF7F31636C8F4004BB24A /* job_record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7F21636C8F4004BB24A /* job_record@2x.png */; };
+		0F6CF7F51636C909004BB24A /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7F41636C909004BB24A /* favorite@2x.png */; };
+		0F6CF7F71636C927004BB24A /* unreader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7F61636C927004BB24A /* unreader@2x.png */; };
+		0F6CF7F91636C93F004BB24A /* searchSubscribeViewController@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7F81636C93F004BB24A /* searchSubscribeViewController@2x.png */; };
 		0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */; };
 		0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */; };
 		0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE475163503BA00C20619 /* SaveDataSingleton.m */; };
@@ -172,6 +178,14 @@
 		0F6CF7C716369AC3004BB24A /* VIPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPDetailViewController.h; sourceTree = "<group>"; };
 		0F6CF7C816369AC3004BB24A /* VIPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPDetailViewController.m; sourceTree = "<group>"; };
 		0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPDetailViewController.xib; sourceTree = "<group>"; };
+		0F6CF7EB1636C5DD004BB24A /* A2ResumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A2ResumeView.h; sourceTree = "<group>"; };
+		0F6CF7EC1636C5DD004BB24A /* A2ResumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A2ResumeView.m; sourceTree = "<group>"; };
+		0F6CF7EF1636C87B004BB24A /* ResumeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResumeViewCell.h; sourceTree = "<group>"; };
+		0F6CF7F01636C87B004BB24A /* ResumeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResumeViewCell.m; sourceTree = "<group>"; };
+		0F6CF7F21636C8F4004BB24A /* job_record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "job_record@2x.png"; sourceTree = "<group>"; };
+		0F6CF7F41636C909004BB24A /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite@2x.png"; sourceTree = "<group>"; };
+		0F6CF7F61636C927004BB24A /* unreader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unreader@2x.png"; sourceTree = "<group>"; };
+		0F6CF7F81636C93F004BB24A /* searchSubscribeViewController@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchSubscribeViewController@2x.png"; sourceTree = "<group>"; };
 		0F9DE46E1635026900C20619 /* VIPSelectedTableviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSelectedTableviewController.h; sourceTree = "<group>"; };
 		0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSelectedTableviewController.m; sourceTree = "<group>"; };
 		0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSelectedTableviewController.xib; sourceTree = "<group>"; };
@@ -390,6 +404,10 @@
 				0F0A10DB1634E45B0003E32B /* IsLogin.m */,
 				0F0A10DC1634E45B0003E32B /* LoginWithAccount.h */,
 				0F0A10DD1634E45B0003E32B /* LoginWithAccount.m */,
+				0F6CF7EB1636C5DD004BB24A /* A2ResumeView.h */,
+				0F6CF7EC1636C5DD004BB24A /* A2ResumeView.m */,
+				0F6CF7EF1636C87B004BB24A /* ResumeViewCell.h */,
+				0F6CF7F01636C87B004BB24A /* ResumeViewCell.m */,
 				0F0A10DE1634E45B0003E32B /* Resume.h */,
 				0F0A10DF1634E45B0003E32B /* Resume.m */,
 				0F0A11631634EF6A0003E32B /* XMLAnalysis.h */,
@@ -494,6 +512,10 @@
 		0FA0151E16323577004A0CB0 /* ImageSourse */ = {
 			isa = PBXGroup;
 			children = (
+				0F6CF7F81636C93F004BB24A /* searchSubscribeViewController@2x.png */,
+				0F6CF7F61636C927004BB24A /* unreader@2x.png */,
+				0F6CF7F41636C909004BB24A /* favorite@2x.png */,
+				0F6CF7F21636C8F4004BB24A /* job_record@2x.png */,
 				0FA01577163264BA004A0CB0 /* registerBg@2x.png */,
 				0FA0157016325F2B004A0CB0 /* select_icon@2x.png */,
 				0FA0156E16325F14004A0CB0 /* unselect_icon@2x.png */,
@@ -697,6 +719,10 @@
 				0FA2358116357383000E9080 /* VIPSearchOptionViewController.xib in Resources */,
 				0FA02BF016364A6000E2A44C /* VIPCompanyViewController.xib in Resources */,
 				0F6CF7CB16369AC3004BB24A /* VIPDetailViewController.xib in Resources */,
+				0F6CF7F31636C8F4004BB24A /* job_record@2x.png in Resources */,
+				0F6CF7F51636C909004BB24A /* favorite@2x.png in Resources */,
+				0F6CF7F71636C927004BB24A /* unreader@2x.png in Resources */,
+				0F6CF7F91636C93F004BB24A /* searchSubscribeViewController@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +767,8 @@
 				0FA2358016357383000E9080 /* VIPSearchOptionViewController.m in Sources */,
 				0FA02BEF16364A6000E2A44C /* VIPCompanyViewController.m in Sources */,
 				0F6CF7CA16369AC3004BB24A /* VIPDetailViewController.m in Sources */,
+				0F6CF7ED1636C5DD004BB24A /* A2ResumeView.m in Sources */,
+				0F6CF7F11636C87B004BB24A /* ResumeViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

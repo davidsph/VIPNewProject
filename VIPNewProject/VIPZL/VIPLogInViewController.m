@@ -87,10 +87,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 //实现代理的方法
+
 //当登陆失败时候的方法
 - (void)sentError:(NSString *)error
 {
-    NSLog(@"显示密码错误了啊啊啊啊啊啊");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登陆失败" message:error delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"找回密码", nil];
     [self.view addSubview:alert];
     [alert show];

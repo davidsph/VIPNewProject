@@ -37,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"controolers = %@",self.navigationController.viewControllers);
     tableView1.delegate = self;
     tableView1.dataSource = self;
     tableView1.backgroundColor = [UIColor clearColor];
@@ -79,35 +80,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    static NSString *CellIdentifier = @"Cell";
-    SecOptionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[SecOptionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
     if (indexPath.section == 0) {//第一个分区
+        static NSString *CellIdentifier = @"Cell1";
+        SecOptionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[SecOptionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+        
+        
         
         NSString *name = [cellName objectAtIndex:indexPath.row];
         cell.textLabel.text = name;
         NSString *optionText = [cellOption objectAtIndex:indexPath.row];
         cell.optionLabel.text = optionText;
-//        if (indexPath.row == 1 && selectPositon == YES) {
-//            cell.optionLabel.textColor = [UIColor blackColor];
-//        }
-//        if (indexPath.row == 2 && selectPositon == YES) {
-//            cell.optionLabel.textColor = [UIColor blackColor];
-//        }
-//        if (indexPath.row == 3 && selectWorkPositon == YES) {
-//            cell.optionLabel.textColor = [UIColor blackColor];
-//        }
-//        if (indexPath.row == 5 && selectRange == YES) {
-//            cell.optionLabel.textColor = [UIColor blackColor];
-//        }
-//        else
-//        {
-//            cell.optionLabel.textColor = [UIColor grayColor];
-//        }
         for (int i = 0; i<[numbers count]; i++) {
             
             if (indexPath.row == [[numbers objectAtIndex:indexPath.row] intValue]) {
@@ -116,11 +101,31 @@
             }
             else
             {
-                cell.optionLabel.textColor = [UIColor blackColor];
+                cell.optionLabel.textColor = [UIColor grayColor];
             }
         }
+        if (indexPath.row == 4) {
+            keyField = [[UITextField alloc] initWithFrame:CGRectMake(140, 10, 160, 25)];
+            keyField.borderStyle = UITextBorderStyleRoundedRect;
+            [cell addSubview:keyField];
+        }
+         return cell;
     }
+    else if(indexPath.section == 1)
+    {
+        static NSString *CellIdentifier = @"Cell2";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+        
+        // Configure the cell...
+        cell.textLabel.text = @"历史记录";
+        cell.textLabel.font = [UIFont fontWithName:@"" size:16];
         return cell;
+    }
+   
 }
 
 /*
@@ -166,16 +171,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 4) {
+    if (indexPath.section == 0) {
         
+        if (indexPath.row == 4) {
+            
+        }
+        else
+        {
+            VIPSearchOptionViewController *serchVC = [[VIPSearchOptionViewController alloc] init];
+            serchVC.tag = indexPath.row;
+            serchVC.delegate = self;
+            [self.navigationController pushViewController:serchVC animated:YES];
+            [serchVC release];
+        }
     }
     else
     {
-        VIPSearchOptionViewController *serchVC = [[VIPSearchOptionViewController alloc] init];
-        serchVC.tag = indexPath.row;
-        serchVC.delegate = self;
-        [self.navigationController pushViewController:serchVC animated:YES];
-        [serchVC release];
+        NSLog(@"点击了历史记录");
     }
     // Navigation logic may go here. Create and push another view controller.
     /*
@@ -243,6 +255,7 @@
     comVC.industry = self.industry;
     comVC.workPositon = self.workPositon;
     comVC.range = self.range;
+    comVC.keyWord = keyField.text;
     //comVC.keyWord = self.keyWord;
     NSLog(@"%@,%@,%@,%@,%@",comVC.position,comVC.postName,comVC.industry,comVC.workPositon,comVC.range);
     [self.navigationController pushViewController:comVC animated:YES];

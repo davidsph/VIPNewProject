@@ -369,6 +369,13 @@
 			path = CorePlotHeaders;
 			sourceTree = "<group>";
 		};
+		0F6CF7D61636C15D004BB24A /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		0F726B371633F1D400F922C6 /* AboutLogin1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +396,7 @@
 				0F0A11641634EF6A0003E32B /* XMLAnalysis.m */,
 				0F0A11671634EF820003E32B /* basedata.xml */,
 				0FCC264016341504003A660F /* libz.dylib */,
+				0F6CF7D61636C15D004BB24A /* DataBase */,
 				0FCC263E163414F4003A660F /* CFNetwork.framework */,
 				0FCC263C163414EA003A660F /* SystemConfiguration.framework */,
 				0FCC263A163414E2003A660F /* MobileCoreServices.framework */,
@@ -800,6 +808,7 @@
 				GCC_PREFIX_HEADER = "VIPZL/VIPZL-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "VIPZL/VIPZL-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -817,6 +826,7 @@
 				GCC_PREFIX_HEADER = "VIPZL/VIPZL-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "VIPZL/VIPZL-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

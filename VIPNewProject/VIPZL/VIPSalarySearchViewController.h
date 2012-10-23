@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface VIPSalarySearchViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
+#import "VIPSelectedTableviewController.h"
+@interface VIPSalarySearchViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,VIPSelectedTableviewControllerDelegate>
 
 {
     NSArray *selextedArrar;
@@ -16,6 +16,13 @@
     
     
 }
+@property (retain, nonatomic) IBOutlet UIScrollView *scrollview;
 @property (retain, nonatomic) IBOutlet UITableView *tableview;
+@property(nonatomic,retain)NSArray *tmpSaveArray; //保存字典的数组
+@property(nonatomic,retain)NSArray *itemAllkeys; //保存与服务器交互的所有参数
+@property(nonatomic,retain)NSMutableDictionary *prepareItemsForNetWork;
+
+- (IBAction)getSalaryInfo:(id)sender;
+
 
 @end

@@ -24,6 +24,9 @@
 //获得职位级别
 + (NSMutableDictionary *) getJobLevelItems;
 
+//所有的参数
++(NSArray *) getAllKeys;
++(NSMutableArray *) getSalaryInfoFromNetWork:(NSMutableDictionary *) dictionary;
 
 @end
 

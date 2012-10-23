@@ -8,10 +8,11 @@
 
 #import "VIPJobSearchViewController.h"
 #import "SecOptionCell.h"
+#import "VIPCompanyViewController.h"
 
 @implementation VIPJobSearchViewController
 @synthesize tableView1;
-@synthesize industry = _industry,position = _position,postName = _postName,workPositon = _workPositon,range = _range;
+@synthesize industry = _industry,position = _position,postName = _postName,workPositon = _workPositon,range = _range,keyWord = _keyWord;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -85,21 +86,41 @@
         cell = [[[SecOptionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0) {//第一个分区
+        
         NSString *name = [cellName objectAtIndex:indexPath.row];
         cell.textLabel.text = name;
         NSString *optionText = [cellOption objectAtIndex:indexPath.row];
         cell.optionLabel.text = optionText;
-        if (indexPath.section == 0 && indexPath.row == 2 &&selectIndustry == YES) {
-            cell.optionLabel.textColor = [UIColor blackColor];
-        }
-        else
-        {
-            cell.optionLabel.textColor = [UIColor grayColor];
+//        if (indexPath.row == 1 && selectPositon == YES) {
+//            cell.optionLabel.textColor = [UIColor blackColor];
+//        }
+//        if (indexPath.row == 2 && selectPositon == YES) {
+//            cell.optionLabel.textColor = [UIColor blackColor];
+//        }
+//        if (indexPath.row == 3 && selectWorkPositon == YES) {
+//            cell.optionLabel.textColor = [UIColor blackColor];
+//        }
+//        if (indexPath.row == 5 && selectRange == YES) {
+//            cell.optionLabel.textColor = [UIColor blackColor];
+//        }
+//        else
+//        {
+//            cell.optionLabel.textColor = [UIColor grayColor];
+//        }
+        for (int i = 0; i<[numbers count]; i++) {
+            
+            if (indexPath.row == [[numbers objectAtIndex:indexPath.row] intValue]) {
+                cell.optionLabel.textColor = [UIColor blackColor];
+                break;
+            }
+            else
+            {
+                cell.optionLabel.textColor = [UIColor blackColor];
+            }
         }
     }
         return cell;
-    
 }
 
 /*
@@ -145,12 +166,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VIPSearchOptionViewController *serchVC = [[VIPSearchOptionViewController alloc] init];
-    serchVC.tag = indexPath.row;
-    serchVC.delegate = self;
-    [self.navigationController pushViewController:serchVC animated:YES];
-    [serchVC release];
-  
+    if (indexPath.row == 4) {
+        
+    }
+    else
+    {
+        VIPSearchOptionViewController *serchVC = [[VIPSearchOptionViewController alloc] init];
+        serchVC.tag = indexPath.row;
+        serchVC.delegate = self;
+        [self.navigationController pushViewController:serchVC animated:YES];
+        [serchVC release];
+    }
     // Navigation logic may go here. Create and push another view controller.
     /*
      S *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -193,6 +219,7 @@
         searchButton.frame = CGRectMake(100, 7, 100, 35);
         [searchButton setBackgroundImage:[UIImage imageNamed:@"loginNormal@2x.png"] forState:UIControlStateNormal];
         [searchButton setTitle:@"查询" forState:UIControlStateNormal];
+        [searchButton addTarget:self action:@selector(clickSearch) forControlEvents:UIControlEventTouchUpInside];
         [footView addSubview:searchButton];
         return footView;
     }
@@ -204,6 +231,22 @@
 - (void)dealloc {
     [tableView1 release];
     [super dealloc];
+}
+
+#pragma mark -- 点击了查询按钮
+- (void)clickSearch
+{
+    NSLog(@"点击了查询按钮");
+    VIPCompanyViewController *comVC = [[VIPCompanyViewController alloc] init];
+    comVC.position = self.position;
+    comVC.postName = self.postName;
+    comVC.industry = self.industry;
+    comVC.workPositon = self.workPositon;
+    comVC.range = self.range;
+    //comVC.keyWord = self.keyWord;
+    NSLog(@"%@,%@,%@,%@,%@",comVC.position,comVC.postName,comVC.industry,comVC.workPositon,comVC.range);
+    [self.navigationController pushViewController:comVC animated:YES];
+    [comVC release];
 }
 
 #pragma mark -- 以下是实现了一些用于传值的协议的方法
@@ -243,12 +286,11 @@
     }
     
     [cellOption replaceObjectAtIndex:tag withObject:selectedOption];
-    NSLog(@"行业类别选中为：%@",_industry);
-    [tableView1 reloadData];
     [numbers replaceObjectAtIndex:tag withObject:[NSString stringWithFormat:@"%d",tag]];
     for (int i = 0; i<[numbers count]; i++) {
         NSLog(@"number = %@",[numbers objectAtIndex:i]);
     }
+    [tableView1 reloadData];
     j++;
 }
 @end

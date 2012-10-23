@@ -49,7 +49,10 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     VIPHomeViewController *homeVC = [[VIPHomeViewController alloc] init];
-    UINavigationController *homeNV = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    UINavigationController *homeNV = [[UINavigationController alloc] init];
+    homeNV.viewControllers = [[NSMutableArray alloc] init];
+    [homeNV initWithRootViewController:homeVC];
+    
     [homeVC release];
     
     self.window.rootViewController = homeNV;

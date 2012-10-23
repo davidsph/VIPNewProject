@@ -1,17 +1,16 @@
 //
-//  VIPSearchOptionViewController.m
+//  VIPDetailViewController.m
 //  VIPZL
 //
-//  Created by Ibokan on 12-10-22.
+//  Created by Ibokan on 12-10-23.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "VIPSearchOptionViewController.h"
-#import "XMLAnalysis.h"
 #import "VIPDetailViewController.h"
+#import "XMLAnalysis.h"
 
-@implementation VIPSearchOptionViewController
-@synthesize delegate,tag;
+@implementation VIPDetailViewController
+@synthesize tag,theRow,delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,34 +34,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    switch (tag) {
-        case 0:
-        {
-            break;
-        }
-        case 1:
-        {
-            array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisJob]];
-            break;
-        }
-        case 2:
-        {
-            array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisIndustry]];
-            break;
-        }
-        case 3:
-        {
-            array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisProvince]];
-            break;
-        }
-        case 5:
-        {
-            array = [[NSArray alloc] initWithObjects:@"不限",@"1公里",@"3公里",@"5公里", nil];
-            break;
-        }
-        default:
-            break;
+
+    if(self.tag == 1)
+    {
+        
+        array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisSmallJob:[[XMLAnalysis XMLAnalysisJob]objectAtIndex:theRow]]];
     }
+    if(self.tag == 3)
+    {
+        
+        array = [[NSArray alloc] initWithArray:[XMLAnalysis XMLAnalysisCity:[[XMLAnalysis XMLAnalysisProvince]objectAtIndex:theRow]]];
+    }
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -107,12 +90,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+
     // Return the number of rows in the section.
     return [array count];
 }
@@ -120,6 +105,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
@@ -174,20 +160,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tag==1||tag==3) {
-        VIPDetailViewController *dtVC = [[VIPDetailViewController alloc] init];
-        dtVC.tag = tag;
-        dtVC.theRow = indexPath.row;
-        dtVC.delegate = self;
-        [self.navigationController pushViewController:dtVC animated:YES];
-        [dtVC release];
+    NSLog(@"delegate = %@",delegate);
+    if (delegate!=nil && [delegate respondsToSelector:@selector(sent:tag:)]) {
+        [delegate sent:[array objectAtIndex:indexPath.row] tag:tag];
     }
-    else{
-        if (delegate!= nil && [delegate respondsToSelector:@selector(sentOption:tag:)]) {
-            [delegate sentOption:[array objectAtIndex:indexPath.row] tag:tag];
-        }
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    NSLog(@"%@",self.navigationController.viewControllers);
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -197,15 +176,5 @@
      [detailViewController release];
      */
 }
-#pragma mark -- 实现detailprotocol的方法
--(void)sent:(NSString *)message tag:(int)tag1
-{
-    NSLog(@"message = %@,tag = %d",message,tag1);
-    
-    if (delegate!= nil && [delegate respondsToSelector:@selector(sentOption:tag:)]) {
-        [delegate sentOption:message tag:tag1];
-    }
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 @end

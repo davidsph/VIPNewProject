@@ -14,6 +14,7 @@
     NSMutableArray *cellOption;
     
     NSMutableArray *numbers;
+    UITextField *keyField;
     int j;
     
     BOOL selectPositon;//是否选中了当前位置

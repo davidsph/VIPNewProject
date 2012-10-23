@@ -52,7 +52,6 @@
     UINavigationController *homeNV = [[UINavigationController alloc] init];
     homeNV.viewControllers = [[NSMutableArray alloc] init];
     [homeNV initWithRootViewController:homeVC];
-    
     [homeVC release];
     
     self.window.rootViewController = homeNV;

@@ -34,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    NSLog(@"controolers = %@",self.navigationController.viewControllers);
     if(self.tag == 1)
     {
         
@@ -164,8 +164,9 @@
     if (delegate!=nil && [delegate respondsToSelector:@selector(sent:tag:)]) {
         [delegate sent:[array objectAtIndex:indexPath.row] tag:tag];
     }
-    NSLog(@"%@",self.navigationController.viewControllers);
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
+    NSLog(@"controolers = %@",self.navigationController.viewControllers);
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES]; 
+    
     
     // Navigation logic may go here. Create and push another view controller.
     /*

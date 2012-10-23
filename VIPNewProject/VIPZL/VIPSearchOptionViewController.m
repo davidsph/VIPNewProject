@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"controolers = %@",self.navigationController.viewControllers);
     switch (tag) {
         case 0:
         {
@@ -206,6 +207,5 @@
         [delegate sentOption:message tag:tag1];
     }
     
-    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

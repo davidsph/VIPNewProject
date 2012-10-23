@@ -39,6 +39,7 @@
     
     [super viewDidLoad];
     //隐藏navgationcontroller
+    NSLog(@"controolers = %@",self.navigationController.viewControllers);
     self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view from its nib.
 }

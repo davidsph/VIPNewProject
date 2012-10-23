@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VIPDetailViewController.h"
 @protocol SearchOptionProtocol <NSObject>
 - (void)sentOption:(NSString *)selectedOption tag:(int)tag;
 @end
 
-@interface VIPSearchOptionViewController : UITableViewController
+@interface VIPSearchOptionViewController : UITableViewController<DetailProtocl>
 {
     NSArray *array;
 }

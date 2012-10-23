@@ -16,6 +16,8 @@
 		0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11641634EF6A0003E32B /* XMLAnalysis.m */; };
 		0F0A11681634EF820003E32B /* basedata.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A11671634EF820003E32B /* basedata.xml */; };
 		0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A05A316326FD0003D216A /* QuartzCore.framework */; };
+		0F6CF7CA16369AC3004BB24A /* VIPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CF7C816369AC3004BB24A /* VIPDetailViewController.m */; };
+		0F6CF7CB16369AC3004BB24A /* VIPDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */; };
 		0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */; };
 		0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */; };
 		0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE475163503BA00C20619 /* SaveDataSingleton.m */; };
@@ -47,6 +49,8 @@
 		0FA0157516326388004A0CB0 /* VIPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0157316326387004A0CB0 /* VIPRegisterViewController.m */; };
 		0FA0157616326388004A0CB0 /* VIPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0157416326388004A0CB0 /* VIPRegisterViewController.xib */; };
 		0FA01578163264BA004A0CB0 /* registerBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA01577163264BA004A0CB0 /* registerBg@2x.png */; };
+		0FA02BEF16364A6000E2A44C /* VIPCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA02BED16364A6000E2A44C /* VIPCompanyViewController.m */; };
+		0FA02BF016364A6000E2A44C /* VIPCompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA02BEE16364A6000E2A44C /* VIPCompanyViewController.xib */; };
 		0FA2358016357383000E9080 /* VIPSearchOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA2357E16357383000E9080 /* VIPSearchOptionViewController.m */; };
 		0FA2358116357383000E9080 /* VIPSearchOptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA2357F16357383000E9080 /* VIPSearchOptionViewController.xib */; };
 		0FCC25FC1633F3E6003A660F /* CustomCellForRow0.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FCC25FB1633F3E6003A660F /* CustomCellForRow0.xib */; };
@@ -165,6 +169,9 @@
 		0F5A059C16326ED2003D216A /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		0F5A059D16326ED2003D216A /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		0F5A05A316326FD0003D216A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0F6CF7C716369AC3004BB24A /* VIPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPDetailViewController.h; sourceTree = "<group>"; };
+		0F6CF7C816369AC3004BB24A /* VIPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPDetailViewController.m; sourceTree = "<group>"; };
+		0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPDetailViewController.xib; sourceTree = "<group>"; };
 		0F9DE46E1635026900C20619 /* VIPSelectedTableviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSelectedTableviewController.h; sourceTree = "<group>"; };
 		0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSelectedTableviewController.m; sourceTree = "<group>"; };
 		0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSelectedTableviewController.xib; sourceTree = "<group>"; };
@@ -209,6 +216,9 @@
 		0FA0157316326387004A0CB0 /* VIPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPRegisterViewController.m; sourceTree = "<group>"; };
 		0FA0157416326388004A0CB0 /* VIPRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPRegisterViewController.xib; sourceTree = "<group>"; };
 		0FA01577163264BA004A0CB0 /* registerBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registerBg@2x.png"; sourceTree = "<group>"; };
+		0FA02BEC16364A6000E2A44C /* VIPCompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPCompanyViewController.h; sourceTree = "<group>"; };
+		0FA02BED16364A6000E2A44C /* VIPCompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPCompanyViewController.m; sourceTree = "<group>"; };
+		0FA02BEE16364A6000E2A44C /* VIPCompanyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPCompanyViewController.xib; sourceTree = "<group>"; };
 		0FA2357D16357383000E9080 /* VIPSearchOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSearchOptionViewController.h; sourceTree = "<group>"; };
 		0FA2357E16357383000E9080 /* VIPSearchOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSearchOptionViewController.m; sourceTree = "<group>"; };
 		0FA2357F16357383000E9080 /* VIPSearchOptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSearchOptionViewController.xib; sourceTree = "<group>"; };
@@ -463,6 +473,12 @@
 				0FA2357D16357383000E9080 /* VIPSearchOptionViewController.h */,
 				0FA2357E16357383000E9080 /* VIPSearchOptionViewController.m */,
 				0FA2357F16357383000E9080 /* VIPSearchOptionViewController.xib */,
+				0FA02BEC16364A6000E2A44C /* VIPCompanyViewController.h */,
+				0FA02BED16364A6000E2A44C /* VIPCompanyViewController.m */,
+				0FA02BEE16364A6000E2A44C /* VIPCompanyViewController.xib */,
+				0F6CF7C716369AC3004BB24A /* VIPDetailViewController.h */,
+				0F6CF7C816369AC3004BB24A /* VIPDetailViewController.m */,
+				0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -671,6 +687,8 @@
 				0F0A11681634EF820003E32B /* basedata.xml in Resources */,
 				0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */,
 				0FA2358116357383000E9080 /* VIPSearchOptionViewController.xib in Resources */,
+				0FA02BF016364A6000E2A44C /* VIPCompanyViewController.xib in Resources */,
+				0F6CF7CB16369AC3004BB24A /* VIPDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +731,8 @@
 				0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */,
 				0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */,
 				0FA2358016357383000E9080 /* VIPSearchOptionViewController.m in Sources */,
+				0FA02BEF16364A6000E2A44C /* VIPCompanyViewController.m in Sources */,
+				0F6CF7CA16369AC3004BB24A /* VIPDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

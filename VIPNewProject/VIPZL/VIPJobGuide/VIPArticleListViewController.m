@@ -10,7 +10,7 @@
 #import "VIPChannel.h"
 #import "VIPArticle.h"
 #import "VIPIndicator.h"
-
+#import "VIPChannelListViewController.h"
 //私有方法
 @interface VIPArticleListViewController()
 //发送网络请求的方法
@@ -21,7 +21,7 @@
 @end
 
 @implementation VIPArticleListViewController
-@synthesize articleListTableView,ID,i,topButton;
+@synthesize articleListTableView,ID,i,topButton,txtFont;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,6 +46,7 @@
 {
     [super viewDidLoad];
     UIImageView *imgv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+    imgv.userInteractionEnabled=YES;
     imgv.image = [UIImage imageNamed:@"home.png"];
     [self.view addSubview:imgv];
     [imgv release];
@@ -159,10 +160,9 @@
 {
     if (scrollView.contentOffset.y>hight&&canreload==YES) {
         [self performSelector:@selector(reloadView) withObject:nil afterDelay:1.0]; 
-        NSLog(@"123");
         i=i+10;
         hight=hight+10*44;
-         [footView.activityIndicator startAnimating];
+        [footView.activityIndicator startAnimating];
         self.topButton.hidden=YES;
           }
    if(canreload==NO)
@@ -204,6 +204,9 @@
     VIPArticleDetailViewController *detailViewController = [[VIPArticleDetailViewController alloc] init];
     VIPArticle *article = [channel.articles objectAtIndex:indexPath.row]; 
     detailViewController.ID = article.ID;
+    detailViewController.delegate=self;
+    detailViewController.textFont=self.txtFont;
+//    NSLog(@"%f",detailViewController.textFont);
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release]; 
 }

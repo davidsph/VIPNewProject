@@ -72,6 +72,7 @@
     [array addObject:normal_high];
     
     NSString *high = [[[root nodesForXPath:@"//high" error:nil] objectAtIndex:0] stringValue];
+    NSLog(@"high = %@",high);
     [array addObject:high];
     
         
@@ -111,6 +112,21 @@
     
     NSArray *array = [[NSArray alloc] initWithObjects:@"experience",@"cityid",@"industryid",@"educationid",@"corppropertyid",@"jobcatid",@"joblevelid",@"salary",nil];
     return [array autorelease];
+}
+
++ (NSMutableDictionary *) getAllKeysForSalaryComparing{
+    
+    
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setObject:@"地区" forKey:@"city"];
+    [dictionary setObject:@"行业" forKey:@"industry"];
+    [dictionary setObject:@"企业性质" forKey:@"corpproperty"];
+    [dictionary setObject:@"职位类型" forKey:@"jobcat"];
+    [dictionary setObject:@"职位类别" forKey:@"joblevel"];
+    [dictionary setObject:@"学历" forKey:@"educationid"];
+    
+    return  [dictionary autorelease];
+    
 }
 
 //得到xml文件

@@ -29,12 +29,19 @@
 		0F94DD1D16376F0F0029A114 /* VIPSalaryCompareVontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F94DD1B16376F0F0029A114 /* VIPSalaryCompareVontroller.m */; };
 		0F94DD1E16376F0F0029A114 /* VIPSalaryCompareVontroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD1C16376F0F0029A114 /* VIPSalaryCompareVontroller.xib */; };
 
+
 		0F8591D6163768F4004BF123 /* resume_page_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8591D5163768F4004BF123 /* resume_page_bg@2x.png */; };
 		0F8591D91637691E004BF123 /* reresh_resume_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8591D81637691E004BF123 /* reresh_resume_button@2x.png */; };
 		0F8591DB1637692E004BF123 /* resume_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8591DA1637692E004BF123 /* resume_unselected@2x.png */; };
 		0F8591DD16376954004BF123 /* resume_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8591DC16376954004BF123 /* resume_selected@2x.png */; };
 		0F8591E416376D85004BF123 /* GetColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8591E316376D85004BF123 /* GetColor.m */; };
 		0F8591E71637794C004BF123 /* GetPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8591E61637794C004BF123 /* GetPath.m */; };
+
+
+		0F94DD3116379A200029A114 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F94DD3016379A200029A114 /* MBProgressHUD.m */; };
+		0F94DD3C1637C51D0029A114 /* chart1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD3B1637C51D0029A114 /* chart1.png */; };
+		0F94DD3E1637CBEE0029A114 /* chart2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD3D1637CBEE0029A114 /* chart2.png */; };
+		0F94DD401637CCB40029A114 /* chart3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD3F1637CCB40029A114 /* chart3.png */; };
 
 		0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */; };
 		0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */; };
@@ -205,6 +212,7 @@
 		0F94DD1B16376F0F0029A114 /* VIPSalaryCompareVontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSalaryCompareVontroller.m; sourceTree = "<group>"; };
 		0F94DD1C16376F0F0029A114 /* VIPSalaryCompareVontroller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSalaryCompareVontroller.xib; sourceTree = "<group>"; };
 
+
 		0F8591D5163768F4004BF123 /* resume_page_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resume_page_bg@2x.png"; sourceTree = "<group>"; };
 		0F8591D81637691E004BF123 /* reresh_resume_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reresh_resume_button@2x.png"; sourceTree = "<group>"; };
 		0F8591DA1637692E004BF123 /* resume_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resume_unselected@2x.png"; sourceTree = "<group>"; };
@@ -213,6 +221,13 @@
 		0F8591E316376D85004BF123 /* GetColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetColor.m; sourceTree = "<group>"; };
 		0F8591E51637794C004BF123 /* GetPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPath.h; sourceTree = "<group>"; };
 		0F8591E61637794C004BF123 /* GetPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPath.m; sourceTree = "<group>"; };
+
+
+		0F94DD2F16379A200029A114 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		0F94DD3016379A200029A114 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		0F94DD3B1637C51D0029A114 /* chart1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart1.png; sourceTree = "<group>"; };
+		0F94DD3D1637CBEE0029A114 /* chart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart2.png; sourceTree = "<group>"; };
+		0F94DD3F1637CCB40029A114 /* chart3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart3.png; sourceTree = "<group>"; };
 
 		0F9DE46E1635026900C20619 /* VIPSelectedTableviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSelectedTableviewController.h; sourceTree = "<group>"; };
 		0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSelectedTableviewController.m; sourceTree = "<group>"; };
@@ -447,6 +462,9 @@
 		0FA014ED16322FF2004A0CB0 = {
 			isa = PBXGroup;
 			children = (
+				0F94DD3F1637CCB40029A114 /* chart3.png */,
+				0F94DD3D1637CBEE0029A114 /* chart2.png */,
+				0F94DD3B1637C51D0029A114 /* chart1.png */,
 				0F0A10DA1634E45B0003E32B /* IsLogin.h */,
 				0F0A10DB1634E45B0003E32B /* IsLogin.m */,
 				0F0A10DC1634E45B0003E32B /* LoginWithAccount.h */,
@@ -589,6 +607,8 @@
 		0FA0154B16324E13004A0CB0 /* CommonSource */ = {
 			isa = PBXGroup;
 			children = (
+				0F94DD2F16379A200029A114 /* MBProgressHUD.h */,
+				0F94DD3016379A200029A114 /* MBProgressHUD.m */,
 				0FCC2611163414AB003A660F /* ASIHTTPReauest */,
 				0FA0154C16324E65004A0CB0 /* GDataXMLNode.h */,
 				0FA0154D16324E65004A0CB0 /* GDataXMLNode.m */,
@@ -783,10 +803,16 @@
 
 				0F94DD1E16376F0F0029A114 /* VIPSalaryCompareVontroller.xib in Resources */,
 
+
 				0F8591D6163768F4004BF123 /* resume_page_bg@2x.png in Resources */,
 				0F8591D91637691E004BF123 /* reresh_resume_button@2x.png in Resources */,
 				0F8591DB1637692E004BF123 /* resume_unselected@2x.png in Resources */,
 				0F8591DD16376954004BF123 /* resume_selected@2x.png in Resources */,
+
+
+				0F94DD3C1637C51D0029A114 /* chart1.png in Resources */,
+				0F94DD3E1637CBEE0029A114 /* chart2.png in Resources */,
+				0F94DD401637CCB40029A114 /* chart3.png in Resources */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -838,8 +864,12 @@
 				0F94DD1316376D9F0029A114 /* PCPieChart.m in Sources */,
 				0F94DD1D16376F0F0029A114 /* VIPSalaryCompareVontroller.m in Sources */,
 
+
 				0F8591E416376D85004BF123 /* GetColor.m in Sources */,
 				0F8591E71637794C004BF123 /* GetPath.m in Sources */,
+
+
+				0F94DD3116379A200029A114 /* MBProgressHUD.m in Sources */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;

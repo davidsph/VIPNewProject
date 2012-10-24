@@ -12,6 +12,7 @@
 {
     
     NSMutableDictionary *thisDictionaryForPieChart;
+    NSArray *salaryLevelKeyArray;
 }
 
 @property(nonatomic,retain)NSMutableArray *salaryInfoArray;

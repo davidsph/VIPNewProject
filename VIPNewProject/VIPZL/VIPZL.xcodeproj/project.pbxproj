@@ -24,9 +24,18 @@
 		0F6CF7F51636C909004BB24A /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7F41636C909004BB24A /* favorite@2x.png */; };
 		0F6CF7F71636C927004BB24A /* unreader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7F61636C927004BB24A /* unreader@2x.png */; };
 		0F6CF7F91636C93F004BB24A /* searchSubscribeViewController@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7F81636C93F004BB24A /* searchSubscribeViewController@2x.png */; };
+<<<<<<< HEAD
 		0F94DD1316376D9F0029A114 /* PCPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F94DD1216376D9F0029A114 /* PCPieChart.m */; };
 		0F94DD1D16376F0F0029A114 /* VIPSalaryCompareVontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F94DD1B16376F0F0029A114 /* VIPSalaryCompareVontroller.m */; };
 		0F94DD1E16376F0F0029A114 /* VIPSalaryCompareVontroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD1C16376F0F0029A114 /* VIPSalaryCompareVontroller.xib */; };
+=======
+		0F8591D6163768F4004BF123 /* resume_page_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8591D5163768F4004BF123 /* resume_page_bg@2x.png */; };
+		0F8591D91637691E004BF123 /* reresh_resume_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8591D81637691E004BF123 /* reresh_resume_button@2x.png */; };
+		0F8591DB1637692E004BF123 /* resume_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8591DA1637692E004BF123 /* resume_unselected@2x.png */; };
+		0F8591DD16376954004BF123 /* resume_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8591DC16376954004BF123 /* resume_selected@2x.png */; };
+		0F8591E416376D85004BF123 /* GetColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8591E316376D85004BF123 /* GetColor.m */; };
+		0F8591E71637794C004BF123 /* GetPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8591E61637794C004BF123 /* GetPath.m */; };
+>>>>>>> lyc
 		0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */; };
 		0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */; };
 		0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE475163503BA00C20619 /* SaveDataSingleton.m */; };
@@ -189,11 +198,22 @@
 		0F6CF7F41636C909004BB24A /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite@2x.png"; sourceTree = "<group>"; };
 		0F6CF7F61636C927004BB24A /* unreader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unreader@2x.png"; sourceTree = "<group>"; };
 		0F6CF7F81636C93F004BB24A /* searchSubscribeViewController@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchSubscribeViewController@2x.png"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		0F94DD1116376D9F0029A114 /* PCPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPieChart.h; sourceTree = "<group>"; };
 		0F94DD1216376D9F0029A114 /* PCPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPieChart.m; sourceTree = "<group>"; };
 		0F94DD1A16376F0F0029A114 /* VIPSalaryCompareVontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSalaryCompareVontroller.h; sourceTree = "<group>"; };
 		0F94DD1B16376F0F0029A114 /* VIPSalaryCompareVontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSalaryCompareVontroller.m; sourceTree = "<group>"; };
 		0F94DD1C16376F0F0029A114 /* VIPSalaryCompareVontroller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSalaryCompareVontroller.xib; sourceTree = "<group>"; };
+=======
+		0F8591D5163768F4004BF123 /* resume_page_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resume_page_bg@2x.png"; sourceTree = "<group>"; };
+		0F8591D81637691E004BF123 /* reresh_resume_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reresh_resume_button@2x.png"; sourceTree = "<group>"; };
+		0F8591DA1637692E004BF123 /* resume_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resume_unselected@2x.png"; sourceTree = "<group>"; };
+		0F8591DC16376954004BF123 /* resume_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resume_selected@2x.png"; sourceTree = "<group>"; };
+		0F8591E216376D85004BF123 /* GetColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetColor.h; sourceTree = "<group>"; };
+		0F8591E316376D85004BF123 /* GetColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetColor.m; sourceTree = "<group>"; };
+		0F8591E51637794C004BF123 /* GetPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPath.h; sourceTree = "<group>"; };
+		0F8591E61637794C004BF123 /* GetPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPath.m; sourceTree = "<group>"; };
+>>>>>>> lyc
 		0F9DE46E1635026900C20619 /* VIPSelectedTableviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSelectedTableviewController.h; sourceTree = "<group>"; };
 		0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSelectedTableviewController.m; sourceTree = "<group>"; };
 		0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSelectedTableviewController.xib; sourceTree = "<group>"; };
@@ -539,6 +559,10 @@
 		0FA0151E16323577004A0CB0 /* ImageSourse */ = {
 			isa = PBXGroup;
 			children = (
+				0F8591DC16376954004BF123 /* resume_selected@2x.png */,
+				0F8591DA1637692E004BF123 /* resume_unselected@2x.png */,
+				0F8591D81637691E004BF123 /* reresh_resume_button@2x.png */,
+				0F8591D5163768F4004BF123 /* resume_page_bg@2x.png */,
 				0F6CF7F81636C93F004BB24A /* searchSubscribeViewController@2x.png */,
 				0F6CF7F61636C927004BB24A /* unreader@2x.png */,
 				0F6CF7F41636C909004BB24A /* favorite@2x.png */,
@@ -570,6 +594,10 @@
 				0FA0154D16324E65004A0CB0 /* GDataXMLNode.m */,
 				0FA0154E16324E65004A0CB0 /* DNWrapper.h */,
 				0FA0154F16324E65004A0CB0 /* DNWrapper.m */,
+				0F8591E216376D85004BF123 /* GetColor.h */,
+				0F8591E316376D85004BF123 /* GetColor.m */,
+				0F8591E51637794C004BF123 /* GetPath.h */,
+				0F8591E61637794C004BF123 /* GetPath.m */,
 			);
 			name = CommonSource;
 			sourceTree = "<group>";
@@ -752,7 +780,14 @@
 				0F6CF7F51636C909004BB24A /* favorite@2x.png in Resources */,
 				0F6CF7F71636C927004BB24A /* unreader@2x.png in Resources */,
 				0F6CF7F91636C93F004BB24A /* searchSubscribeViewController@2x.png in Resources */,
+<<<<<<< HEAD
 				0F94DD1E16376F0F0029A114 /* VIPSalaryCompareVontroller.xib in Resources */,
+=======
+				0F8591D6163768F4004BF123 /* resume_page_bg@2x.png in Resources */,
+				0F8591D91637691E004BF123 /* reresh_resume_button@2x.png in Resources */,
+				0F8591DB1637692E004BF123 /* resume_unselected@2x.png in Resources */,
+				0F8591DD16376954004BF123 /* resume_selected@2x.png in Resources */,
+>>>>>>> lyc
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,8 +834,13 @@
 				0F6CF7CA16369AC3004BB24A /* VIPDetailViewController.m in Sources */,
 				0F6CF7ED1636C5DD004BB24A /* A2ResumeView.m in Sources */,
 				0F6CF7F11636C87B004BB24A /* ResumeViewCell.m in Sources */,
+<<<<<<< HEAD
 				0F94DD1316376D9F0029A114 /* PCPieChart.m in Sources */,
 				0F94DD1D16376F0F0029A114 /* VIPSalaryCompareVontroller.m in Sources */,
+=======
+				0F8591E416376D85004BF123 /* GetColor.m in Sources */,
+				0F8591E71637794C004BF123 /* GetPath.m in Sources */,
+>>>>>>> lyc
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

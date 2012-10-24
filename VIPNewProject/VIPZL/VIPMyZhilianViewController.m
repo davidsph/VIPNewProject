@@ -12,6 +12,8 @@
 #import "DNWrapper.h"
 #import "IsLogin.h"
 #import "ResumeViewCell.h"
+#import "GetPath.h"
+#import "GetColor.h"
 
 @implementation VIPMyZhilianViewController
 @synthesize resumeNameLabel;
@@ -43,8 +45,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"我的智联";
+    self.navigationItem.backBarButtonItem.title = @"智联招聘";
+    
+    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeft)];
+    leftBar.title = @"智联招聘";
+    self.navigationItem.leftBarButtonItem = leftBar;
+    [leftBar release];
+    
+    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickRight)];
+    self.navigationItem.rightBarButtonItem = rightBar;
+    [rightBar release];
+    
     if ([_rsmArray count]!= 0) {
-        
         self.rsmViewArray = [NSMutableArray arrayWithCapacity:[_rsmArray count]];
         Resume *rsm = [_rsmArray objectAtIndex:0];
         resumeNameLabel.text = rsm.rsmName;
@@ -102,14 +115,37 @@
         
     }
     //未读人事来信等列表
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 160, 300, 180) style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 230, 300, 140) style:UITableViewStyleGrouped];
     tableView.backgroundColor = [UIColor clearColor];
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.scrollEnabled = NO;
+    tableView.tag = 200;
     
     [self.view addSubview:tableView];
     // Do any additional setup after loading the view from its nib.
+}
+#pragma mark -- 左右键
+-(void)clickLeft
+{
+    NSLog(@"controolers = %@",self.navigationController.viewControllers);
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
+}
+- (void)clickRight
+{
+    int c = [self.navigationController.viewControllers count];
+
+
+    UITableView *tbView = [[UITableView alloc] initWithFrame:CGRectMake(100, 100, 0, 0)style:UITableViewStyleGrouped];
+    tbView.backgroundColor = [UIColor clearColor];
+    tbView.delegate = self;
+    tbView.dataSource = self;
+    tbView.tag = 100;
+    [self.view addSubview:tbView];
+    
+    [UIView animateWithDuration:2 animations:^{
+        tbView.frame = CGRectMake(0,0, 110,40*c  );
+    }];
 }
 
 - (void)viewDidUnload
@@ -190,64 +226,96 @@
 //实现表格协议的方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    if (tableView.tag == 100) {
+        return [self.navigationController.viewControllers count];
+    }
+    else{
+    return 3;
+    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    ResumeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[ResumeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    if (tableView.tag == 200) {
+        
+        static NSString *CellIdentifier = @"Cell";
+        ResumeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[ResumeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+        //四张图片
+        UIImage *img1 = [UIImage imageNamed:@"unreader@2x.png"];
+        UIImage *img2 = [UIImage imageNamed:@"job_record@2x.png"];
+        UIImage *img3 = [UIImage imageNamed:@"favorite@2x.png"];
+        UIImage *img4 = [UIImage imageNamed:@"searchSubscribeViewController@2x.png"];
+        NSArray *imgArr = [NSArray arrayWithObjects:img1,img2,img3,img4, nil];
+        NSArray *nameArr = [NSArray arrayWithObjects:@"未读人事来信",@"职位申请记录",@"职位收藏夹",@"搜索与订阅", nil];
+        
+        cell.imgv1.image = [imgArr objectAtIndex:indexPath.row];
+        cell.nameLabel.text = [nameArr objectAtIndex:indexPath.row];
+        cell.countLabel.text = [_someNumber objectAtIndex:indexPath.row];
+        // Configure the cell...
+        
+        return cell;
     }
-    //四张图片
-    UIImage *img1 = [UIImage imageNamed:@"unreader@2x.png"];
-    UIImage *img2 = [UIImage imageNamed:@"job_record@2x.png"];
-    UIImage *img3 = [UIImage imageNamed:@"favorite@2x.png"];
-    UIImage *img4 = [UIImage imageNamed:@"searchSubscribeViewController@2x.png"];
-    NSArray *imgArr = [NSArray arrayWithObjects:img1,img2,img3,img4, nil];
-    NSArray *nameArr = [NSArray arrayWithObjects:@"未读人事来信",@"职位申请记录",@"职位收藏夹",@"搜索与订阅", nil];
-    
-    cell.imgv1.image = [imgArr objectAtIndex:indexPath.row];
-    cell.nameLabel.text = [nameArr objectAtIndex:indexPath.row];
-    cell.countLabel.text = [_someNumber objectAtIndex:indexPath.row];
-    // Configure the cell...
-    
-    return cell;
-    
+    else
+    {
+        static NSString *CellIdentifier = @"Cell2";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+
+        UIViewController *vc = [self.navigationController.viewControllers objectAtIndex:indexPath.row];
+        NSString *name = vc.navigationItem.title;
+        NSLog(@"路径 -- %@",name);
+        cell.textLabel.text = name;
+        GetColor *getColor = [[GetColor alloc] init];
+        cell.backgroundColor = [getColor getColor:[NSString stringWithFormat:@"36A8D4"]];
+        cell.alpha = 0.8;
+        cell.textLabel.textColor = [UIColor whiteColor];
+        return cell;
+    }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    switch (indexPath.row) {
-        case 0:
-        {
-            NSLog(@"推出未读人事来信");
-            break;
+    if (tableView.tag == 200) {
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                NSLog(@"推出未读人事来信");
+                break;
+            }
+            case 1:
+            {
+                NSLog(@"推出职位申请记录");
+                break;
+            }
+            case 2:
+            {
+                NSLog(@"推出职位收藏夹");
+                break;
+            }
+            default:
+                break;
         }
-        case 1:
-        {
-            NSLog(@"推出职位申请记录");
-            break;
-        }
-        case 2:
-        {
-            NSLog(@"推出职位收藏夹");
-            break;
-        }
-        case 3:
-        {
-            NSLog(@"推出搜索与订阅");
-            break;
-        }
-        default:
-            break;
+    }
+    else
+    {
+        NSLog(@"返回到哪一个假面");
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:indexPath.row] animated:YES];
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40;
+    if (tableView.tag == 200) {
+        return 40;
+    }
+    else
+    {
+        return 30;
+    }
 }
-
 
 
 @end

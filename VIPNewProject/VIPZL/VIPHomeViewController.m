@@ -12,6 +12,7 @@
 #import "IsLogin.h"
 #import "VIPSalarySearchViewController.h"
 #import "VIPJobSearchViewController.h"
+#import "GetColor.h"
 @implementation VIPHomeViewController
 @synthesize myZhilian;
 
@@ -36,19 +37,19 @@
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
     //隐藏navgationcontroller
-    NSLog(@"controolers = %@",self.navigationController.viewControllers);
-    self.navigationController.navigationBarHidden = YES;
+    GetColor *getColor = [[GetColor alloc] init];
+    [self.navigationController.navigationBar setTintColor:[getColor getColor:[NSString stringWithFormat:@"B7D4DE"]]];
+    self.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
+    self.navigationItem.title = @"智联招聘";
+    //self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
     [self setMyZhilian:nil];
-    
-    
     [super viewDidUnload];
     
     // Release any retained subviews of the main view.
@@ -82,6 +83,8 @@
     {
         NSLog(@"推出我的智联界面");
         VIPMyZhilianViewController *myzlVC = [[VIPMyZhilianViewController alloc] init];
+        myzlVC.rsmArray = [[NSArray alloc] initWithArray:islg.resumeArray];
+        myzlVC.someNumber = [NSArray arrayWithObjects:islg.noReadEmailNumber,islg.applyCount,islg.favCount,islg.jobSearchCount, nil];
         [self.navigationController pushViewController:myzlVC animated:YES];
         [myzlVC release];
     }
@@ -111,5 +114,7 @@
     [myZhilian release];
     [super dealloc];
 }
+
+
 
 @end

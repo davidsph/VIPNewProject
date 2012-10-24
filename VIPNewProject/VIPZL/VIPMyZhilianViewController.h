@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "A2ResumeView.h"
-
-@interface VIPMyZhilianViewController : UIViewController<tapShowProtocol,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
+#import "GetPath.h"
+@interface VIPMyZhilianViewController : UIViewController<tapShowProtocol,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,UINavigationBarDelegate>
 {
-    
+    GetPath *path;
 }
 
 @property (retain, nonatomic) IBOutlet UILabel *resumeNameLabel;

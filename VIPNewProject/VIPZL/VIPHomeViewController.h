@@ -23,6 +23,8 @@
 - (IBAction)jobSeekerGuide:(id)sender;
 //智联助手方法
 - (IBAction)zhilianHelp:(id)sender;
+//关于智联
+- (IBAction)anoutZhilian:(id)sender;
 
 - (NSString *)filePath;
 

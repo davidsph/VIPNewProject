@@ -24,6 +24,8 @@
 		0F36582116380C53008D24D4 /* Home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581916380C53008D24D4 /* Home.jpg */; };
 		0F36582216380C53008D24D4 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581A16380C53008D24D4 /* board.png */; };
 		0F36582616380D34008D24D4 /* VIPHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F36582516380D34008D24D4 /* VIPHelpViewController.m */; };
+		0F36583616381733008D24D4 /* VIPAboutZhilianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F36583416381733008D24D4 /* VIPAboutZhilianViewController.m */; };
+		0F36583716381733008D24D4 /* VIPAboutZhilianViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F36583516381733008D24D4 /* VIPAboutZhilianViewController.xib */; };
 		0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A05A316326FD0003D216A /* QuartzCore.framework */; };
 		0F6CF7CA16369AC3004BB24A /* VIPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CF7C816369AC3004BB24A /* VIPDetailViewController.m */; };
 		0F6CF7CB16369AC3004BB24A /* VIPDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */; };
@@ -432,6 +434,9 @@
 		0F36581A16380C53008D24D4 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
 		0F36582416380D34008D24D4 /* VIPHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPHelpViewController.h; sourceTree = "<group>"; };
 		0F36582516380D34008D24D4 /* VIPHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPHelpViewController.m; sourceTree = "<group>"; };
+		0F36583316381733008D24D4 /* VIPAboutZhilianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPAboutZhilianViewController.h; sourceTree = "<group>"; };
+		0F36583416381733008D24D4 /* VIPAboutZhilianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPAboutZhilianViewController.m; sourceTree = "<group>"; };
+		0F36583516381733008D24D4 /* VIPAboutZhilianViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPAboutZhilianViewController.xib; sourceTree = "<group>"; };
 		0F5A055416326ED2003D216A /* _CPTFillColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillColor.h; sourceTree = "<group>"; };
 		0F5A055516326ED2003D216A /* _CPTFillGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillGradient.h; sourceTree = "<group>"; };
 		0F5A055616326ED2003D216A /* _CPTFillImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillImage.h; sourceTree = "<group>"; };
@@ -1948,6 +1953,9 @@
 				0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */,
 				0F36582416380D34008D24D4 /* VIPHelpViewController.h */,
 				0F36582516380D34008D24D4 /* VIPHelpViewController.m */,
+				0F36583316381733008D24D4 /* VIPAboutZhilianViewController.h */,
+				0F36583416381733008D24D4 /* VIPAboutZhilianViewController.m */,
+				0F36583516381733008D24D4 /* VIPAboutZhilianViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2428,6 +2436,7 @@
 				0F36582016380C53008D24D4 /* 6.png in Resources */,
 				0F36582116380C53008D24D4 /* Home.jpg in Resources */,
 				0F36582216380C53008D24D4 /* board.png in Resources */,
+				0F36583716381733008D24D4 /* VIPAboutZhilianViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2545,6 +2554,7 @@
 				0F88AA901637F1DE00254FD6 /* VIPTableFootView.m in Sources */,
 				0F88AAA11637FDC300254FD6 /* GetPath.m in Sources */,
 				0F36582616380D34008D24D4 /* VIPHelpViewController.m in Sources */,
+				0F36583616381733008D24D4 /* VIPAboutZhilianViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,10 +8,13 @@
 
 #import "VIPSalaryCompareVontroller.h"
 #import "PCPieChart.h"
+#import "DealWithNetWorkAndXmlHelper.h"
+#import "SaveDataSingleton.h"
 @implementation VIPSalaryCompareVontroller
 
 @synthesize salaryInfoArray;
 @synthesize salarySearchInfoDictionary;
+@synthesize AllKeysForSalaryComparing;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,13 +36,16 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     [super viewDidLoad];
-    salaryLevelKeyArray = [[NSArray alloc] initWithObjects:@"低端",@"中低端",@"中端",@"中高端",@"高端", nil];
-    thisDictionaryForPieChart = [[NSMutableDictionary alloc] init];
     
-
+   
     
-    NSLog(@"收到的数据 salaryInfoArray count %d",  [salaryInfoArray count]);
+    
+        
+    
+    
+    NSLog(@"收到的薪酬数据 salaryInfoArray count %d",  [salaryInfoArray count]);
    
     NSLog(@"salarySearchInfoDictionary count = %d", [salarySearchInfoDictionary count]);
     

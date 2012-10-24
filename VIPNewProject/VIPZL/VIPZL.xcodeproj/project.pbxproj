@@ -338,6 +338,9 @@
 		0F94DD3C1637C51D0029A114 /* chart1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD3B1637C51D0029A114 /* chart1.png */; };
 		0F94DD3E1637CBEE0029A114 /* chart2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD3D1637CBEE0029A114 /* chart2.png */; };
 		0F94DD401637CCB40029A114 /* chart3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD3F1637CCB40029A114 /* chart3.png */; };
+		0F94DD8E163816350029A114 /* HZAreaPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F94DD8A163816350029A114 /* HZAreaPickerView.m */; };
+		0F94DD8F163816350029A114 /* HZAreaPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD8B163816350029A114 /* HZAreaPickerView.xib */; };
+		0F94DD90163816350029A114 /* HZLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F94DD8D163816350029A114 /* HZLocation.m */; };
 		0F9DE4711635026900C20619 /* VIPSelectedTableviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */; };
 		0F9DE4721635026900C20619 /* VIPSelectedTableviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */; };
 		0F9DE476163503BA00C20619 /* SaveDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9DE475163503BA00C20619 /* SaveDataSingleton.m */; };
@@ -889,6 +892,11 @@
 		0F94DD3B1637C51D0029A114 /* chart1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart1.png; sourceTree = "<group>"; };
 		0F94DD3D1637CBEE0029A114 /* chart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart2.png; sourceTree = "<group>"; };
 		0F94DD3F1637CCB40029A114 /* chart3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart3.png; sourceTree = "<group>"; };
+		0F94DD89163816350029A114 /* HZAreaPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAreaPickerView.h; sourceTree = "<group>"; };
+		0F94DD8A163816350029A114 /* HZAreaPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZAreaPickerView.m; sourceTree = "<group>"; };
+		0F94DD8B163816350029A114 /* HZAreaPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HZAreaPickerView.xib; sourceTree = "<group>"; };
+		0F94DD8C163816350029A114 /* HZLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZLocation.h; sourceTree = "<group>"; };
+		0F94DD8D163816350029A114 /* HZLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZLocation.m; sourceTree = "<group>"; };
 		0F9DE46E1635026900C20619 /* VIPSelectedTableviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSelectedTableviewController.h; sourceTree = "<group>"; };
 		0F9DE46F1635026900C20619 /* VIPSelectedTableviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPSelectedTableviewController.m; sourceTree = "<group>"; };
 		0F9DE4701635026900C20619 /* VIPSelectedTableviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPSelectedTableviewController.xib; sourceTree = "<group>"; };
@@ -1792,11 +1800,24 @@
 		0F94DD1816376EF30029A114 /* compare */ = {
 			isa = PBXGroup;
 			children = (
+				0F94DD87163816150029A114 /* pickview */,
 				0F94DD1A16376F0F0029A114 /* VIPSalaryCompareVontroller.h */,
 				0F94DD1B16376F0F0029A114 /* VIPSalaryCompareVontroller.m */,
 				0F94DD1C16376F0F0029A114 /* VIPSalaryCompareVontroller.xib */,
 			);
 			path = compare;
+			sourceTree = "<group>";
+		};
+		0F94DD87163816150029A114 /* pickview */ = {
+			isa = PBXGroup;
+			children = (
+				0F94DD89163816350029A114 /* HZAreaPickerView.h */,
+				0F94DD8A163816350029A114 /* HZAreaPickerView.m */,
+				0F94DD8B163816350029A114 /* HZAreaPickerView.xib */,
+				0F94DD8C163816350029A114 /* HZLocation.h */,
+				0F94DD8D163816350029A114 /* HZLocation.m */,
+			);
+			path = pickview;
 			sourceTree = "<group>";
 		};
 		0FA014ED16322FF2004A0CB0 = {
@@ -2387,6 +2408,7 @@
 				0F88AA531637F0EE00254FD6 /* SHKSharers.plist in Resources */,
 				0F88AA581637F0EE00254FD6 /* Localizable.strings in Resources */,
 				0F88AA601637F0EE00254FD6 /* FBConnect.bundle in Resources */,
+				0F94DD8F163816350029A114 /* HZAreaPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2503,6 +2525,8 @@
 				0F88AA8D1637F0FE00254FD6 /* VIPIndicator.m in Sources */,
 				0F88AA901637F1DE00254FD6 /* VIPTableFootView.m in Sources */,
 				0F88AAA11637FDC300254FD6 /* GetPath.m in Sources */,
+				0F94DD8E163816350029A114 /* HZAreaPickerView.m in Sources */,
+				0F94DD90163816350029A114 /* HZLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

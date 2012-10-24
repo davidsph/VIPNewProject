@@ -15,6 +15,7 @@
 #import "LoginWithAccount.h"
 #import "VIPChannelListViewController.h"
 #import "VIPHelpViewController.h"
+#import "VIPAboutZhilianViewController.h"
 
 @implementation VIPHomeViewController
 @synthesize myZhilian;
@@ -132,6 +133,14 @@
     VIPHelpViewController *helpVC = [[VIPHelpViewController alloc] init];
     [self.navigationController pushViewController:helpVC animated:YES];
     [helpVC release];
+}
+
+- (IBAction)anoutZhilian:(id)sender {
+    NSLog(@"推出关于我的智联界面");
+    VIPAboutZhilianViewController *aboutVC = [[VIPAboutZhilianViewController alloc] init];
+    [self.navigationController pushViewController:aboutVC animated:YES];
+    [aboutVC release];
+    
 }
 
 - (void)dealloc {

@@ -342,6 +342,46 @@
 		0F88AA8D1637F0FE00254FD6 /* VIPIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88AA871637F0FE00254FD6 /* VIPIndicator.m */; };
 		0F88AA901637F1DE00254FD6 /* VIPTableFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88AA8F1637F1DE00254FD6 /* VIPTableFootView.m */; };
 		0F88AAA11637FDC300254FD6 /* GetPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88AAA01637FDC300254FD6 /* GetPath.m */; };
+		0F8FE977163819080086363F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8FE976163819080086363F /* MapKit.framework */; };
+		0F8FE97A1638191F0086363F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8FE9791638191F0086363F /* libsqlite3.0.dylib */; };
+		0F8FE97C1638192C0086363F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8FE97B1638192C0086363F /* CoreLocation.framework */; };
+		0F8FE9BF163819570086363F /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE97F163819570086363F /* 11.png */; };
+		0F8FE9C0163819570086363F /* A1FindJobViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE981163819570086363F /* A1FindJobViewCell.m */; };
+		0F8FE9C1163819570086363F /* A1FindJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE983163819570086363F /* A1FindJobViewController.m */; };
+		0F8FE9C2163819570086363F /* A1FirstLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE985163819570086363F /* A1FirstLevelViewController.m */; };
+		0F8FE9C3163819570086363F /* A1historyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE987163819570086363F /* A1historyCell.m */; };
+		0F8FE9C4163819570086363F /* A1HistroyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE989163819570086363F /* A1HistroyDB.m */; };
+		0F8FE9C5163819570086363F /* A1Job.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE98B163819570086363F /* A1Job.m */; };
+		0F8FE9C6163819570086363F /* A1LevelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE98D163819570086363F /* A1LevelViewCell.m */; };
+		0F8FE9C7163819570086363F /* A1MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE98F163819570086363F /* A1MapVC.m */; };
+		0F8FE9C8163819570086363F /* A1MoreApply.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE991163819570086363F /* A1MoreApply.m */; };
+		0F8FE9C9163819570086363F /* A1MoreApplyProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE993163819570086363F /* A1MoreApplyProcess.m */; };
+		0F8FE9CA163819570086363F /* A1PlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE995163819570086363F /* A1PlaceInfo.m */; };
+		0F8FE9CB163819570086363F /* A1SecondLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE997163819570086363F /* A1SecondLevelViewController.m */; };
+		0F8FE9CC163819570086363F /* A1ShowJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE999163819570086363F /* A1ShowJob.m */; };
+		0F8FE9CD163819570086363F /* A1ShowOtherJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE99B163819570086363F /* A1ShowOtherJob.m */; };
+		0F8FE9CE163819570086363F /* A1ShowTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE99D163819570086363F /* A1ShowTable.m */; };
+		0F8FE9CF163819570086363F /* A1ShowTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE99F163819570086363F /* A1ShowTableCell.m */; };
+		0F8FE9D0163819570086363F /* A1SingleApply.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9A1163819570086363F /* A1SingleApply.m */; };
+		0F8FE9D1163819570086363F /* A1SingleApplyProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9A3163819570086363F /* A1SingleApplyProcess.m */; };
+		0F8FE9D2163819570086363F /* ApplyProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9A5163819570086363F /* ApplyProcess.m */; };
+		0F8FE9D3163819570086363F /* CollectJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9A8163819570086363F /* CollectJob.m */; };
+		0F8FE9D4163819570086363F /* CompanyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9AA163819570086363F /* CompanyDetail.m */; };
+		0F8FE9D5163819570086363F /* del.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9AB163819570086363F /* del.png */; };
+		0F8FE9D6163819570086363F /* del2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9AC163819570086363F /* del2.png */; };
+		0F8FE9D7163819570086363F /* delnew.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9AD163819570086363F /* delnew.png */; };
+		0F8FE9D8163819570086363F /* history.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9AE163819570086363F /* history.sqlite */; };
+		0F8FE9D9163819570086363F /* history1.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9AF163819570086363F /* history1.sqlite */; };
+		0F8FE9DA163819570086363F /* JobDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9B1163819570086363F /* JobDetails.m */; };
+		0F8FE9DB163819570086363F /* LogInProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9B3163819570086363F /* LogInProcess.m */; };
+		0F8FE9DC163819570086363F /* se.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9B4163819570086363F /* se.png */; };
+		0F8FE9DD163819570086363F /* se@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9B5163819570086363F /* se@2x.png */; };
+		0F8FE9DE163819570086363F /* SearchJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9B8163819570086363F /* SearchJob.m */; };
+		0F8FE9DF163819570086363F /* SearchSavedArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FE9BA163819570086363F /* SearchSavedArgument.m */; };
+		0F8FE9E0163819570086363F /* shang.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9BB163819570086363F /* shang.png */; };
+		0F8FE9E1163819570086363F /* un_se.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9BC163819570086363F /* un_se.png */; };
+		0F8FE9E2163819570086363F /* un_se@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9BD163819570086363F /* un_se@2x.png */; };
+		0F8FE9E3163819570086363F /* xia.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F8FE9BE163819570086363F /* xia.png */; };
 		0F94DD1316376D9F0029A114 /* PCPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F94DD1216376D9F0029A114 /* PCPieChart.m */; };
 		0F94DD1D16376F0F0029A114 /* VIPSalaryCompareVontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F94DD1B16376F0F0029A114 /* VIPSalaryCompareVontroller.m */; };
 		0F94DD1E16376F0F0029A114 /* VIPSalaryCompareVontroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F94DD1C16376F0F0029A114 /* VIPSalaryCompareVontroller.xib */; };
@@ -902,6 +942,73 @@
 		0F88AA8F1637F1DE00254FD6 /* VIPTableFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPTableFootView.m; sourceTree = "<group>"; };
 		0F88AA9F1637FDC300254FD6 /* GetPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPath.h; sourceTree = "<group>"; };
 		0F88AAA01637FDC300254FD6 /* GetPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPath.m; sourceTree = "<group>"; };
+		0F8FE976163819080086363F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0F8FE9791638191F0086363F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		0F8FE97B1638192C0086363F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0F8FE97F163819570086363F /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
+		0F8FE980163819570086363F /* A1FindJobViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1FindJobViewCell.h; sourceTree = "<group>"; };
+		0F8FE981163819570086363F /* A1FindJobViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1FindJobViewCell.m; sourceTree = "<group>"; };
+		0F8FE982163819570086363F /* A1FindJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1FindJobViewController.h; sourceTree = "<group>"; };
+		0F8FE983163819570086363F /* A1FindJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1FindJobViewController.m; sourceTree = "<group>"; };
+		0F8FE984163819570086363F /* A1FirstLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1FirstLevelViewController.h; sourceTree = "<group>"; };
+		0F8FE985163819570086363F /* A1FirstLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1FirstLevelViewController.m; sourceTree = "<group>"; };
+		0F8FE986163819570086363F /* A1historyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1historyCell.h; sourceTree = "<group>"; };
+		0F8FE987163819570086363F /* A1historyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1historyCell.m; sourceTree = "<group>"; };
+		0F8FE988163819570086363F /* A1HistroyDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1HistroyDB.h; sourceTree = "<group>"; };
+		0F8FE989163819570086363F /* A1HistroyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1HistroyDB.m; sourceTree = "<group>"; };
+		0F8FE98A163819570086363F /* A1Job.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1Job.h; sourceTree = "<group>"; };
+		0F8FE98B163819570086363F /* A1Job.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1Job.m; sourceTree = "<group>"; };
+		0F8FE98C163819570086363F /* A1LevelViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1LevelViewCell.h; sourceTree = "<group>"; };
+		0F8FE98D163819570086363F /* A1LevelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1LevelViewCell.m; sourceTree = "<group>"; };
+		0F8FE98E163819570086363F /* A1MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1MapVC.h; sourceTree = "<group>"; };
+		0F8FE98F163819570086363F /* A1MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1MapVC.m; sourceTree = "<group>"; };
+		0F8FE990163819570086363F /* A1MoreApply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1MoreApply.h; sourceTree = "<group>"; };
+		0F8FE991163819570086363F /* A1MoreApply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1MoreApply.m; sourceTree = "<group>"; };
+		0F8FE992163819570086363F /* A1MoreApplyProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1MoreApplyProcess.h; sourceTree = "<group>"; };
+		0F8FE993163819570086363F /* A1MoreApplyProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1MoreApplyProcess.m; sourceTree = "<group>"; };
+		0F8FE994163819570086363F /* A1PlaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1PlaceInfo.h; sourceTree = "<group>"; };
+		0F8FE995163819570086363F /* A1PlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1PlaceInfo.m; sourceTree = "<group>"; };
+		0F8FE996163819570086363F /* A1SecondLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1SecondLevelViewController.h; sourceTree = "<group>"; };
+		0F8FE997163819570086363F /* A1SecondLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1SecondLevelViewController.m; sourceTree = "<group>"; };
+		0F8FE998163819570086363F /* A1ShowJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1ShowJob.h; sourceTree = "<group>"; };
+		0F8FE999163819570086363F /* A1ShowJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1ShowJob.m; sourceTree = "<group>"; };
+		0F8FE99A163819570086363F /* A1ShowOtherJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1ShowOtherJob.h; sourceTree = "<group>"; };
+		0F8FE99B163819570086363F /* A1ShowOtherJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1ShowOtherJob.m; sourceTree = "<group>"; };
+		0F8FE99C163819570086363F /* A1ShowTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1ShowTable.h; sourceTree = "<group>"; };
+		0F8FE99D163819570086363F /* A1ShowTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1ShowTable.m; sourceTree = "<group>"; };
+		0F8FE99E163819570086363F /* A1ShowTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1ShowTableCell.h; sourceTree = "<group>"; };
+		0F8FE99F163819570086363F /* A1ShowTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1ShowTableCell.m; sourceTree = "<group>"; };
+		0F8FE9A0163819570086363F /* A1SingleApply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1SingleApply.h; sourceTree = "<group>"; };
+		0F8FE9A1163819570086363F /* A1SingleApply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1SingleApply.m; sourceTree = "<group>"; };
+		0F8FE9A2163819570086363F /* A1SingleApplyProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A1SingleApplyProcess.h; sourceTree = "<group>"; };
+		0F8FE9A3163819570086363F /* A1SingleApplyProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A1SingleApplyProcess.m; sourceTree = "<group>"; };
+		0F8FE9A4163819570086363F /* ApplyProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyProcess.h; sourceTree = "<group>"; };
+		0F8FE9A5163819570086363F /* ApplyProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyProcess.m; sourceTree = "<group>"; };
+		0F8FE9A6163819570086363F /* ApplyProcessProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyProcessProtocol.h; sourceTree = "<group>"; };
+		0F8FE9A7163819570086363F /* CollectJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectJob.h; sourceTree = "<group>"; };
+		0F8FE9A8163819570086363F /* CollectJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectJob.m; sourceTree = "<group>"; };
+		0F8FE9A9163819570086363F /* CompanyDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyDetail.h; sourceTree = "<group>"; };
+		0F8FE9AA163819570086363F /* CompanyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyDetail.m; sourceTree = "<group>"; };
+		0F8FE9AB163819570086363F /* del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del.png; sourceTree = "<group>"; };
+		0F8FE9AC163819570086363F /* del2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del2.png; sourceTree = "<group>"; };
+		0F8FE9AD163819570086363F /* delnew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delnew.png; sourceTree = "<group>"; };
+		0F8FE9AE163819570086363F /* history.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = history.sqlite; sourceTree = "<group>"; };
+		0F8FE9AF163819570086363F /* history1.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = history1.sqlite; sourceTree = "<group>"; };
+		0F8FE9B0163819570086363F /* JobDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobDetails.h; sourceTree = "<group>"; };
+		0F8FE9B1163819570086363F /* JobDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobDetails.m; sourceTree = "<group>"; };
+		0F8FE9B2163819570086363F /* LogInProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInProcess.h; sourceTree = "<group>"; };
+		0F8FE9B3163819570086363F /* LogInProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInProcess.m; sourceTree = "<group>"; };
+		0F8FE9B4163819570086363F /* se.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = se.png; sourceTree = "<group>"; };
+		0F8FE9B5163819570086363F /* se@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "se@2x.png"; sourceTree = "<group>"; };
+		0F8FE9B6163819570086363F /* SearchJob-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SearchJob-Prefix.pch"; sourceTree = "<group>"; };
+		0F8FE9B7163819570086363F /* SearchJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchJob.h; sourceTree = "<group>"; };
+		0F8FE9B8163819570086363F /* SearchJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchJob.m; sourceTree = "<group>"; };
+		0F8FE9B9163819570086363F /* SearchSavedArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSavedArgument.h; sourceTree = "<group>"; };
+		0F8FE9BA163819570086363F /* SearchSavedArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchSavedArgument.m; sourceTree = "<group>"; };
+		0F8FE9BB163819570086363F /* shang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shang.png; sourceTree = "<group>"; };
+		0F8FE9BC163819570086363F /* un_se.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = un_se.png; sourceTree = "<group>"; };
+		0F8FE9BD163819570086363F /* un_se@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "un_se@2x.png"; sourceTree = "<group>"; };
+		0F8FE9BE163819570086363F /* xia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xia.png; sourceTree = "<group>"; };
 		0F94DD1116376D9F0029A114 /* PCPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPieChart.h; sourceTree = "<group>"; };
 		0F94DD1216376D9F0029A114 /* PCPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPieChart.m; sourceTree = "<group>"; };
 		0F94DD1A16376F0F0029A114 /* VIPSalaryCompareVontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPSalaryCompareVontroller.h; sourceTree = "<group>"; };
@@ -1010,6 +1117,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA0155516324E9A004A0CB0 /* libicucore.dylib in Frameworks */,
+				0F8FE97C1638192C0086363F /* CoreLocation.framework in Frameworks */,
+				0F8FE97A1638191F0086363F /* libsqlite3.0.dylib in Frameworks */,
+				0F8FE977163819080086363F /* MapKit.framework in Frameworks */,
 				0F8593001637C40B004BF123 /* MessageUI.framework in Frameworks */,
 				0F8592FE1637C403004BF123 /* Security.framework in Frameworks */,
 				0FCC263D163414EA003A660F /* SystemConfiguration.framework in Frameworks */,
@@ -1017,7 +1128,6 @@
 				0FCC263F163414F4003A660F /* CFNetwork.framework in Frameworks */,
 				0FCC263B163414E2003A660F /* MobileCoreServices.framework in Frameworks */,
 				0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */,
-				0FA0155516324E9A004A0CB0 /* libicucore.dylib in Frameworks */,
 				0FA0155316324E8B004A0CB0 /* libxml2.dylib in Frameworks */,
 				0FA014FD16322FF2004A0CB0 /* UIKit.framework in Frameworks */,
 				0FA014FF16322FF2004A0CB0 /* Foundation.framework in Frameworks */,
@@ -1817,6 +1927,85 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		0F8FE97D163819570086363F /* VIPJobSearch */ = {
+			isa = PBXGroup;
+			children = (
+				0F8FE97E163819570086363F /* SearchJob 副本 */,
+			);
+			path = VIPJobSearch;
+			sourceTree = "<group>";
+		};
+		0F8FE97E163819570086363F /* SearchJob 副本 */ = {
+			isa = PBXGroup;
+			children = (
+				0F8FE97F163819570086363F /* 11.png */,
+				0F8FE980163819570086363F /* A1FindJobViewCell.h */,
+				0F8FE981163819570086363F /* A1FindJobViewCell.m */,
+				0F8FE982163819570086363F /* A1FindJobViewController.h */,
+				0F8FE983163819570086363F /* A1FindJobViewController.m */,
+				0F8FE984163819570086363F /* A1FirstLevelViewController.h */,
+				0F8FE985163819570086363F /* A1FirstLevelViewController.m */,
+				0F8FE986163819570086363F /* A1historyCell.h */,
+				0F8FE987163819570086363F /* A1historyCell.m */,
+				0F8FE988163819570086363F /* A1HistroyDB.h */,
+				0F8FE989163819570086363F /* A1HistroyDB.m */,
+				0F8FE98A163819570086363F /* A1Job.h */,
+				0F8FE98B163819570086363F /* A1Job.m */,
+				0F8FE98C163819570086363F /* A1LevelViewCell.h */,
+				0F8FE98D163819570086363F /* A1LevelViewCell.m */,
+				0F8FE98E163819570086363F /* A1MapVC.h */,
+				0F8FE98F163819570086363F /* A1MapVC.m */,
+				0F8FE990163819570086363F /* A1MoreApply.h */,
+				0F8FE991163819570086363F /* A1MoreApply.m */,
+				0F8FE992163819570086363F /* A1MoreApplyProcess.h */,
+				0F8FE993163819570086363F /* A1MoreApplyProcess.m */,
+				0F8FE994163819570086363F /* A1PlaceInfo.h */,
+				0F8FE995163819570086363F /* A1PlaceInfo.m */,
+				0F8FE996163819570086363F /* A1SecondLevelViewController.h */,
+				0F8FE997163819570086363F /* A1SecondLevelViewController.m */,
+				0F8FE998163819570086363F /* A1ShowJob.h */,
+				0F8FE999163819570086363F /* A1ShowJob.m */,
+				0F8FE99A163819570086363F /* A1ShowOtherJob.h */,
+				0F8FE99B163819570086363F /* A1ShowOtherJob.m */,
+				0F8FE99C163819570086363F /* A1ShowTable.h */,
+				0F8FE99D163819570086363F /* A1ShowTable.m */,
+				0F8FE99E163819570086363F /* A1ShowTableCell.h */,
+				0F8FE99F163819570086363F /* A1ShowTableCell.m */,
+				0F8FE9A0163819570086363F /* A1SingleApply.h */,
+				0F8FE9A1163819570086363F /* A1SingleApply.m */,
+				0F8FE9A2163819570086363F /* A1SingleApplyProcess.h */,
+				0F8FE9A3163819570086363F /* A1SingleApplyProcess.m */,
+				0F8FE9A4163819570086363F /* ApplyProcess.h */,
+				0F8FE9A5163819570086363F /* ApplyProcess.m */,
+				0F8FE9A6163819570086363F /* ApplyProcessProtocol.h */,
+				0F8FE9A7163819570086363F /* CollectJob.h */,
+				0F8FE9A8163819570086363F /* CollectJob.m */,
+				0F8FE9A9163819570086363F /* CompanyDetail.h */,
+				0F8FE9AA163819570086363F /* CompanyDetail.m */,
+				0F8FE9AB163819570086363F /* del.png */,
+				0F8FE9AC163819570086363F /* del2.png */,
+				0F8FE9AD163819570086363F /* delnew.png */,
+				0F8FE9AE163819570086363F /* history.sqlite */,
+				0F8FE9AF163819570086363F /* history1.sqlite */,
+				0F8FE9B0163819570086363F /* JobDetails.h */,
+				0F8FE9B1163819570086363F /* JobDetails.m */,
+				0F8FE9B2163819570086363F /* LogInProcess.h */,
+				0F8FE9B3163819570086363F /* LogInProcess.m */,
+				0F8FE9B4163819570086363F /* se.png */,
+				0F8FE9B5163819570086363F /* se@2x.png */,
+				0F8FE9B6163819570086363F /* SearchJob-Prefix.pch */,
+				0F8FE9B7163819570086363F /* SearchJob.h */,
+				0F8FE9B8163819570086363F /* SearchJob.m */,
+				0F8FE9B9163819570086363F /* SearchSavedArgument.h */,
+				0F8FE9BA163819570086363F /* SearchSavedArgument.m */,
+				0F8FE9BB163819570086363F /* shang.png */,
+				0F8FE9BC163819570086363F /* un_se.png */,
+				0F8FE9BD163819570086363F /* un_se@2x.png */,
+				0F8FE9BE163819570086363F /* xia.png */,
+			);
+			path = "SearchJob 副本";
+			sourceTree = "<group>";
+		};
 		0F94DD0F16376D8D0029A114 /* chart */ = {
 			isa = PBXGroup;
 			children = (
@@ -1839,6 +2028,9 @@
 		0FA014ED16322FF2004A0CB0 = {
 			isa = PBXGroup;
 			children = (
+				0F8FE97B1638192C0086363F /* CoreLocation.framework */,
+				0F8FE9791638191F0086363F /* libsqlite3.0.dylib */,
+				0F8FE976163819080086363F /* MapKit.framework */,
 				0F36581216380C53008D24D4 /* hepImage */,
 				0F94DD3F1637CCB40029A114 /* chart3.png */,
 				0F94DD3D1637CBEE0029A114 /* chart2.png */,
@@ -1856,6 +2048,11 @@
 				0F0A11631634EF6A0003E32B /* XMLAnalysis.h */,
 				0F0A11641634EF6A0003E32B /* XMLAnalysis.m */,
 				0F0A11671634EF820003E32B /* basedata.xml */,
+<<<<<<< HEAD
+=======
+				0FCC264016341504003A660F /* libz.dylib */,
+				0F8FE97D163819570086363F /* VIPJobSearch */,
+>>>>>>> lyc
 				0F88A99C1637F0D000254FD6 /* VIPJobGuide */,
 				0F6CF7D61636C15D004BB24A /* DataBase */,
 				0F726B371633F1D400F922C6 /* AboutLogin1 */,
@@ -2436,7 +2633,22 @@
 				0F36582016380C53008D24D4 /* 6.png in Resources */,
 				0F36582116380C53008D24D4 /* Home.jpg in Resources */,
 				0F36582216380C53008D24D4 /* board.png in Resources */,
+<<<<<<< HEAD
 				0F36583716381733008D24D4 /* VIPAboutZhilianViewController.xib in Resources */,
+=======
+				0F8FE9BF163819570086363F /* 11.png in Resources */,
+				0F8FE9D5163819570086363F /* del.png in Resources */,
+				0F8FE9D6163819570086363F /* del2.png in Resources */,
+				0F8FE9D7163819570086363F /* delnew.png in Resources */,
+				0F8FE9D8163819570086363F /* history.sqlite in Resources */,
+				0F8FE9D9163819570086363F /* history1.sqlite in Resources */,
+				0F8FE9DC163819570086363F /* se.png in Resources */,
+				0F8FE9DD163819570086363F /* se@2x.png in Resources */,
+				0F8FE9E0163819570086363F /* shang.png in Resources */,
+				0F8FE9E1163819570086363F /* un_se.png in Resources */,
+				0F8FE9E2163819570086363F /* un_se@2x.png in Resources */,
+				0F8FE9E3163819570086363F /* xia.png in Resources */,
+>>>>>>> lyc
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2554,7 +2766,35 @@
 				0F88AA901637F1DE00254FD6 /* VIPTableFootView.m in Sources */,
 				0F88AAA11637FDC300254FD6 /* GetPath.m in Sources */,
 				0F36582616380D34008D24D4 /* VIPHelpViewController.m in Sources */,
+<<<<<<< HEAD
 				0F36583616381733008D24D4 /* VIPAboutZhilianViewController.m in Sources */,
+=======
+				0F8FE9C0163819570086363F /* A1FindJobViewCell.m in Sources */,
+				0F8FE9C1163819570086363F /* A1FindJobViewController.m in Sources */,
+				0F8FE9C2163819570086363F /* A1FirstLevelViewController.m in Sources */,
+				0F8FE9C3163819570086363F /* A1historyCell.m in Sources */,
+				0F8FE9C4163819570086363F /* A1HistroyDB.m in Sources */,
+				0F8FE9C5163819570086363F /* A1Job.m in Sources */,
+				0F8FE9C6163819570086363F /* A1LevelViewCell.m in Sources */,
+				0F8FE9C7163819570086363F /* A1MapVC.m in Sources */,
+				0F8FE9C8163819570086363F /* A1MoreApply.m in Sources */,
+				0F8FE9C9163819570086363F /* A1MoreApplyProcess.m in Sources */,
+				0F8FE9CA163819570086363F /* A1PlaceInfo.m in Sources */,
+				0F8FE9CB163819570086363F /* A1SecondLevelViewController.m in Sources */,
+				0F8FE9CC163819570086363F /* A1ShowJob.m in Sources */,
+				0F8FE9CD163819570086363F /* A1ShowOtherJob.m in Sources */,
+				0F8FE9CE163819570086363F /* A1ShowTable.m in Sources */,
+				0F8FE9CF163819570086363F /* A1ShowTableCell.m in Sources */,
+				0F8FE9D0163819570086363F /* A1SingleApply.m in Sources */,
+				0F8FE9D1163819570086363F /* A1SingleApplyProcess.m in Sources */,
+				0F8FE9D2163819570086363F /* ApplyProcess.m in Sources */,
+				0F8FE9D3163819570086363F /* CollectJob.m in Sources */,
+				0F8FE9D4163819570086363F /* CompanyDetail.m in Sources */,
+				0F8FE9DA163819570086363F /* JobDetails.m in Sources */,
+				0F8FE9DB163819570086363F /* LogInProcess.m in Sources */,
+				0F8FE9DE163819570086363F /* SearchJob.m in Sources */,
+				0F8FE9DF163819570086363F /* SearchSavedArgument.m in Sources */,
+>>>>>>> lyc
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,207 @@
+//
+//  DetailedCityViewController.m
+//  xiangmu
+//
+//  Created by Ibokan on 12-10-8.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//
+
+#import "A1SecondLevelViewController.h"
+#import "A1LevelViewCell.h"
+#import "A1FindJobViewController.h"
+#import "GDataXMLNode.h"
+
+
+@implementation A1SecondLevelViewController
+@synthesize townArr;
+@synthesize sendID;
+@synthesize sendPreviousID;
+@synthesize jobIDArr;
+@synthesize delegate;
+@synthesize proArr;
+@synthesize smallJobArr;
+@synthesize jobID;
+@synthesize string;
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+-(void)initData
+{
+    
+    if (self.sendPreviousID == 3) 
+    {
+        int ID = self.sendID;//判断前一个视图选择的是第几行，
+        NSString * IDStr = [self.proArr objectAtIndex:ID];//根据ID找到provienceID，例如北京530；
+        
+        
+        NSString * str = [NSString stringWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"basedata" ofType:@"xml"] encoding:NSUTF8StringEncoding error:nil];//本地的
+        // NSLog(@"%@",str);
+        //解析XML,把结果放在document里边.
+        GDataXMLDocument * document = [[GDataXMLDocument alloc] initWithXMLString:str options:0 error:nil];
+        GDataXMLElement * root = [document rootElement];//获得根节点
+        
+        
+        NSArray *rootChildren=[root children];//获得根节点的各个子节点
+        GDataXMLElement *basedata =[rootChildren objectAtIndex:0];
+        GDataXMLElement *city=[[basedata children]objectAtIndex:0];
+        
+        GDataXMLElement * secondLevel = [[city children] objectAtIndex:1];
+        
+        for (int i=0;i<[secondLevel childCount];i++) 
+        {
+            GDataXMLElement *secondCity=[[secondLevel children]objectAtIndex:i];
+            
+            NSString *secondCityId=[[secondCity attributeForName:@"parent"]stringValue];
+            
+            if ([secondCityId isEqualToString:IDStr]) {
+                NSString *secondCityName=[secondCity stringValue];
+ //               NSLog(@"%@",secondCityName);
+                
+                [self.townArr addObject:secondCityName]; //存放北京里边的详细城市
+            }
+            
+        }
+
+    }
+    else if (self.sendPreviousID == 1)
+    {
+        self.smallJobArr = [[NSMutableArray alloc] init];
+        int ID = self.sendID;
+        NSString * IDStr = [self.jobIDArr objectAtIndex:ID];
+        
+        
+        NSString * str = [NSString stringWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"basedata" ofType:@"xml"] encoding:NSUTF8StringEncoding error:nil];//本地的
+        // NSLog(@"%@",str);
+        //解析XML,把结果放在document里边.
+        GDataXMLDocument * document = [[GDataXMLDocument alloc] initWithXMLString:str options:0 error:nil];
+        GDataXMLElement * root = [document rootElement];//获得根节点
+        
+        
+        NSArray *rootChildren=[root children];//获得根节点的各个子节点
+        GDataXMLElement *basedata =[rootChildren objectAtIndex:0];
+        GDataXMLElement *small_Job_type=[[basedata children]objectAtIndex:5];
+        
+        
+        
+        for (int i=0;i<[small_Job_type childCount];i++) 
+        {
+            GDataXMLElement *secondCity=[[small_Job_type children]objectAtIndex:i];
+            
+            NSString *secondCityId=[[secondCity attributeForName:@"categoryid"]stringValue];
+            
+            if ([secondCityId isEqualToString:IDStr]) {
+                NSString *secondCityName=[secondCity stringValue];
+                
+                [self.smallJobArr addObject:secondCityName];
+            }
+            
+        }
+
+    }
+    
+}
+
+
+- (void)viewDidLoad
+{
+    
+    self.townArr = [[NSMutableArray alloc] init];
+    self.smallJobArr = [[NSMutableArray alloc] init ];
+    
+    self.navigationItem.title = self.string;
+    
+    [self initData];
+    
+
+    [super viewDidLoad];
+
+}
+
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    if (self.sendPreviousID == 1) 
+    {
+        return [self.smallJobArr count];
+    }
+    else if (self.sendPreviousID == 3)
+    {
+        return [self.townArr count];
+    }
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    A1LevelViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[A1LevelViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+      
+    if (self.sendPreviousID == 1) {
+        cell.nameLabel.text = [self.smallJobArr objectAtIndex:indexPath.row];
+        cell.imageView.image = [UIImage imageNamed:@"11.png"];
+
+    }
+    else if (self.sendPreviousID == 3)
+    {
+        cell.nameLabel.text = [self.townArr objectAtIndex:indexPath.row];
+        cell.imageView.image = [UIImage imageNamed:@"11.png"];
+
+    }
+    
+    return cell;
+}
+
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    if (self.sendPreviousID == 1) {
+
+         NSString * str = [self.smallJobArr objectAtIndex:indexPath.row];
+         [delegate A1SecondLevelViewController:self didSelectJob:str];
+    }
+    else if (self.sendPreviousID == 3){
+
+        NSString * str = [self.townArr objectAtIndex:indexPath.row];
+         [delegate A1SecondLevelViewController:self didSelectTown:str];
+    }
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+}
+
+@end

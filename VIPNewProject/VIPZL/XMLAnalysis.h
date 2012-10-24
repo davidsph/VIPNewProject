@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface XMLAnalysis : NSObject
+
 +(NSMutableArray*)XMLAnalysisProvince;
 +(NSMutableArray*)XMLAnalysisCity:(NSString*)city;
 + (NSMutableArray*)XMLAnalysisJob;
@@ -20,9 +21,5 @@
 +(NSMutableArray*)XMLAnalysisCompanyQuality;
 +(NSMutableArray*)XMLAnalysisCompanyScale;
 +(NSMutableArray*)XMLAnalysismonthPay;
-
-
-
-
 
 @end

@@ -13,6 +13,8 @@
 #import "VIPSalarySearchViewController.h"
 #import "VIPJobSearchViewController.h"
 #import "GetColor.h"
+#import "LoginWithAccount.h"
+
 @implementation VIPHomeViewController
 @synthesize myZhilian;
 
@@ -45,6 +47,17 @@
     self.navigationItem.title = @"智联招聘";
     //self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view from its nib.
+    //自动登陆
+    NSString *ac;
+    NSString *pw;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if ([fm fileExistsAtPath:[self filePath]]) {
+        NSArray *arr = [NSArray arrayWithContentsOfFile:[self filePath]];
+        ac = [arr objectAtIndex:0];
+        pw = [arr objectAtIndex:1];
+        LoginWithAccount *lgwac = [[LoginWithAccount alloc] init];
+        [lgwac LoginWithAccount:ac passWord:pw];
+    }
 }
 
 - (void)viewDidUnload
@@ -115,6 +128,14 @@
     [super dealloc];
 }
 
+- (NSString *)filePath
+{
+    //document路径
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    //具体文件路径
+    NSString *path = [docPath stringByAppendingPathComponent:@"account"];
+    return path;
+}
 
 
 @end

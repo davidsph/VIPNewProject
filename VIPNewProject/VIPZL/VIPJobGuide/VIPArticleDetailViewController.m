@@ -47,6 +47,7 @@
 {
     [super viewDidLoad];
     UIImageView *imgv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+    imgv.userInteractionEnabled=YES;
     imgv.image = [UIImage imageNamed:@"Home.jpg"];
     [self.view addSubview:imgv];
     [imgv release];
@@ -137,6 +138,7 @@
 {
     self.contentTextView.font=[UIFont fontWithName:@"BradleyHandITCTT-Bold" size:pinch.scale*15];
     self.textFont=pinch.scale*15;
+    NSLog(@"sss");
 }
 //实现返回
 -(void)back

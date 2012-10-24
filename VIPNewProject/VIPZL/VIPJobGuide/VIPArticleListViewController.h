@@ -12,7 +12,7 @@
 
 @class VIPChannel;
 
-@interface VIPArticleListViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,NSURLConnectionDataDelegate,UIScrollViewDelegate>
+@interface VIPArticleListViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate,NSURLConnectionDataDelegate,UIScrollViewDelegate,VIPArticleDetailViewControllerDelegate>
 {
     NSMutableData *_data;// 从网络接口上取得的xml数据
     UIView *_connectionView;//网络连接状况说明视图
@@ -21,10 +21,12 @@
     int hight;//到达这一数值，就进行加载
     BOOL canreload;//判断是否已经全部加载完毕
     VIPTableFootView *footView;
-
+    double txtFont;//文章默认的字体大小    
 }
+
 @property (nonatomic,assign)int i;//每个表的行数
 @property (nonatomic,assign)int ID;
 @property (nonatomic,retain)UITableView *articleListTableView;
 @property (nonatomic,retain)UIButton *topButton;
+@property (nonatomic,assign)double txtFont;//文章默认的字体大小   
 @end

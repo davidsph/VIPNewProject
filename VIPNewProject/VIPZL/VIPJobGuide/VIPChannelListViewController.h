@@ -17,6 +17,7 @@
     double  txtFont;//文章默认的字体大小
 }
 
-@property(nonatomic,retain)UITableView *channelListTableView;
+@property (nonatomic,retain)UITableView *channelListTableView;
+@property (nonatomic,assign)double txtFont;//文章默认的字体大小
 
 @end

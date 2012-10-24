@@ -24,7 +24,7 @@
 
 
 @implementation VIPChannelListViewController
-@synthesize channelListTableView;
+@synthesize channelListTableView,txtFont;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -54,7 +54,7 @@
     self.channelListTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 460) style:UITableViewStyleGrouped];
     self.channelListTableView.backgroundColor=[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Home.jpg"]];
     self.tableView=self.channelListTableView;
-    txtFont =15;
+    self.txtFont =15;
    
 }
 
@@ -234,6 +234,8 @@
 {
     VIPArticleListViewController *detailViewController = [[VIPArticleListViewController alloc]init];
     detailViewController.ID = sender.tag;
+    detailViewController.txtFont=self.txtFont;
+    NSLog(@"111111%f",detailViewController.txtFont);
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
 }
@@ -246,8 +248,6 @@
     VIPArticle *article = [channel.articles objectAtIndex:indexPath.row]; 
     detailViewController.ID = article.ID;
     detailViewController.delegate =self;
-    detailViewController.textFont =txtFont;
-    NSLog(@"1111%f",detailViewController.textFont);
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
 }
@@ -258,7 +258,7 @@
 }
 -(void)textFont:(double)aTextFont
 {
-    txtFont =aTextFont;
-    NSLog(@"%f",txtFont);
+    self.txtFont =aTextFont;
+    NSLog(@"%f",self.txtFont);
 }
 @end

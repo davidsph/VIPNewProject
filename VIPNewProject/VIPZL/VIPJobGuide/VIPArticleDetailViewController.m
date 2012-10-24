@@ -57,6 +57,8 @@
     self.imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 54, 320, 4)];
     self.imageView.backgroundColor=[UIColor orangeColor];//分割线颜色
     self.contentTextView=[[UITextView alloc]initWithFrame:CGRectMake(0, 60, 320, 360)];
+    self.titleLabel.backgroundColor=[UIColor clearColor];
+    self.startDateLabel.backgroundColor=[UIColor clearColor];
     self.titleLabel.textAlignment=UITextAlignmentCenter;//居中显示
     self.navigationItem.title=@"文章详情"; 
     
@@ -67,7 +69,7 @@
     self.navigationItem.leftBarButtonItem=left;
     self.endView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 60)];
     self.contentTextView.font=[UIFont fontWithName:@"BradleyHandITCTT-Bold" size:self.textFont];//设置初始时字体的大小
-    NSLog(@"self.font   %f",self.textFont);
+    self.contentTextView.backgroundColor=[UIColor clearColor];
     self.contentTextView.delegate=self;
     self.contentTextView.editable=NO;//文章不可编辑
     //加捏合手势

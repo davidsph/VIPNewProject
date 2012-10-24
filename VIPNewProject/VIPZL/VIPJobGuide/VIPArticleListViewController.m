@@ -51,7 +51,7 @@
     [self.view addSubview:imgv];
     [imgv release];
     self.articleListTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 460) style:UITableViewStyleGrouped];
-    self.articleListTableView.backgroundColor=[UIColor blueColor];
+    self.articleListTableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"Home.jpg"]];
     self.tableView=self.articleListTableView;
     i=10;
     canreload=YES;

@@ -21,5 +21,4 @@
 - (IBAction)paymentSearch:(id)sender;
 //求职指导方法
 - (IBAction)jobSeekerGuide:(id)sender;
-
 @end

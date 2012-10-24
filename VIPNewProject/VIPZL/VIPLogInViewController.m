@@ -10,6 +10,8 @@
 #import "LoginWithAccount.h"
 #import "VIPFindViewController.h"
 #import "VIPRegisterViewController.h"
+#import "IsLogin.h"
+#import "VIPMyZhilianViewController.h"
 
 @implementation VIPLoginViewController
 @synthesize imgView;
@@ -39,6 +41,7 @@
 {
     [super viewDidLoad];
     //添加向左手势返回上一个界面
+    self.navigationItem.title = @"登陆界面";
     imgView.userInteractionEnabled = YES;
     UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe)];
     leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -72,6 +75,27 @@
     lwac.delegate = self;
     [lwac LoginWithAccount:accountTextField.text passWord:passWordTextField.text];
     [lwac release];
+    IsLogin *islg = [IsLogin defaultIsLogin];
+    if (islg.isLogin == YES) {
+            NSLog(@"在登陆界面收到了成功的信息");
+//            //属性传值，把简历，未读人事信息等传过来
+//            self.resumeArr = [[NSMutableArray alloc] initWithCapacity:islg.resumeArray.count];
+//            self.resumeArr = islg.resumeArray;
+//            NSLog(@"传过来的简历有%d个",_resumeArr.count);
+            
+            //推出主界面
+            VIPMyZhilianViewController *myzlvc = [[VIPMyZhilianViewController alloc] init];
+            myzlvc.rsmArray = [[NSArray alloc] initWithArray:islg.resumeArray];
+            myzlvc.someNumber = [NSArray arrayWithObjects:islg.noReadEmailNumber,islg.applyCount,islg.favCount,islg.jobSearchCount, nil];
+            [self.navigationController pushViewController:myzlvc animated:YES];
+            [myzlvc release];
+        }
+        else
+        {
+            NSLog(@"登陆失败，不推出新界面，加个layer提示一下。");
+        }
+
+
 }
 
 - (IBAction)clickRegister:(id)sender {

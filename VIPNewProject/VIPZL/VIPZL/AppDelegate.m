@@ -11,6 +11,7 @@
 #import "VIPLoginViewController.h"
 #import "SaveDataSingleton.h"
 #import "DealWithNetWorkAndXmlHelper.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;

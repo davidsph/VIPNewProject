@@ -12,6 +12,7 @@
 #import "DealWithNetWorkAndXmlHelper.h"
 #import "SaveDataSingleton.h"
 #import "VIPSelectedTableviewController.h"
+#import "VIPSalaryCompareVontroller.h"
 @implementation VIPSalarySearchViewController
 @synthesize scrollview;
 @synthesize tableview;
@@ -70,11 +71,16 @@
     
     [DealWithNetWorkAndXmlHelper getSalaryInfoFromNetWork:prepareItemsForNetWork];
     
+     VIPSalaryCompareVontroller *controller = [[VIPSalaryCompareVontroller alloc] init];
+    //属性传值
+    controller.salaryInfoArray = [DealWithNetWorkAndXmlHelper getSalaryInfoFromNetWork:prepareItemsForNetWork];
+    controller.salarySearchInfoDictionary = prepareItemsForNetWork;
     
-    NSLog(@"保存按钮");
     
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
     
-}
+    NSLog(@"保存按钮");}
 
 - (UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     

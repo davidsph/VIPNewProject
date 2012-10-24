@@ -14,6 +14,7 @@
 #import "VIPJobSearchViewController.h"
 #import "GetColor.h"
 #import "LoginWithAccount.h"
+#import "VIPChannelListViewController.h"
 
 @implementation VIPHomeViewController
 @synthesize myZhilian;
@@ -121,6 +122,9 @@
 
 - (IBAction)jobSeekerGuide:(id)sender {
     NSLog(@"推出求职指导界面");
+    VIPChannelListViewController *chVC = [[VIPChannelListViewController alloc] init];
+    [self.navigationController pushViewController:chVC animated:YES];
+    [chVC release];
 }
 
 - (void)dealloc {

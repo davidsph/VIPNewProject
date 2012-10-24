@@ -2048,11 +2048,11 @@
 				0F0A11631634EF6A0003E32B /* XMLAnalysis.h */,
 				0F0A11641634EF6A0003E32B /* XMLAnalysis.m */,
 				0F0A11671634EF820003E32B /* basedata.xml */,
-<<<<<<< HEAD
-=======
+
+
 				0FCC264016341504003A660F /* libz.dylib */,
 				0F8FE97D163819570086363F /* VIPJobSearch */,
->>>>>>> lyc
+
 				0F88A99C1637F0D000254FD6 /* VIPJobGuide */,
 				0F6CF7D61636C15D004BB24A /* DataBase */,
 				0F726B371633F1D400F922C6 /* AboutLogin1 */,
@@ -2633,9 +2633,9 @@
 				0F36582016380C53008D24D4 /* 6.png in Resources */,
 				0F36582116380C53008D24D4 /* Home.jpg in Resources */,
 				0F36582216380C53008D24D4 /* board.png in Resources */,
-<<<<<<< HEAD
+
 				0F36583716381733008D24D4 /* VIPAboutZhilianViewController.xib in Resources */,
-=======
+
 				0F8FE9BF163819570086363F /* 11.png in Resources */,
 				0F8FE9D5163819570086363F /* del.png in Resources */,
 				0F8FE9D6163819570086363F /* del2.png in Resources */,
@@ -2648,7 +2648,7 @@
 				0F8FE9E1163819570086363F /* un_se.png in Resources */,
 				0F8FE9E2163819570086363F /* un_se@2x.png in Resources */,
 				0F8FE9E3163819570086363F /* xia.png in Resources */,
->>>>>>> lyc
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2766,9 +2766,9 @@
 				0F88AA901637F1DE00254FD6 /* VIPTableFootView.m in Sources */,
 				0F88AAA11637FDC300254FD6 /* GetPath.m in Sources */,
 				0F36582616380D34008D24D4 /* VIPHelpViewController.m in Sources */,
-<<<<<<< HEAD
+
 				0F36583616381733008D24D4 /* VIPAboutZhilianViewController.m in Sources */,
-=======
+
 				0F8FE9C0163819570086363F /* A1FindJobViewCell.m in Sources */,
 				0F8FE9C1163819570086363F /* A1FindJobViewController.m in Sources */,
 				0F8FE9C2163819570086363F /* A1FirstLevelViewController.m in Sources */,
@@ -2794,7 +2794,7 @@
 				0F8FE9DB163819570086363F /* LogInProcess.m in Sources */,
 				0F8FE9DE163819570086363F /* SearchJob.m in Sources */,
 				0F8FE9DF163819570086363F /* SearchSavedArgument.m in Sources */,
->>>>>>> lyc
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

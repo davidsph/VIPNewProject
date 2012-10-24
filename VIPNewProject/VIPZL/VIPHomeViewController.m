@@ -14,6 +14,7 @@
 #import "VIPJobSearchViewController.h"
 #import "LoginWithAccount.h"
 #import "VIPChannelListViewController.h"
+#import "VIPHelpViewController.h"
 
 @implementation VIPHomeViewController
 @synthesize myZhilian;
@@ -43,6 +44,7 @@
     //隐藏navgationcontroller
     
     self.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
+    [self.navigationController.navigationBar setTintColor:[UIColor brownColor]];
     self.navigationItem.title = @"智联招聘";
     //self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view from its nib.
@@ -123,6 +125,13 @@
     VIPChannelListViewController *chVC = [[VIPChannelListViewController alloc] init];
     [self.navigationController pushViewController:chVC animated:YES];
     [chVC release];
+}
+
+- (IBAction)zhilianHelp:(id)sender {
+    NSLog(@"推出智联助手");
+    VIPHelpViewController *helpVC = [[VIPHelpViewController alloc] init];
+    [self.navigationController pushViewController:helpVC animated:YES];
+    [helpVC release];
 }
 
 - (void)dealloc {

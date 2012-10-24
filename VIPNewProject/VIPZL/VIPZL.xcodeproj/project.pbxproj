@@ -15,6 +15,15 @@
 		0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */; };
 		0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11641634EF6A0003E32B /* XMLAnalysis.m */; };
 		0F0A11681634EF820003E32B /* basedata.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A11671634EF820003E32B /* basedata.xml */; };
+		0F36581B16380C53008D24D4 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581316380C53008D24D4 /* 1.png */; };
+		0F36581C16380C53008D24D4 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581416380C53008D24D4 /* 2.png */; };
+		0F36581D16380C53008D24D4 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581516380C53008D24D4 /* 3.png */; };
+		0F36581E16380C53008D24D4 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581616380C53008D24D4 /* 4.png */; };
+		0F36581F16380C53008D24D4 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581716380C53008D24D4 /* 5.png */; };
+		0F36582016380C53008D24D4 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581816380C53008D24D4 /* 6.png */; };
+		0F36582116380C53008D24D4 /* Home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581916380C53008D24D4 /* Home.jpg */; };
+		0F36582216380C53008D24D4 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581A16380C53008D24D4 /* board.png */; };
+		0F36582616380D34008D24D4 /* VIPHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F36582516380D34008D24D4 /* VIPHelpViewController.m */; };
 		0F5A05A416326FD0003D216A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A05A316326FD0003D216A /* QuartzCore.framework */; };
 		0F6CF7CA16369AC3004BB24A /* VIPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CF7C816369AC3004BB24A /* VIPDetailViewController.m */; };
 		0F6CF7CB16369AC3004BB24A /* VIPDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */; };
@@ -349,7 +358,6 @@
 		0FA0150D16322FF2004A0CB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0150C16322FF2004A0CB0 /* AppDelegate.m */; };
 		0FA0151C16323375004A0CB0 /* VIPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0151A16323375004A0CB0 /* VIPHomeViewController.m */; };
 		0FA0151D16323375004A0CB0 /* VIPHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0151B16323375004A0CB0 /* VIPHomeViewController.xib */; };
-		0FA01520163235CC004A0CB0 /* Home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0151F163235CC004A0CB0 /* Home.jpg */; };
 		0FA0153116324314004A0CB0 /* loginBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0153016324314004A0CB0 /* loginBg@2x.png */; };
 		0FA015331632433D004A0CB0 /* xiaoren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA015321632433D004A0CB0 /* xiaoren@2x.png */; };
 		0FA0153516324361004A0CB0 /* loginNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0153416324361004A0CB0 /* loginNormal@2x.png */; };
@@ -414,6 +422,16 @@
 		0F0A11631634EF6A0003E32B /* XMLAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLAnalysis.h; sourceTree = "<group>"; };
 		0F0A11641634EF6A0003E32B /* XMLAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLAnalysis.m; sourceTree = "<group>"; };
 		0F0A11671634EF820003E32B /* basedata.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = basedata.xml; sourceTree = "<group>"; };
+		0F36581316380C53008D24D4 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		0F36581416380C53008D24D4 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		0F36581516380C53008D24D4 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		0F36581616380C53008D24D4 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		0F36581716380C53008D24D4 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		0F36581816380C53008D24D4 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		0F36581916380C53008D24D4 /* Home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Home.jpg; sourceTree = "<group>"; };
+		0F36581A16380C53008D24D4 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
+		0F36582416380D34008D24D4 /* VIPHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPHelpViewController.h; sourceTree = "<group>"; };
+		0F36582516380D34008D24D4 /* VIPHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPHelpViewController.m; sourceTree = "<group>"; };
 		0F5A055416326ED2003D216A /* _CPTFillColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillColor.h; sourceTree = "<group>"; };
 		0F5A055516326ED2003D216A /* _CPTFillGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillGradient.h; sourceTree = "<group>"; };
 		0F5A055616326ED2003D216A /* _CPTFillImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CPTFillImage.h; sourceTree = "<group>"; };
@@ -907,7 +925,6 @@
 		0FA0151916323375004A0CB0 /* VIPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPHomeViewController.h; sourceTree = "<group>"; };
 		0FA0151A16323375004A0CB0 /* VIPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPHomeViewController.m; sourceTree = "<group>"; };
 		0FA0151B16323375004A0CB0 /* VIPHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPHomeViewController.xib; sourceTree = "<group>"; };
-		0FA0151F163235CC004A0CB0 /* Home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Home.jpg; sourceTree = "<group>"; };
 		0FA0153016324314004A0CB0 /* loginBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginBg@2x.png"; sourceTree = "<group>"; };
 		0FA015321632433D004A0CB0 /* xiaoren@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiaoren@2x.png"; sourceTree = "<group>"; };
 		0FA0153416324361004A0CB0 /* loginNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginNormal@2x.png"; sourceTree = "<group>"; };
@@ -1007,6 +1024,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F36581216380C53008D24D4 /* hepImage */ = {
+			isa = PBXGroup;
+			children = (
+				0F36581316380C53008D24D4 /* 1.png */,
+				0F36581416380C53008D24D4 /* 2.png */,
+				0F36581516380C53008D24D4 /* 3.png */,
+				0F36581616380C53008D24D4 /* 4.png */,
+				0F36581716380C53008D24D4 /* 5.png */,
+				0F36581816380C53008D24D4 /* 6.png */,
+				0F36581916380C53008D24D4 /* Home.jpg */,
+				0F36581A16380C53008D24D4 /* board.png */,
+			);
+			path = hepImage;
+			sourceTree = "<group>";
+		};
 		0F5A055316326ED2003D216A /* CorePlotHeaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -1802,6 +1834,7 @@
 		0FA014ED16322FF2004A0CB0 = {
 			isa = PBXGroup;
 			children = (
+				0F36581216380C53008D24D4 /* hepImage */,
 				0F94DD3F1637CCB40029A114 /* chart3.png */,
 				0F94DD3D1637CBEE0029A114 /* chart2.png */,
 				0F94DD3B1637C51D0029A114 /* chart1.png */,
@@ -1913,6 +1946,8 @@
 				0F6CF7C716369AC3004BB24A /* VIPDetailViewController.h */,
 				0F6CF7C816369AC3004BB24A /* VIPDetailViewController.m */,
 				0F6CF7C916369AC3004BB24A /* VIPDetailViewController.xib */,
+				0F36582416380D34008D24D4 /* VIPHelpViewController.h */,
+				0F36582516380D34008D24D4 /* VIPHelpViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1938,7 +1973,6 @@
 				0FA0153416324361004A0CB0 /* loginNormal@2x.png */,
 				0FA015321632433D004A0CB0 /* xiaoren@2x.png */,
 				0FA0153016324314004A0CB0 /* loginBg@2x.png */,
-				0FA0151F163235CC004A0CB0 /* Home.jpg */,
 			);
 			name = ImageSourse;
 			sourceTree = "<group>";
@@ -2118,7 +2152,6 @@
 			files = (
 				0FA0150716322FF2004A0CB0 /* InfoPlist.strings in Resources */,
 				0FA0151D16323375004A0CB0 /* VIPHomeViewController.xib in Resources */,
-				0FA01520163235CC004A0CB0 /* Home.jpg in Resources */,
 				0FA0153116324314004A0CB0 /* loginBg@2x.png in Resources */,
 				0FA015331632433D004A0CB0 /* xiaoren@2x.png in Resources */,
 				0FA0153516324361004A0CB0 /* loginNormal@2x.png in Resources */,
@@ -2387,6 +2420,14 @@
 				0F88AA531637F0EE00254FD6 /* SHKSharers.plist in Resources */,
 				0F88AA581637F0EE00254FD6 /* Localizable.strings in Resources */,
 				0F88AA601637F0EE00254FD6 /* FBConnect.bundle in Resources */,
+				0F36581B16380C53008D24D4 /* 1.png in Resources */,
+				0F36581C16380C53008D24D4 /* 2.png in Resources */,
+				0F36581D16380C53008D24D4 /* 3.png in Resources */,
+				0F36581E16380C53008D24D4 /* 4.png in Resources */,
+				0F36581F16380C53008D24D4 /* 5.png in Resources */,
+				0F36582016380C53008D24D4 /* 6.png in Resources */,
+				0F36582116380C53008D24D4 /* Home.jpg in Resources */,
+				0F36582216380C53008D24D4 /* board.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2503,6 +2544,7 @@
 				0F88AA8D1637F0FE00254FD6 /* VIPIndicator.m in Sources */,
 				0F88AA901637F1DE00254FD6 /* VIPTableFootView.m in Sources */,
 				0F88AAA11637FDC300254FD6 /* GetPath.m in Sources */,
+				0F36582616380D34008D24D4 /* VIPHelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

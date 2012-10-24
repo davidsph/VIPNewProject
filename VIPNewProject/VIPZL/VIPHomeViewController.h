@@ -21,6 +21,8 @@
 - (IBAction)paymentSearch:(id)sender;
 //求职指导方法
 - (IBAction)jobSeekerGuide:(id)sender;
+//智联助手方法
+- (IBAction)zhilianHelp:(id)sender;
 
 - (NSString *)filePath;
 

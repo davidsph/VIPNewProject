@@ -249,17 +249,22 @@
 - (void)clickSearch
 {
     NSLog(@"点击了查询按钮");
-    VIPCompanyViewController *comVC = [[VIPCompanyViewController alloc] init];
-    comVC.position = self.position;
-    comVC.postName = self.postName;
-    comVC.industry = self.industry;
-    comVC.workPositon = self.workPositon;
-    comVC.range = self.range;
-    comVC.keyWord = keyField.text;
-    //comVC.keyWord = self.keyWord;
-    NSLog(@"%@,%@,%@,%@,%@",comVC.position,comVC.postName,comVC.industry,comVC.workPositon,comVC.range);
-    [self.navigationController pushViewController:comVC animated:YES];
-    [comVC release];
+//    VIPCompanyViewController *comVC = [[VIPCompanyViewController alloc] init];
+//    comVC.position = self.position;
+//    comVC.postName = self.postName;
+//    comVC.industry = self.industry;
+//    comVC.workPositon = self.workPositon;
+//    comVC.range = self.range;
+//    comVC.keyWord = keyField.text;
+//    //comVC.keyWord = self.keyWord;
+//    NSLog(@"%@,%@,%@,%@,%@",comVC.position,comVC.postName,comVC.industry,comVC.workPositon,comVC.range);
+//    [self.navigationController pushViewController:comVC animated:YES];
+//    [comVC release];
+//    VIPJobTableViewController *vc=[[VIPJobTableViewController alloc]init];
+//    VIPSearchJob * seachJob = [[VIPSearchJob alloc] initWithschJobType:_postName industry:_industry city:_workPositon keyWord:keyField.text pointRanger:_range sort:nil];
+//    vc.searchjob=seachJob;
+//    vc.dataSourseSign=2;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -- 以下是实现了一些用于传值的协议的方法

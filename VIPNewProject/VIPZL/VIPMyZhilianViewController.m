@@ -13,7 +13,7 @@
 #import "IsLogin.h"
 #import "ResumeViewCell.h"
 #import "GetPath.h"
-#import "GetColor.h"
+
 
 @implementation VIPMyZhilianViewController
 @synthesize resumeNameLabel;
@@ -269,8 +269,7 @@
         NSString *name = vc.navigationItem.title;
         NSLog(@"路径 -- %@",name);
         cell.textLabel.text = name;
-        GetColor *getColor = [[GetColor alloc] init];
-        cell.backgroundColor = [getColor getColor:[NSString stringWithFormat:@"36A8D4"]];
+        
         cell.alpha = 0.8;
         cell.textLabel.textColor = [UIColor whiteColor];
         return cell;

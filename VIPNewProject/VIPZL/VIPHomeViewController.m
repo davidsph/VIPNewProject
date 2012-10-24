@@ -12,8 +12,8 @@
 #import "IsLogin.h"
 #import "VIPSalarySearchViewController.h"
 #import "VIPJobSearchViewController.h"
-#import "GetColor.h"
 #import "LoginWithAccount.h"
+#import "VIPChannelListViewController.h"
 
 @implementation VIPHomeViewController
 @synthesize myZhilian;
@@ -41,8 +41,7 @@
 {
     [super viewDidLoad];
     //隐藏navgationcontroller
-    GetColor *getColor = [[GetColor alloc] init];
-    [self.navigationController.navigationBar setTintColor:[getColor getColor:[NSString stringWithFormat:@"B7D4DE"]]];
+    
     self.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     self.navigationItem.title = @"智联招聘";
     //self.navigationController.navigationBarHidden = YES;
@@ -121,6 +120,9 @@
 
 - (IBAction)jobSeekerGuide:(id)sender {
     NSLog(@"推出求职指导界面");
+    VIPChannelListViewController *chVC = [[VIPChannelListViewController alloc] init];
+    [self.navigationController pushViewController:chVC animated:YES];
+    [chVC release];
 }
 
 - (void)dealloc {

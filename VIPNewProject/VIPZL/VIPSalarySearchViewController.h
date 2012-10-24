@@ -8,19 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "VIPSelectedTableviewController.h"
-@interface VIPSalarySearchViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,VIPSelectedTableviewControllerDelegate>
+#import "MBProgressHUD.h"
+@interface VIPSalarySearchViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,VIPSelectedTableviewControllerDelegate,MBProgressHUDDelegate>
 
 {
-    NSArray *selextedArrar;
-    NSArray *tipArray;
     
-    
+    MBProgressHUD *HUD;
+    NSArray *selextedArrar;//选择项目提示文字数组
+    NSArray *tipArray; //提示文字数组
+    NSMutableArray *tmpSaveSalaryInfo;
 }
+
+
+
+
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollview;
-@property (retain, nonatomic) IBOutlet UITableView *tableview;
+@property (retain, nonatomic) IBOutlet UITableView *tableview; //表
 @property(nonatomic,retain)NSArray *tmpSaveArray; //保存字典的数组
 @property(nonatomic,retain)NSArray *itemAllkeys; //保存与服务器交互的所有参数
-@property(nonatomic,retain)NSMutableDictionary *prepareItemsForNetWork;
+@property(nonatomic,retain)NSMutableDictionary *prepareItemsForNetWork; //封装用户选择的数据，准备与服务器交互
 
 - (IBAction)getSalaryInfo:(id)sender;
 

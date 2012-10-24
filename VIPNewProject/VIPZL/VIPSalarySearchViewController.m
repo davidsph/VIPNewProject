@@ -36,6 +36,8 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+#pragma mark -
+#pragma mark textfield 代理
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{
     
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
@@ -43,14 +45,14 @@
     
     [prepareItemsForNetWork setObject:textField.text forKey:[itemAllkeys objectAtIndex:7]];
     [textField resignFirstResponder];
-       
+    
     return  YES;
 }
 
 - (BOOL) textFieldShouldBeginEditing:(UITextField *)textField{
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     
-           
+    
     NSLog(@"开始编辑进行的操作");
     return YES;
 }
@@ -63,29 +65,63 @@
 }
 
 
+- (void) getSalaryFromNetWork{
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
+
+    tmpSaveSalaryInfo = [[DealWithNetWorkAndXmlHelper getSalaryInfoFromNetWork:prepareItemsForNetWork] retain];
+    
+NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
+    
+}
+#pragma mark -
+#pragma mark 点击查询按钮，与服务器交互
+//点击
 -(void) bnClicked:(UIButton *) bn{
     
-   
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.dimBackground = YES;
+    HUD.labelText = @"正在查询";
+    
+    
+    
+    [HUD showWhileExecuting:@selector(getSalaryFromNetWork) onTarget:self withObject:nil animated:YES];
     NSLog(@"待传递的参数为 count = %d", [prepareItemsForNetWork count]);
-    
-    
-    [DealWithNetWorkAndXmlHelper getSalaryInfoFromNetWork:prepareItemsForNetWork];
-    
-     VIPSalaryCompareVontroller *controller = [[VIPSalaryCompareVontroller alloc] init];
-    //属性传值
-    controller.salaryInfoArray = [DealWithNetWorkAndXmlHelper getSalaryInfoFromNetWork:prepareItemsForNetWork];
-    controller.salarySearchInfoDictionary = prepareItemsForNetWork;
-    
-    
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
-    
-    NSLog(@"保存按钮");}
+        
+    NSLog(@"保存按钮");
+}
 
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
+
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+	// Remove HUD from screen when the HUD was hidded
+	[HUD removeFromSuperview];
+	[HUD release];
+    //创建controller
+    VIPSalaryCompareVontroller *controller = [[VIPSalaryCompareVontroller alloc] init];
+    //查询到的薪水信息
+    controller.salaryInfoArray = tmpSaveSalaryInfo;
+    //用户查询的关键字信息
+    controller.salarySearchInfoDictionary = prepareItemsForNetWork;
+    [self.navigationController pushViewController:controller animated:YES];
+    //释放
+    [controller release];
+
+	HUD = nil;
+}
+
+
+
+#pragma mark -
+#pragma mark 表格的尾部视图
 - (UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
     
     UIView *view = nil;
+    
     if (section==0) {
         
         view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
@@ -150,7 +186,7 @@
     [prepareItemsForNetWork setObject:[NSNumber numberWithInt:1] forKey:[self.itemAllkeys objectAtIndex:0]];
     
     self.scrollview.contentSize=CGSizeMake(320, 600);
-        
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -171,19 +207,19 @@
 }
 - (void) isHaveExperence:(UISegmentedControl *) sender {
     
-   
+    
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     if (sender.selectedSegmentIndex==0) {
         NSLog(@"有经验");
         [prepareItemsForNetWork removeObjectForKey:[itemAllkeys objectAtIndex:0]];
         [prepareItemsForNetWork setObject:[NSNumber numberWithInt:1] forKey:[self.itemAllkeys objectAtIndex:0]];
         
-     
+        
         
     } else{
         NSLog(@"没经验");
         [prepareItemsForNetWork removeObjectForKey:[itemAllkeys objectAtIndex:0]];
-       [prepareItemsForNetWork setObject:[NSNumber numberWithInt:2] forKey:[self.itemAllkeys objectAtIndex:0]];
+        [prepareItemsForNetWork setObject:[NSNumber numberWithInt:2] forKey:[self.itemAllkeys objectAtIndex:0]];
         
     }
     
@@ -199,14 +235,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
+    
     
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+    
     
     return [selextedArrar count];
 }
@@ -233,8 +269,8 @@
         [segController addTarget:self action:@selector(isHaveExperence:) forControlEvents:UIControlEventValueChanged];
         
         
-                
-             
+        
+        
     }
     
     
@@ -289,10 +325,10 @@
 //劫持用户选择
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSIndexPath *path = indexPath;
-     if (indexPath.row==0||indexPath.row==7) {
+    if (indexPath.row==0||indexPath.row==7) {
         path = nil;
     }
-     return path;
+    return path;
     
 }
 
@@ -304,13 +340,14 @@
     
     VIPSelectedTableviewController *controller =[[VIPSelectedTableviewController alloc] init];
     
+    //返回正确的字典
     controller.tmpDictionary= [tmpSaveArray objectAtIndex:indexPath.row-1];
     controller.tmpIndexPath=indexPath;
     controller.delegate = self;
     
     [self.navigationController pushViewController:controller animated:YES];
     
-    }
+}
 
 - (void) VIPSelectedTableviewController:(VIPSelectedTableviewController *)controller didSelectItem:(NSString *)itemName atSelectIndexPath:(NSIndexPath *)path{
     
@@ -343,6 +380,6 @@
     
     NSLog(@"字典中存的参数为：%d",[prepareItemsForNetWork count]);
     
-
+    
 }
 @end

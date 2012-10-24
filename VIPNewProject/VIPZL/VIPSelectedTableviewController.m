@@ -34,11 +34,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    tmpValueArray = [[NSArray alloc] initWithArray:[tmpDictionary allValues]];
-   
     
-    NSLog(@"接ushoudao的 数据为 count %d",[tmpDictionary count]);
+    //获取字典中的所有值
+    tmpValueArray = [[NSArray alloc] initWithArray:[tmpDictionary allValues]];
+    
+    
+    NSLog(@"接到的数据为 count %d",[tmpDictionary count]);
     NSLog(@"接受到的用户选择的是第%d行",tmpIndexPath.row);
     
 }
@@ -50,48 +51,39 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+//dealloc方法
+-(void) dealloc{
+    //释放对象
+    [tmpIndexPath release ];
+    self.tmpDictionary = nil;
+    
+    
+    //调用父类dealloc方法
+    [super dealloc];
+};
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
+    
     
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+    
     // Return the number of rows in the section.
     return [tmpDictionary count];
 }
 
+//简单样式cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -101,6 +93,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
+    //显示对应选择项目
     cell.textLabel.text=[tmpValueArray objectAtIndex:indexPath.row];
     
     return cell;
@@ -113,12 +106,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"在第二季菜单中，用户选择的是第%d行",indexPath.row);
+    
     NSString *selectedItem = [tmpValueArray objectAtIndex:indexPath.row];
     NSLog(@"用户选择的是 %@",selectedItem);
     
-    [self.delegate VIPSelectedTableviewController:self didSelectItem:selectedItem atSelectIndexPath:tmpIndexPath];
+    //代理传值 将用户的选择返回到显示列表
     
+    [self.delegate VIPSelectedTableviewController:self didSelectItem:selectedItem atSelectIndexPath:tmpIndexPath];
     
     [self.navigationController popViewControllerAnimated:YES];
     

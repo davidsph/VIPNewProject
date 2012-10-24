@@ -235,7 +235,6 @@
     VIPArticleListViewController *detailViewController = [[VIPArticleListViewController alloc]init];
     detailViewController.ID = sender.tag;
     detailViewController.txtFont=self.txtFont;
-    NSLog(@"111111%f",detailViewController.txtFont);
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
 }
@@ -247,6 +246,7 @@
     VIPChannel *channel = [channelList objectAtIndex:indexPath.section];
     VIPArticle *article = [channel.articles objectAtIndex:indexPath.row]; 
     detailViewController.ID = article.ID;
+    detailViewController.textFont=txtFont;
     detailViewController.delegate =self;
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];

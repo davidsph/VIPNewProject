@@ -138,8 +138,7 @@
 {
     self.contentTextView.font=[UIFont fontWithName:@"BradleyHandITCTT-Bold" size:pinch.scale*15];
     self.textFont=pinch.scale*15;
-    NSLog(@"sss");
-}
+ }
 //实现返回
 -(void)back
 {

@@ -206,7 +206,6 @@
     detailViewController.ID = article.ID;
     detailViewController.delegate=self;
     detailViewController.textFont=self.txtFont;
-//    NSLog(@"%f",detailViewController.textFont);
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release]; 
 }

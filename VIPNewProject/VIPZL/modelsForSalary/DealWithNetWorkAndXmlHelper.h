@@ -28,8 +28,12 @@
 +(NSArray *) getAllKeys;
 //这是比较的时候
 + (NSMutableDictionary *) getAllKeysForSalaryComparing;
+
 +(NSMutableArray *) getSalaryInfoFromNetWork:(NSMutableDictionary *) dictionary;
 
+
++ (NSArray *) getsaveallKeysArray;
++(NSArray *) getsaveAllValuesArray;
 @end
 
 @interface SaveItemsWithDictionary : NSObject {

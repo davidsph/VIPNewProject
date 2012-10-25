@@ -13,9 +13,21 @@
     
     NSMutableDictionary *thisDictionaryForPieChart;
     NSArray *salaryLevelKeyArray;
+    //暂时保存所有比较条件数据的字典
+    NSArray *tmpSaveArray;
+    NSMutableDictionary *tmpSaveSearchDictionary;
+    
+   
 }
+
+
+@property (retain, nonatomic) IBOutlet UIPickerView *pickerview;
 
 @property(nonatomic,retain)NSMutableArray *salaryInfoArray;
 @property(nonatomic,retain)NSMutableDictionary *salarySearchInfoDictionary;
+@property(nonatomic,retain)NSMutableDictionary *AllKeysForSalaryComparing; //获取比较信息 城市等
+- (IBAction)compare:(id)sender;
+
+
 
 @end

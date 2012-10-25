@@ -159,6 +159,7 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
 {
     
     self.itemAllkeys = [DealWithNetWorkAndXmlHelper getAllKeys];
+    
     self.navigationController.navigationBarHidden = NO;
     
     selextedArrar = [[NSArray alloc] initWithObjects:@"我有工作经验",@"地区:",@"行业:",@"学历:",@"企业性质:",@"职位类别:",@"职位级别:",@"期望月薪:", nil];
@@ -174,7 +175,7 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     NSLog(@"JobLevelItemsDictionary count =%d",[myData.JobLevelItemsDictionary count]);
     
     
-    //保存字典的数组
+    //保存字典的数组 各个选择项目
     
     tmpSaveArray =[[NSArray alloc] initWithObjects:myData.cityItemDictionary,myData.IndustryItemsDictionary,myData.EducationItemsDictionary,myData.CompanyTypeItemsDictionary,myData.JobTypeItemsDictionary,myData.JobLevelItemsDictionary, nil];
     
@@ -340,14 +341,20 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     
     VIPSelectedTableviewController *controller =[[VIPSelectedTableviewController alloc] init];
     
-    //返回正确的字典
+    //返回正确的字典 传进去正确的
     controller.tmpDictionary= [tmpSaveArray objectAtIndex:indexPath.row-1];
+    //选取的是哪一行
     controller.tmpIndexPath=indexPath;
+    //设置代理
     controller.delegate = self;
-    
+    //推出选择界面
     [self.navigationController pushViewController:controller animated:YES];
     
 }
+
+
+#pragma mark -
+#pragma mark 选择界面返回时的代理
 
 - (void) VIPSelectedTableviewController:(VIPSelectedTableviewController *)controller didSelectItem:(NSString *)itemName atSelectIndexPath:(NSIndexPath *)path{
     
@@ -356,16 +363,23 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     
     NSLog(@"执行与服务器传值前的数据封装");
     
+    //取得用户开始选择的是哪一个tablecell
     CustomcellForSalary *cell = (CustomcellForSalary *)[self.tableview cellForRowAtIndexPath:path];
-    
+    //获取用户的选择
     cell.tipTextField.text = itemName;
-    
+    //获得的是选择的那个字典数据
     NSDictionary *tmp = [tmpSaveArray objectAtIndex:path.row-1];
+    
+    //获取数据的key 
     NSString *keyValue = [[tmp allKeysForObject:itemName] objectAtIndex:0];
+    
     NSLog(@"Object value = %@",keyValue);
     NSLog(@"key value =%@",[self.itemAllkeys objectAtIndex:path.row]);
     
+    //删除 指定key的数据
     [prepareItemsForNetWork removeObjectForKey:[self.itemAllkeys objectAtIndex:path.row]];
+    
+    //插入 指定key的value
     
     [prepareItemsForNetWork setObject:keyValue forKey:[self.itemAllkeys objectAtIndex:path.row]];
     

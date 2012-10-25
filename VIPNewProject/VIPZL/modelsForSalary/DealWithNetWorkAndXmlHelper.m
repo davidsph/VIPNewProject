@@ -114,6 +114,19 @@
     return [array autorelease];
 }
 
+
++ (NSArray *) getsaveallKeysArray{
+    NSArray *array = [[NSArray alloc] initWithObjects:@"city", @"industry",@"corpproperty",@"jobcat",@"joblevel",@"educationid",nil];
+    return  [array autorelease];
+    
+}
++(NSArray *) getsaveAllValuesArray{
+    
+    NSArray *array = [[NSArray alloc] initWithObjects:@"地区",@"行业",@"企业性质",@"职位类型",@"职位级别",@"学历" ,nil];
+    return [array autorelease];
+    
+    
+}
 + (NSMutableDictionary *) getAllKeysForSalaryComparing{
     
     

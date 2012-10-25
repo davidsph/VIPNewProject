@@ -79,6 +79,7 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
 -(void) bnClicked:(UIButton *) bn{
     
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
+    
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;

@@ -15,7 +15,7 @@
 #import "LoginWithAccount.h"
 #import "VIPChannelListViewController.h"
 #import "VIPHelpViewController.h"
-
+#import "Real_time_recommendViewController.h"
 #import "VIPAboutZhilianViewController.h"
 
 #import "A1FindJobViewController.h"
@@ -83,9 +83,7 @@
 
 - (IBAction)searchPosition:(id)sender {
     NSLog(@"推出职位查询界面");
-//    VIPJobSearchViewController *jbschVC = [[VIPJobSearchViewController alloc] init];
-//    [self.navigationController pushViewController:jbschVC animated:YES];
-//    [jbschVC release];
+
     A1FindJobViewController *findVC = [[A1FindJobViewController alloc] init];
     [self.navigationController pushViewController:findVC animated:YES];
     [findVC release];
@@ -115,6 +113,9 @@
 
 - (IBAction)realTimeRecommend:(id)sender {
     NSLog(@"推出实时推荐界面");
+    Real_time_recommendViewController *rtVC = [[Real_time_recommendViewController alloc] init];
+    [self.navigationController pushViewController:rtVC animated:YES];
+    [rtVC release];
 }
 
 - (IBAction)paymentSearch:(id)sender {
@@ -122,10 +123,6 @@
     NSLog(@"推出薪酬查询界面");
     VIPSalarySearchViewController *salaryController = [[VIPSalarySearchViewController alloc] init];
     [self.navigationController pushViewController:salaryController animated:YES];
-    
-    
-    
-    
 }
 
 - (IBAction)jobSeekerGuide:(id)sender {

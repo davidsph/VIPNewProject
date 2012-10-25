@@ -43,23 +43,24 @@
 {
     self.view = [[[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 416)]autorelease];
     self.navigationItem.title = @"实时推荐";
-    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStyleBordered target:self action:@selector(backHome)];
-    UIImage *image = [UIImage imageNamed:@"navigationbar_bg.png"];
-    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+//    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStyleBordered target:self action:@selector(backHome)];
+//    UIImage *image = [UIImage imageNamed:@"navigationbar_bg.png"];
+//    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
     //设置“申请”按钮
-    UIButton *btn = [[UIButton buttonWithType:UIButtonTypeCustom]autorelease];
-    btn.frame = CGRectMake(0, 0, 50, 30);//横纵坐标无关紧要
-    [btn setBackgroundImage:[UIImage imageNamed:@"setting-button-click.png"] forState:UIControlStateNormal];//设置背景图片
-    [btn setTitle:@"申请" forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont fontWithName:@"Arial" size:13.0];
-    [btn addTarget:self action:@selector(apply) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightBtn = [[[UIBarButtonItem alloc]initWithCustomView:btn]autorelease];
-    self.navigationItem.rightBarButtonItem = rightBtn;
+//    UIButton *btn = [[UIButton buttonWithType:UIButtonTypeRoundedRect]autorelease];
+//    btn.frame = CGRectMake(0, 0, 50, 30);//横纵坐标无关紧要
+//    //[btn setBackgroundImage:nil forState:UIControlStateNormal];//设置背景图片
+//    [btn setTitle:@"申请" forState:UIControlStateSelected];
+//    btn.titleLabel.font = [UIFont fontWithName:@"Arial" size:13.0];
+//    [btn addTarget:self action:@selector(apply) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightButon = [[UIBarButtonItem alloc] initWithTitle:@"申请" style:UIBarButtonItemStyleBordered target:self action:@selector(apply)];    
+    //UIBarButtonItem *rightBtn = [[[UIBarButtonItem alloc]initWithCustomView:btn]autorelease];
+    self.navigationItem.rightBarButtonItem = rightButon;
     
     //设置大背景
     UIImageView *imageV0 = [[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)]autorelease];
-    imageV0.image = [UIImage imageNamed:@"centerBackground.png"];
+    imageV0.image = [UIImage imageNamed:@"Home.jpg"];
     [self.view addSubview:imageV0];
     
     selectJob = [[NSMutableArray alloc]init]; 
@@ -79,8 +80,6 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     a++;
-    
-    
     IsLogin *islogin=[IsLogin defaultIsLogin];
     self.uTicket=islogin.uticket;
         
@@ -142,7 +141,6 @@
         }
     }
 } 
-
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView//分区的个数
 {

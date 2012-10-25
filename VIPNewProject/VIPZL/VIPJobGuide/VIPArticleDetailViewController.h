@@ -22,7 +22,7 @@
 {
      NSMutableData *_data;// 从网络接口上取得的xml数据
     int i;//字体大小
-    UITableView *tbView;
+    UITableView *promptView;//提示视图，页面跳转
 }
 
 @property (nonatomic,assign) int ID;//从上一个界面传过来的ID

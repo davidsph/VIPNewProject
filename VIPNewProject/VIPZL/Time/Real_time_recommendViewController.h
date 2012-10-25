@@ -30,7 +30,7 @@
 }
 
 @property(nonatomic,retain)NSMutableData *receivedData;
-@property(nonatomic,retain)id delegate;
+@property(nonatomic,assign)id delegate;
 @property(nonatomic,retain)NSString *uTicket;
 
 @end

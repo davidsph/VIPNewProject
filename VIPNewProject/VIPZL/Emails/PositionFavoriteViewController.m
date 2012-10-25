@@ -35,11 +35,6 @@
     [connection release];
     [favoriteData release];
     [root release];
-    [uTicket release];
-    [jobArray release];
-    [selectJob release];
-    [root release];
-    [tableV release];
     [super dealloc];
 }
 

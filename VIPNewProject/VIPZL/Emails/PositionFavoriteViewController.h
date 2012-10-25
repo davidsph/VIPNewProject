@@ -24,7 +24,7 @@
 @property(nonatomic,retain)NSURLConnection *connection;
 @property(nonatomic,retain)NSMutableData *favoriteData;
 @property(nonatomic,retain)GDataXMLElement *root;
-@property (nonatomic,retain)id delegate;
+@property (nonatomic,assign)id delegate;
 
 -(void)setURL:(NSString *)string;
 -(void)setPosition;

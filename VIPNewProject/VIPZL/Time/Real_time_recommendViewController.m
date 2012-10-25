@@ -22,17 +22,8 @@
 
 -(void)dealloc
 {
-    [activityV release];
-    [loginAlertV release];
-    [applyV release];
-    [applyAlertV release]; 
-    [resumeAlertV release];
-    [root release];
-    [selectJob release];
-    [connection release];
-    [alertV release];
+    
     [self.receivedData release];
-    [self.delegate release];
     [self.uTicket release];
     
     [super dealloc];
@@ -43,17 +34,7 @@
 {
     self.view = [[[UIView alloc]initWithFrame:CGRectMake(0, 20, 320, 416)]autorelease];
     self.navigationItem.title = @"实时推荐";
-//    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStyleBordered target:self action:@selector(backHome)];
-//    UIImage *image = [UIImage imageNamed:@"navigationbar_bg.png"];
-//    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    
-    //设置“申请”按钮
-//    UIButton *btn = [[UIButton buttonWithType:UIButtonTypeRoundedRect]autorelease];
-//    btn.frame = CGRectMake(0, 0, 50, 30);//横纵坐标无关紧要
-//    //[btn setBackgroundImage:nil forState:UIControlStateNormal];//设置背景图片
-//    [btn setTitle:@"申请" forState:UIControlStateSelected];
-//    btn.titleLabel.font = [UIFont fontWithName:@"Arial" size:13.0];
-//    [btn addTarget:self action:@selector(apply) forControlEvents:UIControlEventTouchUpInside];
+
     UIBarButtonItem *rightButon = [[UIBarButtonItem alloc] initWithTitle:@"申请" style:UIBarButtonItemStyleBordered target:self action:@selector(apply)];    
     //UIBarButtonItem *rightBtn = [[[UIBarButtonItem alloc]initWithCustomView:btn]autorelease];
     self.navigationItem.rightBarButtonItem = rightButon;
@@ -130,7 +111,6 @@
     {  
         if(buttonIndex == 0) 
         {
-//            [loginAlertV dismissWithClickedButtonIndex:0 animated:YES];
             [self dismissModalViewControllerAnimated:YES];
         }
         if(buttonIndex == 1)

@@ -15,7 +15,6 @@
 
 -(void)dealloc
 {
-    [btn release];
     [titleLabel release];
     [companyLabel release];
     [cityLabel release];

@@ -75,6 +75,11 @@
     //加捏合手势
     UIPinchGestureRecognizer*pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinch:)];
     [self.contentTextView addGestureRecognizer:pinch];
+    //加轻扫手势
+    UISwipeGestureRecognizer *swp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe)];
+    swp.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.contentTextView addGestureRecognizer:swp];
+    
     [pinch release];
     [imgv addSubview:self.titleLabel];
     [imgv addSubview:self.startDateLabel];
@@ -140,15 +145,73 @@
 {
     self.contentTextView.font=[UIFont fontWithName:@"BradleyHandITCTT-Bold" size:pinch.scale*15];
     self.textFont=pinch.scale*15;
- }
-//实现返回
--(void)back
+}
+//轻扫手势
+- (void)swipe
 {
+    NSLog(@"向左轻扫");
     if (self.delegate &&[self.delegate respondsToSelector:@selector(textFont: )]) {
         [self.delegate textFont:self.textFont];
     }
-     [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
+//实现返回
+-(void)back
+{
+    int c = [self.navigationController.viewControllers count];
+    tbView = [[UITableView alloc] initWithFrame:CGRectMake(100, 100, 0, 0)style:UITableViewStyleGrouped];
+    tbView.backgroundColor = [UIColor clearColor];
+    tbView.delegate = self;
+    tbView.dataSource = self;
+    tbView.tag = 100;
+    [self.contentTextView addSubview:tbView];
+    
+    [UIView animateWithDuration:2 animations:^{
+        tbView.frame = CGRectMake(100,50, 110,40*c  );
+    }];
+    
+}
+//表格协议
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return [self.navigationController.viewControllers count];
+    
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+            static NSString *CellIdentifier = @"Cell2";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+        
+        UIViewController *vc = [self.navigationController.viewControllers objectAtIndex:indexPath.row];
+        NSString *name = vc.navigationItem.title;
+        NSLog(@"路径 -- %@",name);
+        cell.textLabel.text = name;
+        cell.backgroundColor = [UIColor brownColor];
+        cell.alpha = 0.8;
+        cell.textLabel.textColor = [UIColor whiteColor];
+        return cell;
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+            NSLog(@"返回到哪一个假面");
+    if (indexPath.row == [self.navigationController.viewControllers count]-1) {
+        [tbView removeFromSuperview];
+    }
+    else
+    {
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:indexPath.row] animated:YES];
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+           return 30;
+}
+
 //实现分享
 -(void)share
 {

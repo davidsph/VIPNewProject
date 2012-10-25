@@ -39,6 +39,7 @@
 
 - (void)viewDidLoad
 {
+    self.navigationItem.title = @"搜索结果";
     count=1;
     //数据初始化
     LoadingSign=NO;
@@ -88,7 +89,8 @@
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"申请" style:UIBarButtonItemStyleBordered target:self action:@selector(apply)];
     
     self.headV=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
-    headV.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"locationbg"]];
+    //headV.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"locationbg"]];
+    headV.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Home.jpg"]];
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeSearchDistance)];
     [headV addGestureRecognizer:tap];
      
@@ -106,7 +108,8 @@
    
     UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(80,20,160, 44)];
     self.navigationItem.titleView=headerView;
-    headerView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"navigationbar_bg.png"]];
+    //headerView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"navigationbar_bg.png"]];
+    headerView.backgroundColor = [UIColor clearColor];
     //在headerView上加Label
     UILabel *lab=[[UILabel alloc]initWithFrame:CGRectMake(40, 5, 80, 24)];
     [lab setTextAlignment:UITextAlignmentCenter];
@@ -189,7 +192,8 @@
     {
         NSLog(@"if");
         viewShow=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 140)];
-        viewShow.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"filterbg.png"]];
+        //viewShow.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"filterbg.png"]];
+        viewShow.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Home.jpg"]];
         //添加一个TextView
         textView=[[UITextView alloc]initWithFrame:CGRectMake(15, 40, 280, 60)];
         textView.backgroundColor=[UIColor clearColor];
@@ -218,11 +222,12 @@
         btn.layer.cornerRadius=5;
         [btn setFrame:CGRectMake(140, 100, 170, 40)];
         [btn setBackgroundImage:[UIImage imageNamed:@"searchbtn.png"] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btn setTitle:@"保存成职位搜索器" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(savedSearcher) forControlEvents:UIControlEventTouchUpInside];
         [viewShow addSubview:btn];
         img.image=[UIImage imageNamed:@"nav_arrow_normal.png"];
+        //img.image = [UIImage imageNamed:@"Home.jpg"];
         [self.view addSubview:viewShow];
         [viewShow release];
     }

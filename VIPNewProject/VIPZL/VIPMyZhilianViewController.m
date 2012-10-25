@@ -53,7 +53,7 @@
     self.navigationItem.leftBarButtonItem = leftBar;
     [leftBar release];
     
-    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickRight)];
+    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(logOut)];
     self.navigationItem.rightBarButtonItem = rightBar;
     [rightBar release];
     
@@ -147,6 +147,15 @@
         tbView.frame = CGRectMake(0,0, 110,40*c  );
     }];
 }
+- (void)logOut
+{
+    IsLogin *islg = [IsLogin defaultIsLogin];
+    [islg setValue:NO utkt:nil rsmArray:nil nrdEmal:nil aplct:nil favct:nil jbsc:nil];
+    NSArray *accounts = [NSArray arrayWithObjects:@"",@"", nil];
+    [accounts writeToFile:[self filePath] atomically:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 
 - (void)viewDidUnload
 {
@@ -206,12 +215,6 @@
 //设置了默认属性后
 - (void)setDefaultResume:(NSString *)msg
 {
-    //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:self cancelButtonTitle:@"知道了" otherButtonTitles: nil];
-    //    [self.view addSubview:alertView];
-    //    [alertView show];
-    //    [alertView release];
-    //    NSLog(@"主页弹出alert");
-    
     //新的默认简历为蓝，将之前的默认简历标志之为灰色，isdefault标志为no
     A2ResumeView *view = [_rsmViewArray objectAtIndex:_beforeDefaultNumber];
     [view.setDefalutResumebt setImage:[UIImage imageNamed:@"resume_unselected@2x.png"] forState:UIControlStateNormal];
@@ -314,6 +317,15 @@
     {
         return 30;
     }
+}
+//文件路径
+- (NSString *)filePath
+{
+    //document路径
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    //具体文件路径
+    NSString *path1 = [docPath stringByAppendingPathComponent:@"account"];
+    return path1;
 }
 
 

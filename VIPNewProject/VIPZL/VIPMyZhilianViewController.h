@@ -24,6 +24,6 @@
 @property(nonatomic,retain)NSMutableArray *rsmViewArray;//存放简历视图的数组，以便设置默认简历时使其他简历的图标改为灰色。
 @property(nonatomic,assign)int beforeDefaultNumber;//前一个默认简历下标
 -(void)changePageCtrl:(UIPageControl *)p;//pagecontrol改变值的时候
-
+- (NSString *)filePath;
 
 @end

@@ -18,11 +18,11 @@
 
 @end
 
-@interface VIPArticleDetailViewController : UIViewController<NSURLConnectionDataDelegate,UITextViewDelegate>//异步获取数据使用的代理 
+@interface VIPArticleDetailViewController : UIViewController<NSURLConnectionDataDelegate,UITextViewDelegate,UITableViewDataSource,UITableViewDelegate>//异步获取数据使用的代理 
 {
      NSMutableData *_data;// 从网络接口上取得的xml数据
     int i;//字体大小
-
+    UITableView *tbView;
 }
 
 @property (nonatomic,assign) int ID;//从上一个界面传过来的ID

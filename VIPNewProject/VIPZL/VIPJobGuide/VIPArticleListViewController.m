@@ -45,11 +45,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImageView *imgv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
-    imgv.userInteractionEnabled=YES;
-    imgv.image = [UIImage imageNamed:@"home.png"];
-    [self.view addSubview:imgv];
-    [imgv release];
     self.articleListTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 460) style:UITableViewStyleGrouped];
     self.articleListTableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"Home.jpg"]];
     self.tableView=self.articleListTableView;

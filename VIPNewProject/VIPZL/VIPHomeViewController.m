@@ -96,6 +96,7 @@
     if (islg.isLogin == NO) {
         NSLog(@"推出我的登陆界面");
         VIPLoginViewController *login = [[VIPLoginViewController alloc] init];
+        login.tag = 1;
         [self.navigationController pushViewController:login animated:YES];
         [login release];
     }
@@ -108,7 +109,6 @@
         [self.navigationController pushViewController:myzlVC animated:YES];
         [myzlVC release];
     }
-    
 }
 
 - (IBAction)realTimeRecommend:(id)sender {

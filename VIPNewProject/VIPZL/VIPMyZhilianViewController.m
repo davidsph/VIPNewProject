@@ -49,10 +49,8 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"我的智联";
-    self.navigationItem.backBarButtonItem.title = @"智联招聘";
     
-    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeft)];
-    leftBar.title = @"智联招聘";
+    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] initWithTitle:@"智联招聘" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeft)];
     self.navigationItem.leftBarButtonItem = leftBar;
     [leftBar release];
     
@@ -99,7 +97,14 @@
     }
     else
     {
-        resumeNameLabel.text = @"添加简历";
+        UIButton *addResume = [UIButton buttonWithType:UIButtonTypeCustom];
+        addResume.frame = CGRectMake(100, 20, 120, 30);
+        [addResume setTitle:@"添加简历" forState:UIControlStateNormal];
+        [addResume addTarget:self action:@selector(addresume) forControlEvents:UIControlEventTouchUpInside];
+        [addResume setBackgroundImage:[UIImage imageNamed:@"loginNormal@2x.png"] forState:UIControlStateNormal];
+        [self.view addSubview:addResume];
+        
+        resumeNameLabel.text = @"";
         Resume *rsm =[[Resume alloc] init];
         A2ResumeView *resumeView = [[A2ResumeView alloc] initWithFrame:CGRectMake(10, 0, 300, 70) resume:rsm];
         resumeView.userInteractionEnabled = YES;//打开用户交互
@@ -128,6 +133,7 @@
     [self.view addSubview:tableView];
     // Do any additional setup after loading the view from its nib.
 }
+
 #pragma mark -- 左右键
 -(void)clickLeft
 {
@@ -158,6 +164,10 @@
     [accounts writeToFile:[self filePath] atomically:YES];
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+- (void)addresume 
+{
+    NSLog(@"推出添加简历界面");
 }
 
 - (void)viewDidUnload

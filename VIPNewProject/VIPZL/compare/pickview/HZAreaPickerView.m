@@ -97,10 +97,22 @@
         
         self.tmpRightArray = [[NSArray alloc] init];
         
+        //第一列默认显示的是地区列表
         self.tmpRightArray = [[tmpSaveArray objectAtIndex:0] allValues] ;
         
         
         NSLog(@"在薪酬比较界面 各个选择列表 count= %d",[tmpSaveArray count]);
+        
+        
+        
+        //初始化用户选择 这个很重要
+        self.compareCondition.comparetype = [saveallKeysArray objectAtIndex:0];
+        //默认选择的值是第一列中的第一行 即地区的第一个数据 的key
+        
+        self.compareCondition.comparevalue = [[[tmpSaveArray objectAtIndex:0] allKeysForObject:[self.tmpRightArray objectAtIndex:0]] objectAtIndex:0];
+        
+        //初始化选择字典 这个也很重要 表示 用户不点击第0列的时候第一列默认显示的是 地区里面的条目
+        tmpdic = [tmpSaveArray objectAtIndex:0];
         
         
     }
@@ -160,6 +172,7 @@
     switch (component) {
         case 0:
             
+            NSLog(@"用户选择的是第0列 第%d行",row);
             //正确取得第一列中要显示的数值
             self.tmpRightArray =[ [tmpSaveArray objectAtIndex:row] allValues] ;
             //刷新第一列的数据
@@ -190,12 +203,19 @@
         default:
             break;
     }
-    
-    
-    if([self.delegate respondsToSelector:@selector(pickerDidChaneStatus:)]) {
-        [self.delegate pickerDidChaneStatus:self];
+    if (self.delegate!=nil) {
+
+        
+        NSLog(@"选择的时候代理不为空");
+        if([self.delegate respondsToSelector:@selector(pickerDidChaneStatus:)]) {
+            [self.delegate pickerDidChaneStatus:self];
+        }
+
+        
+        
     }
     
+        
 }
 
 
@@ -229,12 +249,31 @@
 - (IBAction)compareSalary:(id)sender {
     
     
+    //由于不执行代理方法 只能用通知
     NSLog(@"在自定义pickview中 点击了比较按钮");
     
-    if ([self.delegate respondsToSelector:@selector(pickerDidClickCompareBn:)]) {
-        [self.delegate pickerDidClickCompareBn:self];
-    }
+    NSString *string = @"DidCLickCompareBnNotification";
+    NSNotificationCenter *ceter = [NSNotificationCenter defaultCenter];
+    [ceter postNotificationName:string object:self];
     
+    
+    if (self.delegate!=nil) {
+        
+        NSLog(@"代理不为空");
+        if ([self.delegate respondsToSelector:@selector(pickerDidClickCompareBn:)]) {
+            NSLog(@"响应代理方法");
+            [self.delegate pickerDidClickCompareBn:self];
+        } else{
+            
+            NSLog(@"不响应代理方法");
+        }
+
+        
+    } else{
+        
+        NSLog(@"代理为空");
+    }
+        
     
 }
 @end

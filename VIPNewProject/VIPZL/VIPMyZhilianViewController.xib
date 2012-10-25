@@ -82,7 +82,7 @@
 					<object class="IBUIScrollView" id="936287755">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{0, 97}, {320, 109}}</string>
+						<string key="NSFrame">{{0, 107}, {320, 109}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<string key="NSReuseIdentifierKey">_NS:190</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -200,7 +200,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">Home.jpg</string>
-			<string key="NS.object.0">{320, 480}</string>
+			<string key="NS.object.0">{140, 140}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">933</string>
 	</data>

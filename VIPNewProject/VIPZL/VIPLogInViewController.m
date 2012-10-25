@@ -14,7 +14,7 @@
 #import "VIPMyZhilianViewController.h"
 
 @implementation VIPLoginViewController
-@synthesize imgView;
+@synthesize imgView,tag;
 @synthesize accountTextField;
 @synthesize passWordTextField;
 
@@ -78,11 +78,7 @@
     IsLogin *islg = [IsLogin defaultIsLogin];
     if (islg.isLogin == YES) {
             NSLog(@"在登陆界面收到了成功的信息");
-//            //属性传值，把简历，未读人事信息等传过来
-//            self.resumeArr = [[NSMutableArray alloc] initWithCapacity:islg.resumeArray.count];
-//            self.resumeArr = islg.resumeArray;
-//            NSLog(@"传过来的简历有%d个",_resumeArr.count);
-            
+        if (self.tag == 1) {
             //推出主界面
             VIPMyZhilianViewController *myzlvc = [[VIPMyZhilianViewController alloc] init];
             myzlvc.rsmArray = [[NSArray alloc] initWithArray:islg.resumeArray];
@@ -92,9 +88,14 @@
         }
         else
         {
-            NSLog(@"登陆失败，不推出新界面，加个layer提示一下。");
+            [self.navigationController popViewControllerAnimated:YES];
         }
-
+    }
+    else
+    {
+        NSLog(@"登陆失败，不推出新界面，加个layer提示一下。");
+    }
+    
 
 }
 

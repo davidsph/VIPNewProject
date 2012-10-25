@@ -12,7 +12,7 @@
 {
     UIScrollView *_scrollView;
     UIPageControl *_pageControl;
-    
+     
 }
 
 @end

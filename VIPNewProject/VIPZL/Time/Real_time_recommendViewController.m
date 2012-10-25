@@ -421,7 +421,6 @@
     [self.receivedData appendData:data];//拼接数据，要在上边有self.receivedData = [NSMutableData data];这句话（见上个方法） 
 }
 
-
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     //解析XML，把结果放在document里面。
@@ -462,7 +461,5 @@
 {
     NSLog(@"%@",[error localizedDescription]);
 }
-
-
 
 @end

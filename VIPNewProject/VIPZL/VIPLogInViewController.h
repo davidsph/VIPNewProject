@@ -10,6 +10,10 @@
 #import "LoginWithAccount.h"
 
 @interface VIPLoginViewController : UIViewController<LoginErrorProtocol,UIAlertViewDelegate>
+{
+    int tag;
+}
+@property (assign,nonatomic) int tag;
 @property (retain, nonatomic) IBOutlet UIImageView *imgView;
 @property (retain, nonatomic) IBOutlet UITextField *accountTextField;
 @property (retain, nonatomic) IBOutlet UITextField *passWordTextField;

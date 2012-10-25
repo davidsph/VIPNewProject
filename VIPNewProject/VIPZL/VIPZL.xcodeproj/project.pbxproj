@@ -463,11 +463,6 @@
 		0FD69A2C1638DBA600A8E9C1 /* ApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD69A271638DBA600A8E9C1 /* ApplyCell.m */; };
 		0FD69A2D1638DBA600A8E9C1 /* Real_time_recommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD69A291638DBA600A8E9C1 /* Real_time_recommendViewController.m */; };
 		0FD69A2E1638DBA600A8E9C1 /* UnApplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD69A2B1638DBA600A8E9C1 /* UnApplyCell.m */; };
-		0FE62C66163918680053285C /* CompanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE62C63163918680053285C /* CompanyCell.m */; };
-		0FE62C6A163918E20053285C /* CompanListInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE62C68163918E20053285C /* CompanListInfoViewController.m */; };
-		0FE62C6B163918E20053285C /* CompanListInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE62C69163918E20053285C /* CompanListInfoViewController.xib */; };
-		0FE62C70163919000053285C /* DealWithNetworkAndXMLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE62C6D163919000053285C /* DealWithNetworkAndXMLHelper.m */; };
-		0FE62C71163919000053285C /* LIistItemsForCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE62C6F163919000053285C /* LIistItemsForCompany.m */; };
 		0FE989E81638B6D500FE710B /* DavidCompareType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE989E71638B6D500FE710B /* DavidCompareType.m */; };
 		0FE989F41638D16000FE710B /* MyPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE989F31638D16000FE710B /* MyPickerView.xib */; };
 		0FF798D716326DC200EA1B61 /* CustomcellForSalary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF798D516326DC200EA1B61 /* CustomcellForSalary.m */; };
@@ -1097,15 +1092,6 @@
 		0FD69A291638DBA600A8E9C1 /* Real_time_recommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Real_time_recommendViewController.m; sourceTree = "<group>"; };
 		0FD69A2A1638DBA600A8E9C1 /* UnApplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnApplyCell.h; sourceTree = "<group>"; };
 		0FD69A2B1638DBA600A8E9C1 /* UnApplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnApplyCell.m; sourceTree = "<group>"; };
-		0FE62C62163918680053285C /* CompanyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyCell.h; sourceTree = "<group>"; };
-		0FE62C63163918680053285C /* CompanyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyCell.m; sourceTree = "<group>"; };
-		0FE62C67163918E20053285C /* CompanListInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanListInfoViewController.h; sourceTree = "<group>"; };
-		0FE62C68163918E20053285C /* CompanListInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanListInfoViewController.m; sourceTree = "<group>"; };
-		0FE62C69163918E20053285C /* CompanListInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanListInfoViewController.xib; sourceTree = "<group>"; };
-		0FE62C6C163919000053285C /* DealWithNetworkAndXMLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealWithNetworkAndXMLHelper.h; sourceTree = "<group>"; };
-		0FE62C6D163919000053285C /* DealWithNetworkAndXMLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealWithNetworkAndXMLHelper.m; sourceTree = "<group>"; };
-		0FE62C6E163919000053285C /* LIistItemsForCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LIistItemsForCompany.h; sourceTree = "<group>"; };
-		0FE62C6F163919000053285C /* LIistItemsForCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LIistItemsForCompany.m; sourceTree = "<group>"; };
 		0FE989E61638B6D500FE710B /* DavidCompareType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DavidCompareType.h; sourceTree = "<group>"; };
 		0FE989E71638B6D500FE710B /* DavidCompareType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DavidCompareType.m; sourceTree = "<group>"; };
 		0FE989F31638D16000FE710B /* MyPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPickerView.xib; sourceTree = "<group>"; };
@@ -1986,7 +1972,6 @@
 				0F0A11641634EF6A0003E32B /* XMLAnalysis.m */,
 				0F0A11671634EF820003E32B /* basedata.xml */,
 				0FCC264016341504003A660F /* libz.dylib */,
-				0FE62C5D1639185C0053285C /* ShowContoller */,
 				0FD69A251638DBA500A8E9C1 /* Time */,
 				0FD699FB1638D07600A8E9C1 /* Emails */,
 				0F8FE97D163819570086363F /* VIPJobSearch */,
@@ -2263,22 +2248,6 @@
 				0FD69A2B1638DBA600A8E9C1 /* UnApplyCell.m */,
 			);
 			path = Time;
-			sourceTree = "<group>";
-		};
-		0FE62C5D1639185C0053285C /* ShowContoller */ = {
-			isa = PBXGroup;
-			children = (
-				0FE62C6C163919000053285C /* DealWithNetworkAndXMLHelper.h */,
-				0FE62C6D163919000053285C /* DealWithNetworkAndXMLHelper.m */,
-				0FE62C6E163919000053285C /* LIistItemsForCompany.h */,
-				0FE62C6F163919000053285C /* LIistItemsForCompany.m */,
-				0FE62C67163918E20053285C /* CompanListInfoViewController.h */,
-				0FE62C68163918E20053285C /* CompanListInfoViewController.m */,
-				0FE62C69163918E20053285C /* CompanListInfoViewController.xib */,
-				0FE62C62163918680053285C /* CompanyCell.h */,
-				0FE62C63163918680053285C /* CompanyCell.m */,
-			);
-			path = ShowContoller;
 			sourceTree = "<group>";
 		};
 		0FF798D216326D8C00EA1B61 /* SalarySearch */ = {
@@ -2646,7 +2615,6 @@
 				0FD69A171638D07600A8E9C1 /* MycustomerCellForJianli.xib in Resources */,
 				0F3009711638DB5F00D0E07D /* btn_done_down@2x.png in Resources */,
 				0F3009721638DB5F00D0E07D /* btn_done_up@2x.png in Resources */,
-				0FE62C6B163918E20053285C /* CompanListInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2810,10 +2778,6 @@
 				0F30096C1638D87700D0E07D /* RegexKitLite.m in Sources */,
 				0F30096D1638D87700D0E07D /* RegisterScrollView.m in Sources */,
 				0F3009751638DC9300D0E07D /* VIPRegisterViewController.m in Sources */,
-				0FE62C66163918680053285C /* CompanyCell.m in Sources */,
-				0FE62C6A163918E20053285C /* CompanListInfoViewController.m in Sources */,
-				0FE62C70163919000053285C /* DealWithNetworkAndXMLHelper.m in Sources */,
-				0FE62C71163919000053285C /* LIistItemsForCompany.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

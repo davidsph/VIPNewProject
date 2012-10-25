@@ -15,6 +15,11 @@
 		0F0A11421634ECB60003E32B /* VIPJobSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A113D1634ECB60003E32B /* VIPJobSearchViewController.xib */; };
 		0F0A11651634EF6A0003E32B /* XMLAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A11641634EF6A0003E32B /* XMLAnalysis.m */; };
 		0F0A11681634EF820003E32B /* basedata.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A11671634EF820003E32B /* basedata.xml */; };
+		0F30096C1638D87700D0E07D /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3009691638D87600D0E07D /* RegexKitLite.m */; };
+		0F30096D1638D87700D0E07D /* RegisterScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F30096B1638D87600D0E07D /* RegisterScrollView.m */; };
+		0F3009711638DB5F00D0E07D /* btn_done_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F30096F1638DB5F00D0E07D /* btn_done_down@2x.png */; };
+		0F3009721638DB5F00D0E07D /* btn_done_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3009701638DB5F00D0E07D /* btn_done_up@2x.png */; };
+		0F3009751638DC9300D0E07D /* VIPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3009741638DC9300D0E07D /* VIPRegisterViewController.m */; };
 		0F36581B16380C53008D24D4 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581316380C53008D24D4 /* 1.png */; };
 		0F36581C16380C53008D24D4 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581416380C53008D24D4 /* 2.png */; };
 		0F36581D16380C53008D24D4 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F36581516380C53008D24D4 /* 3.png */; };
@@ -416,8 +421,6 @@
 		0FA0156D16325F07004A0CB0 /* RetrivePWDBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0156C16325F07004A0CB0 /* RetrivePWDBg@2x.png */; };
 		0FA0156F16325F14004A0CB0 /* unselect_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0156E16325F14004A0CB0 /* unselect_icon@2x.png */; };
 		0FA0157116325F2B004A0CB0 /* select_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0157016325F2B004A0CB0 /* select_icon@2x.png */; };
-		0FA0157516326388004A0CB0 /* VIPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0157316326387004A0CB0 /* VIPRegisterViewController.m */; };
-		0FA0157616326388004A0CB0 /* VIPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA0157416326388004A0CB0 /* VIPRegisterViewController.xib */; };
 		0FA01578163264BA004A0CB0 /* registerBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FA01577163264BA004A0CB0 /* registerBg@2x.png */; };
 		0FA02BEF16364A6000E2A44C /* VIPCompanyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA02BED16364A6000E2A44C /* VIPCompanyViewController.m */; };
 		0FA02BF016364A6000E2A44C /* VIPCompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FA02BEE16364A6000E2A44C /* VIPCompanyViewController.xib */; };
@@ -464,6 +467,14 @@
 		0F0A11631634EF6A0003E32B /* XMLAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLAnalysis.h; sourceTree = "<group>"; };
 		0F0A11641634EF6A0003E32B /* XMLAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLAnalysis.m; sourceTree = "<group>"; };
 		0F0A11671634EF820003E32B /* basedata.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = basedata.xml; sourceTree = "<group>"; };
+		0F3009681638D87600D0E07D /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		0F3009691638D87600D0E07D /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		0F30096A1638D87600D0E07D /* RegisterScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterScrollView.h; sourceTree = "<group>"; };
+		0F30096B1638D87600D0E07D /* RegisterScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterScrollView.m; sourceTree = "<group>"; };
+		0F30096F1638DB5F00D0E07D /* btn_done_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_done_down@2x.png"; sourceTree = "<group>"; };
+		0F3009701638DB5F00D0E07D /* btn_done_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_done_up@2x.png"; sourceTree = "<group>"; };
+		0F3009731638DC9300D0E07D /* VIPRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPRegisterViewController.h; sourceTree = "<group>"; };
+		0F3009741638DC9300D0E07D /* VIPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPRegisterViewController.m; sourceTree = "<group>"; };
 		0F36581316380C53008D24D4 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		0F36581416380C53008D24D4 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		0F36581516380C53008D24D4 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
@@ -1058,9 +1069,6 @@
 		0FA0156C16325F07004A0CB0 /* RetrivePWDBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RetrivePWDBg@2x.png"; sourceTree = "<group>"; };
 		0FA0156E16325F14004A0CB0 /* unselect_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unselect_icon@2x.png"; sourceTree = "<group>"; };
 		0FA0157016325F2B004A0CB0 /* select_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_icon@2x.png"; sourceTree = "<group>"; };
-		0FA0157216326387004A0CB0 /* VIPRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPRegisterViewController.h; sourceTree = "<group>"; };
-		0FA0157316326387004A0CB0 /* VIPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPRegisterViewController.m; sourceTree = "<group>"; };
-		0FA0157416326388004A0CB0 /* VIPRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPRegisterViewController.xib; sourceTree = "<group>"; };
 		0FA01577163264BA004A0CB0 /* registerBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "registerBg@2x.png"; sourceTree = "<group>"; };
 		0FA02BEC16364A6000E2A44C /* VIPCompanyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPCompanyViewController.h; sourceTree = "<group>"; };
 		0FA02BED16364A6000E2A44C /* VIPCompanyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPCompanyViewController.m; sourceTree = "<group>"; };
@@ -2028,6 +2036,12 @@
 		0FA014ED16322FF2004A0CB0 = {
 			isa = PBXGroup;
 			children = (
+				0F30096F1638DB5F00D0E07D /* btn_done_down@2x.png */,
+				0F3009701638DB5F00D0E07D /* btn_done_up@2x.png */,
+				0F3009681638D87600D0E07D /* RegexKitLite.h */,
+				0F3009691638D87600D0E07D /* RegexKitLite.m */,
+				0F30096A1638D87600D0E07D /* RegisterScrollView.h */,
+				0F30096B1638D87600D0E07D /* RegisterScrollView.m */,
 				0F8FE97B1638192C0086363F /* CoreLocation.framework */,
 				0F8FE9791638191F0086363F /* libsqlite3.0.dylib */,
 				0F8FE976163819080086363F /* MapKit.framework */,
@@ -2133,9 +2147,6 @@
 				0FA0156716325EAE004A0CB0 /* VIPFindViewController.h */,
 				0FA0156816325EAE004A0CB0 /* VIPFindViewController.m */,
 				0FA0156916325EAE004A0CB0 /* VIPFindViewController.xib */,
-				0FA0157216326387004A0CB0 /* VIPRegisterViewController.h */,
-				0FA0157316326387004A0CB0 /* VIPRegisterViewController.m */,
-				0FA0157416326388004A0CB0 /* VIPRegisterViewController.xib */,
 				0FA2357D16357383000E9080 /* VIPSearchOptionViewController.h */,
 				0FA2357E16357383000E9080 /* VIPSearchOptionViewController.m */,
 				0FA2357F16357383000E9080 /* VIPSearchOptionViewController.xib */,
@@ -2150,6 +2161,8 @@
 				0F36583316381733008D24D4 /* VIPAboutZhilianViewController.h */,
 				0F36583416381733008D24D4 /* VIPAboutZhilianViewController.m */,
 				0F36583516381733008D24D4 /* VIPAboutZhilianViewController.xib */,
+				0F3009731638DC9300D0E07D /* VIPRegisterViewController.h */,
+				0F3009741638DC9300D0E07D /* VIPRegisterViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2363,7 +2376,6 @@
 				0FA0156D16325F07004A0CB0 /* RetrivePWDBg@2x.png in Resources */,
 				0FA0156F16325F14004A0CB0 /* unselect_icon@2x.png in Resources */,
 				0FA0157116325F2B004A0CB0 /* select_icon@2x.png in Resources */,
-				0FA0157616326388004A0CB0 /* VIPRegisterViewController.xib in Resources */,
 				0FA01578163264BA004A0CB0 /* registerBg@2x.png in Resources */,
 				0FF798D816326DC200EA1B61 /* VIPCustomCellForSalarySearch.xib in Resources */,
 				0FF798DD16326DD200EA1B61 /* VIPSalarySearchViewController.xib in Resources */,
@@ -2643,6 +2655,8 @@
 				0F8FE9E1163819570086363F /* un_se.png in Resources */,
 				0F8FE9E2163819570086363F /* un_se@2x.png in Resources */,
 				0F8FE9E3163819570086363F /* xia.png in Resources */,
+				0F3009711638DB5F00D0E07D /* btn_done_down@2x.png in Resources */,
+				0F3009721638DB5F00D0E07D /* btn_done_up@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2661,7 +2675,6 @@
 				0FA0155116324E65004A0CB0 /* DNWrapper.m in Sources */,
 				0FA0155E1632555D004A0CB0 /* VIPMyZhilianViewController.m in Sources */,
 				0FA0156A16325EAE004A0CB0 /* VIPFindViewController.m in Sources */,
-				0FA0157516326388004A0CB0 /* VIPRegisterViewController.m in Sources */,
 				0FF798D716326DC200EA1B61 /* CustomcellForSalary.m in Sources */,
 				0FF798DC16326DD200EA1B61 /* VIPSalarySearchViewController.m in Sources */,
 				0FCC2605163405B0003A660F /* DealWithNetWorkAndXmlHelper.m in Sources */,
@@ -2786,6 +2799,9 @@
 				0F8FE9DB163819570086363F /* LogInProcess.m in Sources */,
 				0F8FE9DE163819570086363F /* SearchJob.m in Sources */,
 				0F8FE9DF163819570086363F /* SearchSavedArgument.m in Sources */,
+				0F30096C1638D87700D0E07D /* RegexKitLite.m in Sources */,
+				0F30096D1638D87700D0E07D /* RegisterScrollView.m in Sources */,
+				0F3009751638DC9300D0E07D /* VIPRegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

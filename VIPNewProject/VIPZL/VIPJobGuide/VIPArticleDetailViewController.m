@@ -159,15 +159,14 @@
 -(void)back
 {
     int c = [self.navigationController.viewControllers count];
-    tbView = [[UITableView alloc] initWithFrame:CGRectMake(100, 100, 0, 0)style:UITableViewStyleGrouped];
-    tbView.backgroundColor = [UIColor clearColor];
-    tbView.delegate = self;
-    tbView.dataSource = self;
-    tbView.tag = 100;
-    [self.contentTextView addSubview:tbView];
-    
+    promptView = [[UITableView alloc] initWithFrame:CGRectMake(100, 100, 0, 0)style:UITableViewStyleGrouped];
+    promptView.backgroundColor = [UIColor clearColor];
+    promptView.delegate = self;
+    promptView.dataSource = self;
+    promptView.tag = 100;
+    [self.contentTextView addSubview:promptView];
     [UIView animateWithDuration:2 animations:^{
-        tbView.frame = CGRectMake(100,50, 110,40*c  );
+        promptView.frame = CGRectMake(100,50, 110,40*c  );
     }];
     
 }
@@ -188,7 +187,7 @@
         
         UIViewController *vc = [self.navigationController.viewControllers objectAtIndex:indexPath.row];
         NSString *name = vc.navigationItem.title;
-        NSLog(@"路径 -- %@",name);
+        cell.backgroundColor=[UIColor orangeColor];
         cell.textLabel.text = name;
         cell.backgroundColor = [UIColor brownColor];
         cell.alpha = 0.8;
@@ -198,9 +197,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-            NSLog(@"返回到哪一个假面");
+    
     if (indexPath.row == [self.navigationController.viewControllers count]-1) {
-        [tbView removeFromSuperview];
+        [promptView removeFromSuperview];
     }
     else
     {

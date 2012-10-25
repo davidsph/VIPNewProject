@@ -57,6 +57,8 @@
     topButton.frame=CGRectMake(30, 0, 260, 50);
     [topButton addTarget:nil action:@selector(gotop) forControlEvents:UIControlEventTouchUpInside];
     [topButton setTitle:@"没有更多了,点击文字回顶部" forState:UIControlStateNormal];
+    [topButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [topButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [footView addSubview:topButton];
 
    }

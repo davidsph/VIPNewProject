@@ -41,8 +41,6 @@
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{
     
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
-    
-    
     [prepareItemsForNetWork setObject:textField.text forKey:[itemAllkeys objectAtIndex:7]];
     [textField resignFirstResponder];
     

@@ -15,8 +15,13 @@ typedef enum {
 } HZAreaPickerStyle;
 
 @class HZAreaPickerView;
+@class DavidCompareType;
 
+//代理
 @protocol HZAreaPickerDelegate <NSObject>
+
+@required
+- (void) pickerDidClickCompareBn:(HZAreaPickerView *) picker;
 
 @optional
 - (void)pickerDidChaneStatus:(HZAreaPickerView *)picker;
@@ -29,9 +34,18 @@ typedef enum {
 @property (strong, nonatomic) IBOutlet UIPickerView *locatePicker;
 @property (strong, nonatomic) HZLocation *locate;
 @property (nonatomic) HZAreaPickerStyle pickerStyle;
+@property(nonatomic,retain)DavidCompareType *compareCondition; //比较条件
 
+- (IBAction)compareSalary:(id)sender;
+
+
+
+//初始化方法
 - (id)initWithStyle:(HZAreaPickerStyle)pickerStyle delegate:(id <HZAreaPickerDelegate>)delegate;
+//显示 
 - (void)showInView:(UIView *)view;
+
+//取消显示
 - (void)cancelPicker;
 
 @end

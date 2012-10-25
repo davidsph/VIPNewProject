@@ -10,26 +10,30 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SaveDataSingleton.h"
 #import "DealWithNetWorkAndXmlHelper.h"
-
+#import "DavidCompareType.h"
 #define kDuration 0.3
 
 @interface HZAreaPickerView ()
 {
-    NSArray *provinces, *cities, *areas;
+   
     
-    
+    //待选择的 key key 和value 一一对应
     NSArray *saveallKeysArray;
+    //待选择的value
     NSArray *saveAllValuesArray;
     
-    NSDictionary *tmpRightDictionary;
+    //第一列的数值 数组
+    NSArray *tmpRightArray;
     
     //暂时保存所有比较条件数据的字典
     NSArray *tmpSaveArray;
-    NSMutableDictionary *tmpSaveSearchDictionary;
-
+    //
+    NSDictionary *tmpdic;
+    
 }
 
-@property(nonatomic,retain)NSMutableDictionary *AllKeysForSalaryComparing; //获取比较信息 城市等
+@property(nonatomic,retain) NSArray *tmpRightArray;
+@property(nonatomic,retain) NSArray *tmpSaveArray;
 
 
 @end
@@ -40,13 +44,15 @@
 @synthesize pickerStyle=_pickerStyle;
 @synthesize locate=_locate;
 @synthesize locatePicker = _locatePicker;
-@synthesize AllKeysForSalaryComparing;
 
+@synthesize compareCondition;
+@synthesize tmpRightArray;
+@synthesize tmpSaveArray;
 - (void)dealloc
 {
     [_locate release];
     [_locatePicker release];
-    [provinces release];
+   
     [super dealloc];
 }
 
@@ -57,6 +63,15 @@
     }
     
     return _locate;
+}
+
+- (DavidCompareType *) compareCondition{
+    
+    if (compareCondition==nil) {
+        compareCondition =[[DavidCompareType alloc] init];
+    }
+    
+    return compareCondition;
 }
 
 //初始化方法
@@ -73,12 +88,6 @@
         saveallKeysArray = [[DealWithNetWorkAndXmlHelper getsaveallKeysArray] retain];
         saveAllValuesArray = [[DealWithNetWorkAndXmlHelper getsaveAllValuesArray] retain];
         
-        
-        //获取 比较的城市 行业 学历等信息
-        self.AllKeysForSalaryComparing = [DealWithNetWorkAndXmlHelper getAllKeysForSalaryComparing];
-        
-        NSLog(@"薪酬查询界面 地区 keys 为 %@",AllKeysForSalaryComparing);
-        
         SaveDataSingleton *myData = [SaveDataSingleton DefaultSaveData];
         
         
@@ -86,37 +95,16 @@
         
         tmpSaveArray =[[NSArray alloc] initWithObjects:myData.cityItemDictionary,myData.IndustryItemsDictionary,myData.CompanyTypeItemsDictionary,myData.JobTypeItemsDictionary,myData.JobLevelItemsDictionary, myData.EducationItemsDictionary,nil];
         
+        self.tmpRightArray = [[NSArray alloc] init];
         
-        //将数据封装到字典中
-        tmpSaveSearchDictionary =[[NSMutableDictionary alloc] init];
-        
-        [tmpSaveSearchDictionary setObject:[tmpSaveArray objectAtIndex:0] forKey:@"city"];
-        [tmpSaveSearchDictionary setObject:[tmpSaveArray objectAtIndex:1] forKey:@"industry"];
-        [tmpSaveSearchDictionary setObject:[tmpSaveArray objectAtIndex:2] forKey:@"corpproperty"];
-        [tmpSaveSearchDictionary setObject:[tmpSaveArray objectAtIndex:3] forKey:@"jobcat"];
-        [tmpSaveSearchDictionary setObject:[tmpSaveArray objectAtIndex:4] forKey:@"joblevel"];
-        [tmpSaveSearchDictionary setObject:[tmpSaveArray objectAtIndex:5] forKey:@"educationid"];
-        
-
-        
-        //动态显示的数据
-        tmpRightDictionary = [tmpSaveSearchDictionary objectForKey:@"city"];
+        self.tmpRightArray = [[tmpSaveArray objectAtIndex:0] allValues] ;
         
         
         NSLog(@"在薪酬比较界面 各个选择列表 count= %d",[tmpSaveArray count]);
-
         
-        provinces = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"city.plist" ofType:nil]];
-            
-        cities = [[provinces objectAtIndex:0] objectForKey:@"cities"];
-            
-            //当前显示的第一个省份 即北京
-            self.locate.state = [[provinces objectAtIndex:0] objectForKey:@"state"];
-            //城市中的第一个城市
-            self.locate.city = [cities objectAtIndex:0];
         
     }
-        
+    
     return self;
     
 }
@@ -127,7 +115,7 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    
+    //有两列
     return 2;
 }
 
@@ -138,11 +126,11 @@
             return [saveallKeysArray count];
             break;
         case 1:
-            return [tmpRightDictionary count]; // 默认显示 城市 城市的第一行
+            return [self.tmpRightArray count]; // 默认显示 城市 城市的第一行
             break;
         default:
             return 0;
-        break;
+            break;
     }
 }
 
@@ -150,45 +138,64 @@
 {
     //一下开始写  每行每列要显示的值
     
-        switch (component) {
-            case 0:
-                return [[provinces objectAtIndex:row] objectForKey:@"state"];
-                break;
-            case 1:
-                return [cities objectAtIndex:row];
-                break;
-            default:
-                return @"";
-                break;
-        }
-   
+    switch (component) {
+        case 0:
+            //显示的是要比较的类别
+            return [saveAllValuesArray objectAtIndex:row];
+            break;
+        case 1:
+            //每个类别下具体的项目
+            return [self.tmpRightArray objectAtIndex:row];
+            break;
+        default:
+            return @"";
+            break;
+    }
+    
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-   
-        switch (component) {
-            case 0:
-                //正确取得城市数据
-                cities = [[provinces objectAtIndex:row] objectForKey:@"cities"];
-                [self.locatePicker selectRow:0 inComponent:1 animated:YES];
-                [self.locatePicker reloadComponent:1];
-                
-                self.locate.state = [[provinces objectAtIndex:row] objectForKey:@"state"];
-                self.locate.city = [cities objectAtIndex:0];
-                break;
-            case 1:
-                self.locate.city = [cities objectAtIndex:row];
-                break;
-            default:
-                break;
-        }
-   
+    //这个方法很重要，不仅要取得用户选择的是什么，还要动态改变第一列中要显示的值
+    switch (component) {
+        case 0:
+            
+            //正确取得第一列中要显示的数值
+            self.tmpRightArray =[ [tmpSaveArray objectAtIndex:row] allValues] ;
+            //刷新第一列的数据
+            [self.locatePicker reloadComponent:1];
+
+            //动态改变的时候默认选择 第一列中的第一行
+            [self.locatePicker selectRow:0 inComponent:1 animated:YES];
+                        
+            //保存用户的选择
+            self.compareCondition.comparetype = [saveallKeysArray objectAtIndex:row];
+            
+            NSLog(@"用户要比较的类型 是 %@ 用户选择的是 %@ ",[saveallKeysArray objectAtIndex:row],[saveAllValuesArray objectAtIndex:row]);
+            
+            //取得正确的字典
+            tmpdic = [tmpSaveArray objectAtIndex:row];
+            
+            
+            //默认选择的值是第一列中的第一行
+            self.compareCondition.comparevalue = [[tmpdic allKeysForObject:[tmpRightArray  objectAtIndex:0]] objectAtIndex:0];               
+            
+            break;
+            //选择的是第一列
+        case 1:
+        self.compareCondition.comparevalue = [[tmpdic allKeysForObject:[self.tmpRightArray  objectAtIndex:row]] objectAtIndex:0];
+            
+            NSLog(@"用户选择的具体哪一个 %@",[self.tmpRightArray objectAtIndex:row]);
+            break;
+        default:
+            break;
+    }
+    
     
     if([self.delegate respondsToSelector:@selector(pickerDidChaneStatus:)]) {
         [self.delegate pickerDidChaneStatus:self];
     }
-
+    
 }
 
 
@@ -219,4 +226,15 @@
     
 }
 
+- (IBAction)compareSalary:(id)sender {
+    
+    
+    NSLog(@"在自定义pickview中 点击了比较按钮");
+    
+    if ([self.delegate respondsToSelector:@selector(pickerDidClickCompareBn:)]) {
+        [self.delegate pickerDidClickCompareBn:self];
+    }
+    
+    
+}
 @end

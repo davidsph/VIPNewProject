@@ -108,6 +108,9 @@
     
     
     NSString *selectedItem = [tmpValueArray objectAtIndex:indexPath.row];
+    
+    
+    
     NSLog(@"用户选择的是 %@",selectedItem);
     
     //代理传值 将用户的选择返回到显示列表

@@ -12,14 +12,16 @@
 @interface VIPSalaryCompareVontroller : UIViewController<MBProgressHUDDelegate>
 {
     
-//    NSMutableDictionary *thisDictionaryForPieChart;
-//    NSArray *salaryLevelKeyArray;
-//    //暂时保存所有比较条件数据的字典
-//    NSArray *tmpSaveArray;
-//    NSMutableDictionary *tmpSaveSearchDictionary;
+
     
    
 }
+
+
+
+@property(nonatomic,retain)NSArray *itemsAllKeys;
+
+
 
 @property (retain, nonatomic) IBOutlet UILabel *firstLowLabel;
 
@@ -59,8 +61,25 @@
 
 @property (retain, nonatomic) IBOutlet UIPickerView *pickerview;
 
+
+@property (retain, nonatomic) IBOutlet UILabel *cityLabel;
+
+@property (retain, nonatomic) IBOutlet UILabel *industryLabel;
+
+@property (retain, nonatomic) IBOutlet UILabel *educationLabel;
+
+@property (retain, nonatomic) IBOutlet UILabel *companyType;
+
+@property (retain, nonatomic) IBOutlet UILabel *jobType;
+
+@property (retain, nonatomic) IBOutlet UILabel *jobLevel;
+
+
+
 @property(nonatomic,retain)NSMutableArray *salaryInfoArray; //服务器返回的薪酬信息 按照顺序 排列
-@property(nonatomic,retain)NSMutableDictionary *salarySearchInfoDictionary; //这是用户选择的项目
+@property(nonatomic,retain)NSMutableDictionary *salarySearchInfoDictionary; //这是用户选择的项目  
+@property(nonatomic,retain)NSMutableDictionary *salarySearchInfoDictionaryForshow; //这是为显示封装的数据
+
 @property(nonatomic,retain)NSMutableDictionary *AllKeysForSalaryComparing; //获取比较信息 城市等
 - (IBAction)compare:(id)sender;
 

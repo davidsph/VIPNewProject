@@ -19,6 +19,7 @@
 @synthesize tmpSaveArray;
 @synthesize itemAllkeys;
 @synthesize prepareItemsForNetWork;
+@synthesize prepareItemsWithNameForSalarySearch;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -115,6 +116,11 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     
     //用户查询的关键字信息
     controller.salarySearchInfoDictionary = prepareItemsForNetWork;
+    //用户显示 用的数据
+    controller.salarySearchInfoDictionaryForshow=prepareItemsWithNameForSalarySearch;
+    
+    //传allKeys
+    controller.itemsAllKeys = self.itemAllkeys;
     
     [self.navigationController pushViewController:controller animated:YES];
     //释放
@@ -192,6 +198,7 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     
     prepareItemsForNetWork = [[NSMutableDictionary alloc] init];
     
+    prepareItemsWithNameForSalarySearch =[[NSMutableDictionary alloc] init];
     //默认是有经验
     [prepareItemsForNetWork removeObjectForKey:[itemAllkeys objectAtIndex:0]];
     [prepareItemsForNetWork setObject:[NSNumber numberWithInt:1] forKey:[self.itemAllkeys objectAtIndex:0]];
@@ -225,12 +232,22 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
         [prepareItemsForNetWork removeObjectForKey:[itemAllkeys objectAtIndex:0]];
         [prepareItemsForNetWork setObject:[NSNumber numberWithInt:1] forKey:[self.itemAllkeys objectAtIndex:0]];
         
+        [prepareItemsWithNameForSalarySearch removeObjectForKey:[itemAllkeys objectAtIndex:0]];
+        [prepareItemsWithNameForSalarySearch setObject:@"有经验" forKey:[itemAllkeys objectAtIndex:0]];
+        
+        
         
         
     } else{
         NSLog(@"没经验");
         [prepareItemsForNetWork removeObjectForKey:[itemAllkeys objectAtIndex:0]];
         [prepareItemsForNetWork setObject:[NSNumber numberWithInt:2] forKey:[self.itemAllkeys objectAtIndex:0]];
+        
+        [prepareItemsWithNameForSalarySearch removeObjectForKey:[itemAllkeys objectAtIndex:0]];
+        [prepareItemsWithNameForSalarySearch setObject:@"无经验" forKey:[itemAllkeys objectAtIndex:0]];
+
+        
+        
         
     }
     
@@ -379,6 +396,10 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     CustomcellForSalary *cell = (CustomcellForSalary *)[self.tableview cellForRowAtIndexPath:path];
     //获取用户的选择
     cell.tipTextField.text = itemName;
+    
+    
+    
+    
     //获得的是选择的那个字典数据
     NSDictionary *tmp = [tmpSaveArray objectAtIndex:path.row-1];
     
@@ -394,6 +415,18 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     //插入 指定key的value
     
     [prepareItemsForNetWork setObject:keyValue forKey:[self.itemAllkeys objectAtIndex:path.row]];
+    
+    
+    
+    //为后面的controller 显示数据   封装
+    [prepareItemsWithNameForSalarySearch removeObjectForKey:[itemAllkeys objectAtIndex:path.row]];
+    
+    [prepareItemsWithNameForSalarySearch setObject:itemName forKey:[itemAllkeys objectAtIndex:path.row]];
+
+    
+    
+    
+    
     
 }
 - (void)dealloc {

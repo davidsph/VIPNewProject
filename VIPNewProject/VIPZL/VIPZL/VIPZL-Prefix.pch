@@ -11,4 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+#define ERRORRequest @"haveNoResult"
+#define ERRORMessage @"errormessage"
+#define SUCCESS @"successmessage"
 #endif

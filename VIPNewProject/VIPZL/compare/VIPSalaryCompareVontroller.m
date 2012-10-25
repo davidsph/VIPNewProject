@@ -17,6 +17,8 @@
 {
     
     MBProgressHUD *HUD;
+    BOOL success;
+    
 }
 
 @property(nonatomic,retain)HZAreaPickerView *localPickView;
@@ -32,7 +34,6 @@
 
 
 
-
 @end
 
 
@@ -40,7 +41,8 @@
 
 @implementation VIPSalaryCompareVontroller
 
-
+@synthesize salarySearchInfoDictionaryForshow;
+@synthesize itemsAllKeys;
 @synthesize compareValues1,compareValues2,compareValues3,compareValues4,compareValues5;
 
 @synthesize saveComparingResultArray;
@@ -66,6 +68,12 @@
 @synthesize comLabel4;
 @synthesize comLabel5;
 @synthesize pickerview;
+@synthesize cityLabel;
+@synthesize industryLabel;
+@synthesize educationLabel;
+@synthesize companyType;
+@synthesize jobType;
+@synthesize jobLevel;
 
 @synthesize salaryInfoArray;
 @synthesize salarySearchInfoDictionary;
@@ -232,6 +240,20 @@
     
 }
 
+- (void) initComparelabelWhenShow{
+    
+       
+    self.cityLabel.text = [salarySearchInfoDictionaryForshow objectForKey:[itemsAllKeys objectAtIndex:1]];
+    self.industryLabel.text=[salarySearchInfoDictionaryForshow objectForKey:[itemsAllKeys objectAtIndex:2]];
+    self.educationLabel.text=[salarySearchInfoDictionaryForshow objectForKey:[itemsAllKeys objectAtIndex:3]];
+    self.companyType.text=[salarySearchInfoDictionaryForshow objectForKey:[itemsAllKeys objectAtIndex:4]];
+    self.jobType.text=[salarySearchInfoDictionaryForshow objectForKey:[itemsAllKeys objectAtIndex:5]];
+    self.jobLevel.text=[salarySearchInfoDictionaryForshow objectForKey:[itemsAllKeys objectAtIndex:6]];
+    
+        
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -308,10 +330,10 @@
     
 }
 
-
-//这个方法 执行查询操作  
+ 
+//这个方法 执行查询操作   
 - (void) pickerDidClickCompareBn:(HZAreaPickerView *)picker{
-    
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     
     self.comparetype = self.localPickView.compareCondition.comparetype;
     self.comparevalue = self.localPickView.compareCondition.comparevalue;
@@ -359,19 +381,30 @@
 
 - (void) hudWasHidden:(MBProgressHUD *)hud{
     
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     // Remove HUD from screen when the HUD was hidded
-	[HUD removeFromSuperview];
-	[HUD release];
+    if (HUD) {
+        [HUD removeFromSuperview];
+        [HUD release];
+    }
+	
+    if (success) {
+        
+        NSLog(@"执行更新界面操作");
+        [self initSecondLabels];
+        [self initCompareLabels];
+        
+    }
 
-    [self initSecondLabels];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"更新成功" message:@"OK" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [alert show];
-    [alert release];
     
+    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"更新成功" message:@"OK" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//    [alert show];
+//    [alert release];
+//    
     //执行更新界面操作10
     
-   
-    [self initCompareLabels];
+        
     
     
 }
@@ -385,22 +418,70 @@
 - (void) getSalaryComparingResultFromNetwork{
     
     
-    
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     //调用工具类方法  会得到一个数组 数组里面保存的是薪酬比较的结果 然后在显示在 界面上
+    NSLog(@"网络请求之前");
     
     self.saveComparingResultArray = [DealWithNetWorkAndXmlHelper getSalaryComparingResultFromNetwork:self.saveComparingConditionDictionary];
     
-    //等待数据返回
+    NSLog(@"网络请求之后");
+        //等待数据返回
    
     NSLog(@"返回的数据为 count %d",[self.saveComparingResultArray count]);
     
     
 }
 
+#pragma mark -
+#pragma mark 通知 告知 网络状态
+//显示警告框
+- (void) showAlertViewWhenRequestErrorHappen:(NSString *) errorMessage{
+    
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
+    UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"温馨提示" message:errorMessage delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+    
+    [alert show];
+    
+    [alert release];
+     
+}
 
 
-
-
+- (void) doWhenNetWorkReturn:(NSNotification *) noti{
+    
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
+    NSString *notiName = [noti name];
+    NSString *message = [[noti userInfo] objectForKey:ERRORMessage];
+    
+    if ([notiName isEqualToString:SUCCESS]) {
+        
+        success =YES;
+        NSLog(@"这是用通知的方式 通知数据请求成功");
+        
+        if ([self.saveComparingResultArray count]!=0) {
+            
+            NSLog(@"执行更新界面操作");
+            [self initSecondLabels];
+            [self initCompareLabels];
+        }  else{
+            
+            NSLog(@"数据为0");
+        }
+        
+    } 
+    
+    if ([notiName isEqualToString:ERRORRequest]) {
+        NSLog(@"这是用通知的方式 通知数据请求失败");
+        
+        success = NO;
+        
+        [self showAlertViewWhenRequestErrorHappen:message];
+        
+  
+    }
+    
+      
+}
 
 
 #pragma mark - View lifecycle
@@ -411,13 +492,19 @@
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     [super viewDidLoad];
     
+    //初始化 用户查询到的 薪酬数据  显示
     [self initFirstLabels];
+    
+    //显示 用户选择的 比较信息
+    [self initComparelabelWhenShow];
     
     //接受通知
      NSString *string = @"DidCLickCompareBnNotification";
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(pickerDidClickCompareBn:) name:string object:nil];
-    
+  
+                                          
+    [center addObserver:self selector:@selector(doWhenNetWorkReturn:) name:nil object:nil];
     
     saveComparingConditionDictionary = [[NSMutableDictionary alloc] initWithDictionary:salarySearchInfoDictionary copyItems:YES];
     
@@ -453,6 +540,12 @@
     [self setComLabel3:nil];
     [self setComLabel4:nil];
     [self setComLabel5:nil];
+    [self setCityLabel:nil];
+    [self setIndustryLabel:nil];
+    [self setEducationLabel:nil];
+    [self setCompanyType:nil];
+    [self setJobType:nil];
+    [self setJobLevel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -471,6 +564,11 @@
     
 }
 - (void)dealloc {
+    
+    
+    [[NSNotificationCenter  defaultCenter] removeObserver:self];
+    
+    
     [pickerview release];
     [firstLowLabel release];
     [firstLowNormalLabel release];
@@ -492,6 +590,12 @@
     [comLabel3 release];
     [comLabel4 release];
     [comLabel5 release];
+    [cityLabel release];
+    [industryLabel release];
+    [educationLabel release];
+    [companyType release];
+    [jobType release];
+    [jobLevel release];
     [super dealloc];
 }
 

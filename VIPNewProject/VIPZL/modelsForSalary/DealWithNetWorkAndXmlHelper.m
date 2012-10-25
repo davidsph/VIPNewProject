@@ -10,6 +10,8 @@
 #import "ASIFormDataRequest.h"
 #import "GDataXMLNode.h"
 
+
+
 @interface DealWithNetWorkAndXmlHelper (network)
 
 //得到xml文件
@@ -131,7 +133,7 @@
 
 
 
-//从xml数据
+//从xml数据  解析薪酬比较数据
 + (NSMutableArray *) getSalaryComparingResultFromXMLString:(NSString *) urlString{
     
     
@@ -160,15 +162,26 @@
         
         NSString *result =[[[root children] objectAtIndex:0] stringValue];
         
+        NSString *message = [[[root children] objectAtIndex:1] stringValue];
+        
         NSLog(@"查询结果 result =%@",result);
         
-        
+        NSLog(@"请求的message = %@",message);
         
         if ([result isEqualToString:@"0"]) {
             
             NSLog(@"查询出错"); 
             //发送服务器出错通知
             
+            
+            
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithObjectsAndKeys:message,ERRORMessage, nil];
+            
+            NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+            [center postNotificationName:ERRORRequest object:self userInfo: dic];
+            
+  
+            return nil;
             
             
         } 
@@ -209,6 +222,9 @@
             NSLog(@"查询到的数据count =%d",[array count]);
             
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:SUCCESS object:self];
+            
+            
         }
         
         
@@ -217,7 +233,11 @@
         NSLog(@"请求有错误");
         
         
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:ERRORRequest object:self];
+            
         //发送服务器不响应通知
+        return nil;
     }
     
     return  [array autorelease];

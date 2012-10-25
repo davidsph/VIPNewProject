@@ -85,6 +85,8 @@
     [imgv addSubview:self.startDateLabel];
     [imgv addSubview:self.imageView];
     [imgv addSubview:self.contentTextView];
+    
+    isBack = NO;//返回的快捷方式没有开启。
  }
 
 #pragma mark - View lifecycle
@@ -158,17 +160,24 @@
 //实现返回
 -(void)back
 {
-    int c = [self.navigationController.viewControllers count];
-    promptView = [[UITableView alloc] initWithFrame:CGRectMake(100, 100, 0, 0)style:UITableViewStyleGrouped];
-    promptView.backgroundColor = [UIColor clearColor];
-    promptView.delegate = self;
-    promptView.dataSource = self;
-    promptView.tag = 100;
-    [self.contentTextView addSubview:promptView];
-    [UIView animateWithDuration:2 animations:^{
-        promptView.frame = CGRectMake(100,50, 110,40*c  );
-    }];
-    
+    if (isBack == NO) {
+        
+        int c = [self.navigationController.viewControllers count];
+        promptView = [[UITableView alloc] initWithFrame:CGRectMake(100, 100, 0, 0)style:UITableViewStyleGrouped];
+        promptView.backgroundColor = [UIColor clearColor];
+        promptView.delegate = self;
+        promptView.dataSource = self;
+        promptView.tag = 100;
+        [self.contentTextView addSubview:promptView];
+        [UIView animateWithDuration:2 animations:^{
+            promptView.frame = CGRectMake(100,50, 110,40*c  );
+        }];
+        isBack = YES;
+    }
+    else
+    {
+        
+    }
 }
 //表格协议
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -190,7 +199,7 @@
         cell.backgroundColor=[UIColor orangeColor];
         cell.textLabel.text = name;
         cell.backgroundColor = [UIColor brownColor];
-        cell.alpha = 0.8;
+        cell.alpha = 0.5;
         cell.textLabel.textColor = [UIColor whiteColor];
         return cell;
     
@@ -200,6 +209,7 @@
     
     if (indexPath.row == [self.navigationController.viewControllers count]-1) {
         [promptView removeFromSuperview];
+        isBack = NO;
     }
     else
     {

@@ -16,6 +16,7 @@
 #import "PersonnelMessageViewController.h"
 #import "Position_recordViewController.h"
 #import "PositionFavoriteViewController.h"
+#import "CompanListInfoViewController.h"
 
 @implementation VIPMyZhilianViewController
 @synthesize resumeNameLabel;
@@ -206,13 +207,14 @@
 - (void)pushNewPage:(Resume *)resume
 {
     //点击浏览简历 按钮 推出特定界面 展示公司列表
+    CompanListInfoViewController *controller =[[CompanListInfoViewController alloc] init];
     
+    //属性传值
+    controller.resumeItemsOfCompany = resume;
     
-//    CompanListInfoViewController *controller =[[CompanListInfoViewController alloc] init];
-//    //属性传值
-//    controller.resumeItemsOfCompany = resume;
-//    
-//    [self.navigationController pushViewController:controller animated:YES];
+    [self.navigationController pushViewController:controller animated:YES];
+    
+
 }
 //设置了默认属性后
 - (void)setDefaultResume:(NSString *)msg

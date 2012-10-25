@@ -20,19 +20,20 @@ typedef enum {
 //代理
 @protocol HZAreaPickerDelegate <NSObject>
 
-@required
-- (void) pickerDidClickCompareBn:(HZAreaPickerView *) picker;
+
+- (void)pickerDidClickCompareBn:(HZAreaPickerView *) picker;
 
 @optional
+
 - (void)pickerDidChaneStatus:(HZAreaPickerView *)picker;
 
 @end
 
 @interface HZAreaPickerView : UIView <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (assign, nonatomic) id <HZAreaPickerDelegate> delegate;
-@property (strong, nonatomic) IBOutlet UIPickerView *locatePicker;
-@property (strong, nonatomic) HZLocation *locate;
+@property (retain, nonatomic) id <HZAreaPickerDelegate> delegate;
+@property (retain, nonatomic) IBOutlet UIPickerView *locatePicker;
+@property (retain, nonatomic) HZLocation *locate;
 @property (nonatomic) HZAreaPickerStyle pickerStyle;
 @property(nonatomic,retain)DavidCompareType *compareCondition; //比较条件
 

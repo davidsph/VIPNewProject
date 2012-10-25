@@ -42,41 +42,65 @@
         reponse = [newRequest responseString];
         NSLog(@"请求的数据为:%@",reponse);
         
+        
+        
+        
+        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithXMLString:reponse options:0 error:nil];
+        
+        GDataXMLElement *root = [doc rootElement];
+        
+        NSString *result =[[[[[root children] objectAtIndex:0] elementsForName:@"result"]  objectAtIndex:0] stringValue] ;
+        
+        NSLog(@"查询结果 result =%@",result);
+        
+        if (result!=nil) {
+            
+        NSLog(@"查询出错"); 
+            //发送服务器出错通知
+               
+        } 
+        else
+            {
+              //打印几个孩子
+            NSLog(@"root children=%d",[root childCount]);
+            
+            NSString *low =[[[root nodesForXPath:@"//low" error:nil] objectAtIndex:0] stringValue];
+            NSLog(@"low = %@",low);
+                
+            [array addObject:low];
+            
+            NSString *low_normal= [[[root nodesForXPath:@"//low-normal" error:nil] objectAtIndex:0] stringValue];
+            NSLog(@"low_normal = %@",low_normal);
+            [array addObject:low_normal];
+            
+            NSString *normal = [[[root nodesForXPath:@"//normal" error:nil] objectAtIndex:0] stringValue];
+            NSLog(@"normal = %@",normal);
+            [array addObject:normal];
+            
+            NSString *normal_high = [[[root nodesForXPath:@"//normal-high" error:nil] objectAtIndex:0] stringValue];
+            NSLog(@"normal_high = %@",normal_high);
+            
+            [array addObject:normal_high];
+            
+            NSString *high = [[[root nodesForXPath:@"//high" error:nil] objectAtIndex:0] stringValue];
+            NSLog(@"high = %@",high);
+            [array addObject:high];
+            
+            
+            NSLog(@"查询到的数据count =%d",[array count]);
+            
+            
+        }
+        
+           
     } else {
         
         NSLog(@"请求有错误");
+        
+        
+        //发送服务器不响应通知
     }
 
-    
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithXMLString:reponse options:0 error:nil];
-    
-    GDataXMLElement *root = [doc rootElement];
-    //打印几个孩子
-    NSLog(@"root children=%d",[root childCount]);
-
-    NSString *low =[[[root nodesForXPath:@"//low" error:nil] objectAtIndex:0] stringValue];
-    NSLog(@"low = %@",low);
-    [array addObject:low];
-    
-    NSString *low_normal= [[[root nodesForXPath:@"//low-normal" error:nil] objectAtIndex:0] stringValue];
-    NSLog(@"low_normal = %@",low_normal);
-    [array addObject:low_normal];
-    
-    NSString *normal = [[[root nodesForXPath:@"//normal" error:nil] objectAtIndex:0] stringValue];
-    NSLog(@"normal = %@",normal);
-    [array addObject:normal];
-    
-    NSString *normal_high = [[[root nodesForXPath:@"//normal-high" error:nil] objectAtIndex:0] stringValue];
-    NSLog(@"normal_high = %@",normal_high);
-    
-    [array addObject:normal_high];
-    
-    NSString *high = [[[root nodesForXPath:@"//high" error:nil] objectAtIndex:0] stringValue];
-    NSLog(@"high = %@",high);
-    [array addObject:high];
-    
-        
-    NSLog(@"查询到的数据count =%d",[array count]);
     return  [array autorelease];
     
 }
@@ -84,7 +108,7 @@
 
 
 
-
+//根据查询条件 查询薪酬信息  返回的是 有顺序的 保存薪酬的数组
 +(NSMutableArray *) getSalaryInfoFromNetWork:(NSMutableDictionary *) dictionary{
     
     NSMutableString *string = [[NSMutableString alloc] initWithString:@"http://mobileinterface.zhaopin.com/iphone/payquery/query.service?"];
@@ -107,11 +131,134 @@
 
 
 
+//从xml数据
++ (NSMutableArray *) getSalaryComparingResultFromXMLString:(NSString *) urlString{
+    
+    
+    NSMutableArray * array =[[NSMutableArray alloc] init];
+    ASIFormDataRequest *newRequest = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlString]];
+    //发送请求
+    [newRequest startSynchronous];
+    
+    NSError *erroe= [newRequest error];
+    
+    NSString *reponse;
+    
+    
+    if (!erroe) {
+        
+        NSLog(@"请求成功");
+        reponse = [newRequest responseString];
+        NSLog(@"请求的数据为:%@",reponse);
+        
+        
+        
+        
+        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithXMLString:reponse options:0 error:nil];
+        
+        GDataXMLElement *root = [doc rootElement];
+        
+        NSString *result =[[[root children] objectAtIndex:0] stringValue];
+        
+        NSLog(@"查询结果 result =%@",result);
+        
+        
+        
+        if ([result isEqualToString:@"0"]) {
+            
+            NSLog(@"查询出错"); 
+            //发送服务器出错通知
+            
+            
+            
+        } 
+        else
+        {
+            //打印几个孩子
+            NSLog(@"root children=%d",[root childCount]);
+            
+            
+            GDataXMLElement *compareResult =[[root children] objectAtIndex:5];
+            
+            
+            NSLog(@"compareResult count = %d",[compareResult childCount]);
+            NSString *low =[[[compareResult children] objectAtIndex:0] stringValue];            
+            NSLog(@"low = %@",low);
+            
+            [array addObject:low];
+            
+            NSString *low_normal= [[[compareResult elementsForName:@"low-normal"] objectAtIndex:0] stringValue];
+            NSLog(@"low_normal = %@",low_normal);
+            [array addObject:low_normal];
+            
+            
+            NSString *normal = [[[compareResult children] objectAtIndex:2]stringValue];          
+            NSLog(@"normal = %@",normal);
+            [array addObject:normal];
+            
+            NSString *normal_high = [[[compareResult children] objectAtIndex:3]  stringValue];
+            NSLog(@"normal_high = %@",normal_high);
+            
+            [array addObject:normal_high];
+            
+            NSString *high = [[[compareResult children] objectAtIndex:4] stringValue];
+            NSLog(@"high = %@",high);
+            [array addObject:high];
+            
+            
+            NSLog(@"查询到的数据count =%d",[array count]);
+            
+            
+        }
+        
+        
+    } else {
+        
+        NSLog(@"请求有错误");
+        
+        
+        //发送服务器不响应通知
+    }
+    
+    return  [array autorelease];
+    
+      
+}
+
+
+//根据比较条件 查询比较 薪酬比较结果 返回的是有顺序的 保存薪酬 的数组
++ (NSMutableArray *) getSalaryComparingResultFromNetwork:(NSMutableDictionary *) dictionary{
+    
+    NSMutableString *string = [[NSMutableString alloc] initWithString:@"http://mobileinterface.zhaopin.com/iphone/payquery/comparequery.service?"];
+  
+    NSArray *itemsKey = [[self getAllKeys] retain];
+    [string appendFormat:@"%@=%d&",[itemsKey objectAtIndex:0],[[dictionary objectForKey:[itemsKey objectAtIndex:0]] intValue]];
+    
+    for (int i=1; i<7; i++) {
+        [string appendFormat:@"%@=%@&",[itemsKey objectAtIndex:i],[dictionary objectForKey:[itemsKey objectAtIndex:i]]];
+    }
+    
+    [string appendFormat:@"%@=%d&",[itemsKey objectAtIndex:7],[[dictionary objectForKey:[itemsKey objectAtIndex:7]] intValue]];
+    
+  
+    [string appendFormat:@"comparetype=%@&comparevalue=%@",[dictionary objectForKey:@"comparetype"],[dictionary objectForKey:@"comparevalue"]];
+    
+    
+    
+    NSLog(@"拼接之后的网址 ：%@",string);
+    
+    
+      
+    return [self getSalaryComparingResultFromXMLString:string];
+}
+
+
 
 + (NSArray *) getAllKeys{
     
-    NSArray *array = [[NSArray alloc] initWithObjects:@"experience",@"cityid",@"industryid",@"educationid",@"corppropertyid",@"jobcatid",@"joblevelid",@"salary",nil];
-    return [array autorelease];
+    NSArray *array2 = [[NSArray alloc] initWithObjects:@"experience",@"cityid",@"industryid",@"educationid",@"corppropertyid",@"jobcatid",@"joblevelid",@"salary",nil];
+    
+    return [array2 autorelease];
 }
 
 
@@ -142,7 +289,7 @@
     
 }
 
-//得到xml文件
+//从网络解析查询条件  城市 行业 等
 +(NSString *) getXMlStringFromNet{
     
     

@@ -66,6 +66,7 @@
 - (void) getSalaryFromNetWork{
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
 
+    //从网络获取 薪酬数据
     tmpSaveSalaryInfo = [[DealWithNetWorkAndXmlHelper getSalaryInfoFromNetWork:prepareItemsForNetWork] retain];
     
 NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
@@ -78,6 +79,10 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     
+
+
+    //活动指示图
+
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
@@ -85,8 +90,9 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     HUD.labelText = @"正在查询";
     
     
-    
+    //
     [HUD showWhileExecuting:@selector(getSalaryFromNetWork) onTarget:self withObject:nil animated:YES];
+    
     NSLog(@"待传递的参数为 count = %d", [prepareItemsForNetWork count]);
         
     NSLog(@"保存按钮");
@@ -95,16 +101,21 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
 #pragma mark -
 #pragma mark MBProgressHUDDelegate methods
 
+//在代理方法中  执行推送界面
 - (void)hudWasHidden:(MBProgressHUD *)hud {
 	// Remove HUD from screen when the HUD was hidded
 	[HUD removeFromSuperview];
 	[HUD release];
+    
     //创建controller
     VIPSalaryCompareVontroller *controller = [[VIPSalaryCompareVontroller alloc] init];
+    
     //查询到的薪水信息
     controller.salaryInfoArray = tmpSaveSalaryInfo;
+    
     //用户查询的关键字信息
     controller.salarySearchInfoDictionary = prepareItemsForNetWork;
+    
     [self.navigationController pushViewController:controller animated:YES];
     //释放
     [controller release];
@@ -355,6 +366,8 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
 #pragma mark -
 #pragma mark 选择界面返回时的代理
 
+
+//在这个方法中主要处理用户选择的项目  封装成字典形式
 - (void) VIPSelectedTableviewController:(VIPSelectedTableviewController *)controller didSelectItem:(NSString *)itemName atSelectIndexPath:(NSIndexPath *)path{
     
     //执行与服务器传值前的数据封装

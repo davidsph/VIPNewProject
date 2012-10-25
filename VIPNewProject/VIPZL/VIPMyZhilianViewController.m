@@ -13,7 +13,9 @@
 #import "IsLogin.h"
 #import "ResumeViewCell.h"
 #import "GetPath.h"
-
+#import "PersonnelMessageViewController.h"
+#import "Position_recordViewController.h"
+#import "PositionFavoriteViewController.h"
 
 @implementation VIPMyZhilianViewController
 @synthesize resumeNameLabel;
@@ -286,16 +288,25 @@
             case 0:
             {
                 NSLog(@"推出未读人事来信");
+                PersonnelMessageViewController *psmss = [[PersonnelMessageViewController alloc] init];
+                [self.navigationController pushViewController:psmss animated:YES];
+                [psmss release];
                 break;
             }
             case 1:
             {
                 NSLog(@"推出职位申请记录");
+                Position_recordViewController *p1 = [[Position_recordViewController alloc] init];
+                [self.navigationController pushViewController:p1 animated:YES];
+                [p1 release];
                 break;
             }
             case 2:
             {
                 NSLog(@"推出职位收藏夹");
+                PositionFavoriteViewController *p2 = [[PositionFavoriteViewController alloc] init];
+                [self.navigationController pushViewController:p2 animated:YES];
+                [p2 release];
                 break;
             }
             default:

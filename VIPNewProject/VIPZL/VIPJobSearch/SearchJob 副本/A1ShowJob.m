@@ -117,10 +117,11 @@
     //tabBar
     //        NSArray *tabBarArr = [NSArray arrayWithObjects:@"A",@"B",@"C",@"D", nil];
     UITabBar *tabBar = [[[UITabBar alloc]initWithFrame:CGRectMake(0, 371, 320, 45)]autorelease];
-    tabBar.backgroundImage = [UIImage imageNamed:@"bottombar.png"];
+    //tabBar.backgroundImage = [UIImage imageNamed:@"bottombar.png"];
+    tabBar.backgroundColor = [UIColor brownColor];
+    tabBar.tintColor = [UIColor brownColor];
     //        [tabBar setItems:tabBarArr];
     [self.view addSubview:tabBar];
-    
     
     //joinJob
     UIButton *joinJobButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -297,8 +298,8 @@
 
 -(void)backupjob
 {
-    IsLogin *isLg=[[IsLogin alloc]init];
-    
+    //IsLogin *isLg=[[IsLogin alloc]init];
+    IsLogin *isLg = [IsLogin defaultIsLogin];
     if (isLg.isLogin) {
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(CollectJob:) name:@"收藏职位" object:nil];
         [CollectJob CollectJobWithUticket:isLg.uticket JobNumber:self.job.jobNumber];
@@ -321,12 +322,11 @@
 }
 -(void)loginedCollectJob
 {
-    IsLogin *isLg=[[IsLogin alloc]init];
+    //IsLogin *isLg=[[IsLogin alloc]init];
+    IsLogin *isLg = [IsLogin defaultIsLogin];
     [[NSNotificationCenter defaultCenter]removeObserver:self];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(CollectJob:) name:@"收藏职位" object:nil];
     [CollectJob CollectJobWithUticket:isLg.uticket JobNumber:self.job.jobNumber];
-    
-    
 }
 
 

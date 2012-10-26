@@ -163,7 +163,6 @@
     NSArray *accounts = [NSArray arrayWithObjects:@"",@"", nil];
     [accounts writeToFile:[self filePath] atomically:YES];
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 - (void)addresume 
 {
@@ -350,6 +349,5 @@
     NSString *path1 = [docPath stringByAppendingPathComponent:@"account"];
     return path1;
 }
-
 
 @end

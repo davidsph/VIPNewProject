@@ -367,7 +367,7 @@
 
 #pragma mark -
 #pragma mark 这个也是pickview中的代理方法 
-//这个方法 执行查询操作    这里使用
+//这个方法 执行查询操作    这里使用通知的方法来做的
 - (void) pickerDidClickCompareBn:(HZAreaPickerView *)picker{
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     
@@ -517,8 +517,7 @@
     }
     
     
-    //在这里移除通知  通知返回的时候 移除通知 不会重复调用方法
-     [[NSNotificationCenter  defaultCenter] removeObserver:self];
+   
       
 }
 
@@ -537,13 +536,14 @@
     //显示 用户选择的 比较信息
     [self initComparelabelWhenShow];
     
-//    //接受通知
-//     NSString *string = @"DidCLickCompareBnNotification";
-//    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-//    [center addObserver:self selector:@selector(pickerDidClickCompareBn:) name:string object:nil];
-//  
-//                                          
-//    [center addObserver:self selector:@selector(doWhenNetWorkReturn:) name:nil object:nil];
+    //接受通知
+     NSString *string = @"DidCLickCompareBnNotification";
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(pickerDidClickCompareBn:) name:string object:nil];
+  
+                                          
+    [center addObserver:self selector:@selector(doWhenNetWorkReturn:) name:nil object:nil];
     
     saveComparingConditionDictionary = [[NSMutableDictionary alloc] initWithDictionary:salarySearchInfoDictionary copyItems:YES];
     
@@ -599,15 +599,21 @@
 
 - (IBAction)compare:(id)sender {
     
-    //当用户点击我想比较的时候 接受通知
     
-    //接受通知
-    NSString *string = @"DidCLickCompareBnNotification";
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(pickerDidClickCompareBn:) name:string object:nil];
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     
-    
-    [center addObserver:self selector:@selector(doWhenNetWorkReturn:) name:nil object:nil];
+//    //当用户点击我想比较的时候 接受通知
+//    
+//    //接受通知   
+//    
+//    
+//    NSString *string = @"DidCLickCompareBnNotification";
+//    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//    
+//    [center addObserver:self selector:@selector(pickerDidClickCompareBn:) name:string object:nil];
+//    
+//    
+//    [center addObserver:self selector:@selector(doWhenNetWorkReturn:) name:nil object:nil];
 
     self.localPickView = [[HZAreaPickerView alloc] initWithStyle:HZAreaPickerWithStateAndCity delegate:self];
     
@@ -635,7 +641,8 @@
 - (void)dealloc {
     
     
-   
+    //在这里移除通知  通知返回的时候 移除通知 不会重复调用方法
+    [[NSNotificationCenter  defaultCenter] removeObserver:self];
     
     
     [pickerview release];

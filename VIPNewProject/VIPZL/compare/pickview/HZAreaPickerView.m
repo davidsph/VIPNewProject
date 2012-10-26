@@ -267,6 +267,7 @@
     NSNotificationCenter *ceter = [NSNotificationCenter defaultCenter];
     [ceter postNotificationName:string object:self];
     
+    NSLog(@"发送 比较按钮 点击成功");
     
     if (self.delegate!=nil) {
         

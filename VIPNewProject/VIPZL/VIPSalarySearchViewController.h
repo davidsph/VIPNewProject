@@ -12,6 +12,9 @@
 @interface VIPSalarySearchViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,VIPSelectedTableviewControllerDelegate,MBProgressHUDDelegate>
 
 {
+        
+    UITextField *keyboardTF;  //键盘接受的TF
+    UIButton *doneInKeyboardButton;//数字键盘按钮
     
     MBProgressHUD *HUD;
     NSArray *selextedArrar;//选择项目提示文字数组

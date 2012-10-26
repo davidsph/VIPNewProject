@@ -39,10 +39,64 @@
 
 #pragma mark -
 #pragma mark textfield 代理
+//  键盘通知执行的方法
+//通知执行的方法
+- (void)handleKeyboardWillHide:(NSNotification *)notification 
+{
+    if (doneInKeyboardButton.superview) 
+    {
+        [doneInKeyboardButton removeFromSuperview];
+    }
+    
+
+    
+}
+
+- (void)handleKeyboardDidShow:(NSNotification *)notification  
+{  
+    
+    
+    
+    
+    
+    // create custom button
+    if (doneInKeyboardButton == nil) 
+    {
+        doneInKeyboardButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+        
+        doneInKeyboardButton.frame = CGRectMake(0, 480 - 53, 106, 53);
+        doneInKeyboardButton.adjustsImageWhenHighlighted = NO;
+        [doneInKeyboardButton setImage:[UIImage imageNamed:@"btn_done_up.png"] forState:UIControlStateNormal];
+        [doneInKeyboardButton setImage:[UIImage imageNamed:@"btn_done_down.png"] forState:UIControlStateHighlighted];
+        
+        [doneInKeyboardButton addTarget:self action:@selector(finishAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    // locate keyboard view
+    UIWindow *tempWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
+    [tempWindow addSubview:doneInKeyboardButton];
+    
+    
+    
+    
+}  
+// 数字键盘按钮执行的方法
+-(void)finishAction
+{
+    
+    
+     [prepareItemsForNetWork removeObjectForKey:[itemAllkeys objectAtIndex:7]];
+    
+     [prepareItemsForNetWork setObject:keyboardTF.text forKey:[itemAllkeys objectAtIndex:7]];
+    
+    [keyboardTF resignFirstResponder];
+   
+}
+
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{
     
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
-    [prepareItemsForNetWork setObject:textField.text forKey:[itemAllkeys objectAtIndex:7]];
+   
     [textField resignFirstResponder];
     
     return  YES;
@@ -195,10 +249,14 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
         view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
         
         
-        UIButton *bn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *bn = [UIButton buttonWithType:UIButtonTypeCustom];
         
         bn.frame=CGRectMake(100, 0, 130, 37);
-        [bn setTitle:@"保存" forState:UIControlStateNormal];
+        [bn setTitle:@"查询薪酬" forState:UIControlStateNormal];
+        //添加背景图片
+        
+        
+        [bn setBackgroundImage:[UIImage imageNamed:@"loginNormal@2x.png"] forState:UIControlStateNormal];
         [bn addTarget:self action:@selector(bnClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         [view addSubview:bn];
@@ -229,6 +287,10 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     
     
     //注册通知 
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];  
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(doSalarySearchWhenNotifictionCome:) name:nil object:nil];
@@ -384,6 +446,10 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
         thiscell.selectedLabel.text = [selextedArrar objectAtIndex:indexPath.row];
         
         if (indexPath.row==7) {
+            
+            thiscell.tipTextField.keyboardType = UIKeyboardTypeNumberPad;
+            keyboardTF = thiscell.tipTextField;
+            
             
             
             //用户交互打开

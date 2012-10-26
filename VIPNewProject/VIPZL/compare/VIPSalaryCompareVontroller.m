@@ -80,6 +80,7 @@
 @synthesize compareCon1;
 @synthesize compareCon2;
 @synthesize compareConditionLabel;
+@synthesize thisImageViewPretty;
 
 @synthesize salaryInfoArray;
 @synthesize salarySearchInfoDictionary;
@@ -481,6 +482,9 @@
 
 - (void) doWhenNetWorkReturn:(NSNotification *) noti{
     
+    
+    
+    
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     NSString *notiName = [noti name];
     NSString *message = [[noti userInfo] objectForKey:ERRORMessage];
@@ -512,6 +516,9 @@
   
     }
     
+    
+    //在这里移除通知  通知返回的时候 移除通知 不会重复调用方法
+     [[NSNotificationCenter  defaultCenter] removeObserver:self];
       
 }
 
@@ -530,13 +537,13 @@
     //显示 用户选择的 比较信息
     [self initComparelabelWhenShow];
     
-    //接受通知
-     NSString *string = @"DidCLickCompareBnNotification";
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(pickerDidClickCompareBn:) name:string object:nil];
-  
-                                          
-    [center addObserver:self selector:@selector(doWhenNetWorkReturn:) name:nil object:nil];
+//    //接受通知
+//     NSString *string = @"DidCLickCompareBnNotification";
+//    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//    [center addObserver:self selector:@selector(pickerDidClickCompareBn:) name:string object:nil];
+//  
+//                                          
+//    [center addObserver:self selector:@selector(doWhenNetWorkReturn:) name:nil object:nil];
     
     saveComparingConditionDictionary = [[NSMutableDictionary alloc] initWithDictionary:salarySearchInfoDictionary copyItems:YES];
     
@@ -581,6 +588,7 @@
     [self setCompareCon1:nil];
     [self setCompareCon2:nil];
     [self setCompareConditionLabel:nil];
+    [self setThisImageViewPretty:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -591,6 +599,16 @@
 
 - (IBAction)compare:(id)sender {
     
+    //当用户点击我想比较的时候 接受通知
+    
+    //接受通知
+    NSString *string = @"DidCLickCompareBnNotification";
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(pickerDidClickCompareBn:) name:string object:nil];
+    
+    
+    [center addObserver:self selector:@selector(doWhenNetWorkReturn:) name:nil object:nil];
+
     self.localPickView = [[HZAreaPickerView alloc] initWithStyle:HZAreaPickerWithStateAndCity delegate:self];
     
     self.localPickView.delegate=self;
@@ -598,10 +616,26 @@
         
     
 }
+
+- (IBAction)changeImageWhenSwip:(id)sender {
+    
+    NSLog(@"清扫手势");
+    UIImage *image1 = [UIImage imageNamed:@"chart1.png"];
+    UIImage *image2 = [UIImage imageNamed:@"chart2.png"];
+    UIImage *image3 = [UIImage imageNamed:@"chart3.png"];
+    
+    NSArray *imageArray = [[NSArray  alloc] initWithObjects:image1,image2,image3, nil];
+    
+    int i = arc4random()%3;
+    self.thisImageViewPretty.image =[imageArray objectAtIndex:i];
+    
+    [imageArray release];
+    
+   }
 - (void)dealloc {
     
     
-    [[NSNotificationCenter  defaultCenter] removeObserver:self];
+   
     
     
     [pickerview release];
@@ -634,6 +668,7 @@
     [compareCon1 release];
     [compareCon2 release];
     [compareConditionLabel release];
+    [thisImageViewPretty release];
     [super dealloc];
 }
 

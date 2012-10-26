@@ -80,6 +80,10 @@
 
 @property (retain, nonatomic) IBOutlet UILabel *compareConditionLabel;
 
+@property (retain, nonatomic) IBOutlet UIImageView *thisImageViewPretty;
+
+
+
 
 @property(nonatomic,retain)NSMutableArray *salaryInfoArray; //服务器返回的薪酬信息 按照顺序 排列
 @property(nonatomic,retain)NSMutableDictionary *salarySearchInfoDictionary; //这是用户选择的项目  
@@ -89,5 +93,6 @@
 - (IBAction)compare:(id)sender;
 
 
+- (IBAction)changeImageWhenSwip:(id)sender;
 
 @end

@@ -12,4 +12,6 @@
 
 @synthesize comparetype;
 @synthesize comparevalue;
+@synthesize comparetypeName;
+@synthesize comparevalueName;
 @end

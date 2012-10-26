@@ -74,6 +74,11 @@
 
 @property (retain, nonatomic) IBOutlet UILabel *jobLevel;
 
+@property (retain, nonatomic) IBOutlet UILabel *compareCon1;
+
+@property (retain, nonatomic) IBOutlet UILabel *compareCon2;
+
+@property (retain, nonatomic) IBOutlet UILabel *compareConditionLabel;
 
 
 @property(nonatomic,retain)NSMutableArray *salaryInfoArray; //服务器返回的薪酬信息 按照顺序 排列

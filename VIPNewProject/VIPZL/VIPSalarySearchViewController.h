@@ -17,6 +17,8 @@
     NSArray *selextedArrar;//选择项目提示文字数组
     NSArray *tipArray; //提示文字数组
     NSMutableArray *tmpSaveSalaryInfo;
+    
+    BOOL isNetWorkSuccess;
 }
 
 

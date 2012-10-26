@@ -88,7 +88,7 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     HUD.dimBackground = YES;
-    HUD.labelText = @"正在查询";
+    HUD.labelText = @"正在查询,请您稍等";
     
     
     //
@@ -99,6 +99,51 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     NSLog(@"保存按钮");
 }
 
+
+- (void) showAlerInfoWhenErrorHappen:(NSString *) error{
+    
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
+    UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"温馨提示" message:error delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+    
+    [alert show];
+    
+    [alert release];
+
+}
+
+#pragma mark -
+#pragma mark 通知来到时  进行的操作
+
+
+- (void) doSalarySearchWhenNotifictionCome:(NSNotification *) notifictionName{
+    
+    
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
+    NSString *notiName = [notifictionName name];
+    NSString *message = [[notifictionName userInfo] objectForKey:ERRORMessage];
+    
+    if ([notiName isEqualToString:SUCCESSResultFORSALARYSearch]) {
+        
+        isNetWorkSuccess =YES;
+        NSLog(@"这是用通知的方式 通知数据请求成功");
+        
+               
+    } 
+    
+    if ([notiName isEqualToString:ERRORRequest]) {
+        NSLog(@"这是用通知的方式 通知数据请求失败");
+        
+        isNetWorkSuccess = NO;
+        
+      [self showAlerInfoWhenErrorHappen:message];
+        
+        
+    }
+
+       
+}
+    
+    
 #pragma mark -
 #pragma mark MBProgressHUDDelegate methods
 
@@ -108,6 +153,11 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
 	[HUD removeFromSuperview];
 	[HUD release];
     
+    
+    //如果成功 则跳转到下一个界面
+    if (isNetWorkSuccess) {
+        
+   
     //创建controller
     VIPSalaryCompareVontroller *controller = [[VIPSalaryCompareVontroller alloc] init];
     
@@ -124,7 +174,9 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
     
     [self.navigationController pushViewController:controller animated:YES];
     //释放
+    
     [controller release];
+    }
 
 	HUD = nil;
 }
@@ -173,6 +225,14 @@ NSLog(@"指示图中得到的数据count为：%d",[tmpSaveSalaryInfo count]);
 
 - (void)viewDidLoad
 {
+    
+    
+    
+    //注册通知 
+    
+    NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(doSalarySearchWhenNotifictionCome:) name:nil object:nil];
+    
     
     self.itemAllkeys = [DealWithNetWorkAndXmlHelper getAllKeys];
     

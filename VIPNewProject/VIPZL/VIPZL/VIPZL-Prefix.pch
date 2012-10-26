@@ -11,7 +11,12 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-#define ERRORRequest @"haveNoResult"
-#define ERRORMessage @"errormessage"
-#define SUCCESS @"successmessage"
+
+#define ERRORRequest @"haveNoResult"  //薪酬比较时 返回错误 通知名字
+#define ERRORMessage @"errormessage"   //错误类型的提示信息 
+#define SUCCESS @"successmessage"   //薪酬比较时  正确时 通知 
+#define NETWORKERROR @"网络服务异常，请检查网络连接"  //网络 url错误 服务器不响应 等其他错误通知
+#define ERRORRequestFORSALARYSearch @"SalarySearchError"  //薪酬查询 错误 返回时 通知 
+#define SUCCESSResultFORSALARYSearch @"SalarySearchSuccess"  //薪酬查询 正确返回时  通知
+
 #endif

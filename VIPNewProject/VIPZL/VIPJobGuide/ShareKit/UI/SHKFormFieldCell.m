@@ -120,7 +120,7 @@
 }
 
 
-#pragma mark -
+#pragma mark ------
 
 - (void)setSettings:(SHKFormFieldSettings *)s
 {

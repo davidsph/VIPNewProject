@@ -44,6 +44,8 @@
 
 @end
 
+
+//这是单例模式 保存信息  已经提取出去  放在这里 只是供以后总结用
 @interface SaveItemsWithDictionary : NSObject {
 @private
     NSMutableDictionary *cityItemDictionary; //城市

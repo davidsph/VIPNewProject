@@ -12,4 +12,7 @@
 
 @property(nonatomic,retain)NSString *comparetype; //比较的类型
 @property(nonatomic,retain)NSString *comparevalue; //比较的值
-@end
+
+@property(nonatomic,retain)NSString *comparetypeName; //供显示用
+@property(nonatomic,retain)NSString *comparevalueName; //供显示用
+@end 

@@ -27,6 +27,10 @@
 
 @implementation DealWithNetWorkAndXmlHelper
 
+
+
+#pragma mark -
+#pragma mark 解析xml数据 返回查询的薪酬信息  xml->>>>>>>>>查询到的薪酬数据
 + (NSMutableArray *) getSalaryInfoFromXML:(NSString *) string{
     
     
@@ -54,21 +58,36 @@
         NSString *result =[[[[[root children] objectAtIndex:0] elementsForName:@"result"]  objectAtIndex:0] stringValue] ;
         
         NSLog(@"查询结果 result =%@",result);
+        NSString *message = [[[root children] objectAtIndex:1] stringValue];
+        NSLog(@"请求的message = %@",message);
         
-        if (result!=nil) {
+        
+        
+        if ([result isEqualToString:@"0"]) {
             
-        NSLog(@"查询出错"); 
+            
+          
+            NSLog(@"查询出错"); 
             //发送服务器出错通知
-               
+            
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithObjectsAndKeys:message,ERRORMessage, nil];
+            
+            NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+            [center postNotificationName:ERRORRequestFORSALARYSearch object:self userInfo: dic];
+            
+            [dic release];
+            
+            return  nil;
+                    
         } 
         else
-            {
-              //打印几个孩子
+        {
+            //打印几个孩子
             NSLog(@"root children=%d",[root childCount]);
             
             NSString *low =[[[root nodesForXPath:@"//low" error:nil] objectAtIndex:0] stringValue];
             NSLog(@"low = %@",low);
-                
+            
             [array addObject:low];
             
             NSString *low_normal= [[[root nodesForXPath:@"//low-normal" error:nil] objectAtIndex:0] stringValue];
@@ -91,25 +110,38 @@
             
             NSLog(@"查询到的数据count =%d",[array count]);
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:SUCCESSResultFORSALARYSearch object:self];
+            
             
         }
         
-           
+        
     } else {
         
         NSLog(@"请求有错误");
         
         
         //发送服务器不响应通知
-    }
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:NETWORKERROR,ERRORMessage, nil];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:ERRORRequest object:self userInfo:dict];
+        
+        [dict release];
+        
+        //发送服务器不响应通知
+        return nil;
 
+             
+    }
+    
     return  [array autorelease];
     
 }
 
 
 
-
+#pragma mark -
+#pragma mark 查询薪酬信息 封装用户传进来的字典 >>>>>>url 
 //根据查询条件 查询薪酬信息  返回的是 有顺序的 保存薪酬的数组
 +(NSMutableArray *) getSalaryInfoFromNetWork:(NSMutableDictionary *) dictionary{
     
@@ -121,7 +153,7 @@
         [string appendFormat:@"%@=%@&",[itemsKey objectAtIndex:i],[dictionary objectForKey:[itemsKey objectAtIndex:i]]];
     }
     
-   [string appendFormat:@"%@=%d",[itemsKey objectAtIndex:7],[[dictionary objectForKey:[itemsKey objectAtIndex:7]] intValue]];
+    [string appendFormat:@"%@=%d",[itemsKey objectAtIndex:7],[[dictionary objectForKey:[itemsKey objectAtIndex:7]] intValue]];
     
     
     NSLog(@"拼接之后的网址 ：%@",string);
@@ -132,7 +164,8 @@
 }
 
 
-
+#pragma mark -
+#pragma mark 获得薪酬比较信息 解析xml 数据 返回 数组  xml----->>>>>薪酬数组
 //从xml数据  解析薪酬比较数据
 + (NSMutableArray *) getSalaryComparingResultFromXMLString:(NSString *) urlString{
     
@@ -152,10 +185,6 @@
         NSLog(@"请求成功");
         reponse = [newRequest responseString];
         NSLog(@"请求的数据为:%@",reponse);
-        
-        
-        
-        
         GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithXMLString:reponse options:0 error:nil];
         
         GDataXMLElement *root = [doc rootElement];
@@ -180,7 +209,8 @@
             NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
             [center postNotificationName:ERRORRequest object:self userInfo: dic];
             
-  
+            [dic release];
+            
             return nil;
             
             
@@ -233,24 +263,30 @@
         NSLog(@"请求有错误");
         
         
+        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:NETWORKERROR,ERRORMessage, nil];
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:ERRORRequest object:self];
-            
+        [[NSNotificationCenter defaultCenter] postNotificationName:ERRORRequest object:self userInfo:dict];
+        
+        [dict release];
+        
         //发送服务器不响应通知
         return nil;
     }
     
     return  [array autorelease];
     
-      
+    
 }
 
+
+#pragma mark -
+#pragma mark 获得薪酬比较信息 封装用户选择的比较条件 >>>>url --->>>>xml
 
 //根据比较条件 查询比较 薪酬比较结果 返回的是有顺序的 保存薪酬 的数组
 + (NSMutableArray *) getSalaryComparingResultFromNetwork:(NSMutableDictionary *) dictionary{
     
     NSMutableString *string = [[NSMutableString alloc] initWithString:@"http://mobileinterface.zhaopin.com/iphone/payquery/comparequery.service?"];
-  
+    
     NSArray *itemsKey = [[self getAllKeys] retain];
     [string appendFormat:@"%@=%d&",[itemsKey objectAtIndex:0],[[dictionary objectForKey:[itemsKey objectAtIndex:0]] intValue]];
     
@@ -260,7 +296,7 @@
     
     [string appendFormat:@"%@=%d&",[itemsKey objectAtIndex:7],[[dictionary objectForKey:[itemsKey objectAtIndex:7]] intValue]];
     
-  
+    
     [string appendFormat:@"comparetype=%@&comparevalue=%@",[dictionary objectForKey:@"comparetype"],[dictionary objectForKey:@"comparevalue"]];
     
     
@@ -268,12 +304,14 @@
     NSLog(@"拼接之后的网址 ：%@",string);
     
     
-      
+    
     return [self getSalaryComparingResultFromXMLString:string];
 }
 
 
 
+#pragma mark -
+#pragma mark 用户选择的 数据 封装成 数组形式 与服务器交互相关 >>>>>>>>>
 + (NSArray *) getAllKeys{
     
     NSArray *array2 = [[NSArray alloc] initWithObjects:@"experience",@"cityid",@"industryid",@"educationid",@"corppropertyid",@"jobcatid",@"joblevelid",@"salary",nil];
@@ -281,7 +319,8 @@
     return [array2 autorelease];
 }
 
-
+#pragma mark -
+#pragma mark 薪酬比较的服务器信息
 + (NSArray *) getsaveallKeysArray{
     NSArray *array = [[NSArray alloc] initWithObjects:@"city", @"industry",@"corpproperty",@"jobcat",@"joblevel",@"educationid",nil];
     return  [array autorelease];
@@ -294,6 +333,8 @@
     
     
 }
+
+
 + (NSMutableDictionary *) getAllKeysForSalaryComparing{
     
     
@@ -379,6 +420,9 @@
 }
 
 
+
+#pragma mark -
+#pragma mark 获得各个城市 列表
 
 //获得城市列表
 + (NSMutableDictionary *) getCityItems{

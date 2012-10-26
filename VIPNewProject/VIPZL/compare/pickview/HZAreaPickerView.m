@@ -105,11 +105,18 @@
         
         
         
-        //初始化用户选择 这个很重要
+        //初始化用户选择 这个很重要 参数
         self.compareCondition.comparetype = [saveallKeysArray objectAtIndex:0];
         //默认选择的值是第一列中的第一行 即地区的第一个数据 的key
         
         self.compareCondition.comparevalue = [[[tmpSaveArray objectAtIndex:0] allKeysForObject:[self.tmpRightArray objectAtIndex:0]] objectAtIndex:0];
+        
+        //默认选择 名字
+        self.compareCondition.comparetypeName = [saveAllValuesArray objectAtIndex:0];
+        
+        self.compareCondition.comparevalueName =[self.tmpRightArray objectAtIndex:0];
+        
+        
         
         //初始化选择字典 这个也很重要 表示 用户不点击第0列的时候第一列默认显示的是 地区里面的条目
         tmpdic = [tmpSaveArray objectAtIndex:0];
@@ -196,7 +203,11 @@
             break;
             //选择的是第一列
         case 1:
+            
         self.compareCondition.comparevalue = [[tmpdic allKeysForObject:[self.tmpRightArray  objectAtIndex:row]] objectAtIndex:0];
+            
+            
+            self.compareCondition.comparevalueName = [self.tmpRightArray objectAtIndex:row];
             
             NSLog(@"用户选择的具体哪一个 %@",[self.tmpRightArray objectAtIndex:row]);
             break;

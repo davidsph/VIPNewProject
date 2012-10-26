@@ -29,7 +29,7 @@
 
 @property(nonatomic,retain) NSString *compareValues1,*compareValues2,*compareValues3,*compareValues4,*compareValues5;
 
-
+@property(nonatomic,retain) NSString *compareValuesNameForShow,*compareTypeNameForShow;
 
 
 
@@ -40,7 +40,10 @@
 
 
 @implementation VIPSalaryCompareVontroller
+#pragma mark -
+#pragma mark 实现属性 
 
+@synthesize compareTypeNameForShow,compareValuesNameForShow;
 @synthesize salarySearchInfoDictionaryForshow;
 @synthesize itemsAllKeys;
 @synthesize compareValues1,compareValues2,compareValues3,compareValues4,compareValues5;
@@ -74,6 +77,9 @@
 @synthesize companyType;
 @synthesize jobType;
 @synthesize jobLevel;
+@synthesize compareCon1;
+@synthesize compareCon2;
+@synthesize compareConditionLabel;
 
 @synthesize salaryInfoArray;
 @synthesize salarySearchInfoDictionary;
@@ -84,7 +90,8 @@
 @synthesize localPickView;
 @synthesize compareCondition;
 
-
+#pragma mark -
+#pragma mark 重写赋值方式 
 - (void) setCompareValues1:(NSString *)compareValues11{
     
     
@@ -240,6 +247,11 @@
     
 }
 
+
+#pragma mark -
+#pragma mark 显示 用户输入的比较条件
+//显示 用户输入的比较条件
+
 - (void) initComparelabelWhenShow{
     
        
@@ -272,6 +284,9 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
+#pragma mark -
+#pragma mark 将pickview 从当前视图中移除
 -(void)cancelLocatePicker
 {
     [self.localPickView cancelPicker];
@@ -280,6 +295,9 @@
 }
 
 
+
+#pragma mark -
+#pragma mark 更新 各种比较的label显示值
 - (void) initFirstLabels{
     
     self.firstLowLabel.text=[salaryInfoArray objectAtIndex:0];
@@ -302,6 +320,7 @@
     
 }
 
+
 - (void) initCompareLabels{
     
     
@@ -314,6 +333,19 @@
     
     
 }
+
+
+- (void) showCompareConditionWhenSuccess{
+    
+    NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
+    self.compareConditionLabel.text = @"比较条件";
+    
+    self.compareCon1.text = self.compareTypeNameForShow;
+    self.compareCon2.text = self.compareValuesNameForShow;    
+    
+    
+}
+
 
 #pragma mark -
 #pragma mark pickview 代理
@@ -331,18 +363,25 @@
 }
 
  
-//这个方法 执行查询操作   
+
+#pragma mark -
+#pragma mark 这个也是pickview中的代理方法 
+//这个方法 执行查询操作    这里使用
 - (void) pickerDidClickCompareBn:(HZAreaPickerView *)picker{
     NSLog(@"function %s line=%d",__FUNCTION__,__LINE__);
     
     self.comparetype = self.localPickView.compareCondition.comparetype;
     self.comparevalue = self.localPickView.compareCondition.comparevalue;
+    
+    self.compareTypeNameForShow = self.localPickView.compareCondition.comparetypeName;
+    self.compareValuesNameForShow =self.localPickView.compareCondition.comparevalueName;
+    
+    NSLog(@"用户比较的是 %@ 选择的是 %@", self.compareTypeNameForShow,self.compareValuesNameForShow);
+    
+    
     NSLog(@"未进行任何选择 key =%@ value = %@",self.comparetype,self.comparevalue);
     
-    
-    
-    
-    
+        
     //封装数据 
     [self.saveComparingConditionDictionary setObject:self.comparetype forKey:@"comparetype"];
     [self.saveComparingConditionDictionary setObject:self.comparevalue forKey:@"comparevalue"];
@@ -358,7 +397,7 @@
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     HUD.dimBackground = YES;
-    HUD.labelText = @"正在查询";
+    HUD.labelText = @"为您努力查询中……";
     
     
     //
@@ -393,18 +432,11 @@
         NSLog(@"执行更新界面操作");
         [self initSecondLabels];
         [self initCompareLabels];
+        [self showCompareConditionWhenSuccess];
         
     }
 
-    
-    
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"更新成功" message:@"OK" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//    [alert show];
-//    [alert release];
-//    
-    //执行更新界面操作10
-    
-        
+          
     
     
 }
@@ -546,6 +578,9 @@
     [self setCompanyType:nil];
     [self setJobType:nil];
     [self setJobLevel:nil];
+    [self setCompareCon1:nil];
+    [self setCompareCon2:nil];
+    [self setCompareConditionLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -596,6 +631,9 @@
     [companyType release];
     [jobType release];
     [jobLevel release];
+    [compareCon1 release];
+    [compareCon2 release];
+    [compareConditionLabel release];
     [super dealloc];
 }
 
